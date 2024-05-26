@@ -2,19 +2,19 @@
 
 Spell::Spell(std::string name, std::string description, bool isTeleport, bool isPortal, bool isArea, bool isAll, uint8_t damageType, uint8_t cost) {
 
-	std::string m_name = name;
-	std::string m_description = description;
-	bool m_isTeleport = isTeleport;
-	bool m_isPortal = isPortal;
-	bool m_isArea = isArea;
-	bool m_isAll = isAll;
-	uint8_t m_damageType = damageType;
-	uint8_t m_cost = cost;
+	this->m_name = name;
+	this->m_description = description;
+	this->m_isTeleport = isTeleport;
+	this->m_isPortal = isPortal;
+	this->m_isArea = isArea;
+	this->m_isAll = isAll;
+	this->m_damageType = damageType;
+	this->m_cost = cost;
 
 }
 
 Spell& Flare::get() {
-	static Spell flare(
+	static Flare flare(
 		"Flare",
 		"Set one enemy ablaze.",
 		false,
@@ -28,7 +28,7 @@ Spell& Flare::get() {
 }
 
 Spell& Freeze::get() {
-	static Spell freeze(
+	static Freeze freeze(
 		"Freeze",
 		"Freeze one enemy.",
 		false,
@@ -42,7 +42,7 @@ Spell& Freeze::get() {
 }
 
 Spell& Shock::get() {
-	static Spell shock(
+	static Shock shock(
 		"Shock",
 		"Eletrecute one enemy.",
 		false,
@@ -56,7 +56,7 @@ Spell& Shock::get() {
 }
 
 Spell& Teleport::get() {
-	static Spell teleport(
+	static Teleport teleport(
 		"Teleport",
 		"EScape the dungeon.",
 		true,
@@ -70,7 +70,7 @@ Spell& Teleport::get() {
 }
 
 Spell& Flame::get() {
-	static Spell flame(
+	static Flame flame(
 		"Flame",
 		"Set an enemy and adjacents ablaze.",
 		false,
@@ -84,8 +84,8 @@ Spell& Flame::get() {
 }
 
 Spell& Ice::get() {
-	static Spell ice(
-		"Flame",
+	static Ice ice(
+		"Ice",
 		"Freeze an enemy and adjacents.",
 		false,
 		false,
@@ -98,7 +98,7 @@ Spell& Ice::get() {
 }
 
 Spell& Lightning::get() {
-	static Spell lightning(
+	static Lightning lightning(
 		"Lightning",
 		"Eletrocute an enemy and adjacents.",
 		false,
@@ -112,7 +112,7 @@ Spell& Lightning::get() {
 }
 
 Spell& Portal::get() {
-	static Spell portal(
+	static Portal portal(
 		"Portal",
 		"Create a portal to the city and back.",
 		false,
@@ -126,7 +126,7 @@ Spell& Portal::get() {
 }
 
 Spell& Inferno::get() {
-	static Spell inferno(
+	static Inferno inferno(
 		"Inferno",
 		"Set all enemies ablaze.",
 		false,
@@ -140,7 +140,7 @@ Spell& Inferno::get() {
 }
 
 Spell& Cocitus::get() {
-	static Spell cocitus(
+	static Cocitus cocitus(
 		"Cocitus",
 		"Freeze all enemies.",
 		false,
@@ -154,7 +154,7 @@ Spell& Cocitus::get() {
 }
 
 Spell& Tempest::get() {
-	static Spell tempest(
+	static Tempest tempest(
 		"Inferno",
 		"Electrocute all enemies.",
 		false,
