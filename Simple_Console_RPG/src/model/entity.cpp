@@ -11,9 +11,9 @@ bool Entity::checkComponent(int i) {
 }
 
 void Entity::addComponent(int i) {
-	m_bitset[1] = 1;
+	m_bitset[i] = 1;
 }
 
 void Entity::removeComponent(int i) {
-	m_bitset[1] = 0;
+	m_bitset[i] = 0;
 }
