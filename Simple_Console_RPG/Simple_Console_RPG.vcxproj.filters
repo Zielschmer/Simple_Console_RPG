@@ -21,7 +21,16 @@
     <ClCompile Include="src\model\entity.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\spell.cpp">
+    <ClCompile Include="lib\spell.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\melody.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\miracle.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\character-creation.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,31 +38,34 @@
     <ClInclude Include="src\model\includes\entity.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\ability-score.h">
+    <ClInclude Include="lib\includes\ability-score.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\info.h">
+    <ClInclude Include="lib\includes\info.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\armor.h">
+    <ClInclude Include="lib\includes\armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\magic.h">
+    <ClInclude Include="lib\includes\magic.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\main-hand.h">
+    <ClInclude Include="lib\includes\main-hand.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\second-hand.h">
+    <ClInclude Include="lib\includes\second-hand.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\spell.h">
+    <ClInclude Include="lib\includes\spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\miracle.h">
+    <ClInclude Include="lib\includes\miracle.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\melody.h">
+    <ClInclude Include="lib\includes\melody.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\character-creation.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

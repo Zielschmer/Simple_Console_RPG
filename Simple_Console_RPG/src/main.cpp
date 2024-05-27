@@ -1,20 +1,23 @@
 #include <iostream>
 
 #include "model\includes\entity.h"
-#include "model\includes\spell.h"
+#include "..\lib\includes\spell.h"
+#include "..\lib\includes\miracle.h"
+#include "..\lib\includes\melody.h"
+#include "model\includes\character-creation.h"
 
 int main() {
 
-	std::cout << "Flare: " << Flare::get().m_name << std::endl;
-	std::cout << "Freeze: " << Freeze::get().m_name << std::endl;
-	std::cout << "Shock: " << Shock::get().m_name << std::endl;
-	std::cout << "Teleport: " << Teleport::get().m_name << std::endl;
-	std::cout << "Flame: " << Flame::get().m_name << std::endl;
-	std::cout << "Ice: " << Ice::get().m_name << std::endl;
-	std::cout << "Lightning: " << Lightning::get().m_name << std::endl;
-	std::cout << "Portal: " << Portal::get().m_name << std::endl;
-	std::cout << "Inferno: " << Inferno::get().m_name << std::endl;
-	std::cout << "Cocitus: " << Cocitus::get().m_name << std::endl;
-	std::cout << "Tempest: " << Tempest::get().m_name << std::endl;
+	Entity guts = characterCreation();
+
+	std::cout << "Name: " << getInfoComponent(guts.getID()).m_name << std::endl;
+	std::cout << "Description: " << getInfoComponent(guts.getID()).m_description << std::endl;
+	std::cout << "----------------------------------------------------------------" << std::endl;
+	std::cout << "Strength:		" << getAbilityScoreComponent(guts.getID()).m_strength << std::endl;
+	std::cout << "Dexterity:		" << getAbilityScoreComponent(guts.getID()).m_dexterity << std::endl;
+	std::cout << "Constitution:		" << getAbilityScoreComponent(guts.getID()).m_constitution << std::endl;
+	std::cout << "Inteligence:		" << getAbilityScoreComponent(guts.getID()).m_intelligence << std::endl;
+	std::cout << "Faith:			" << getAbilityScoreComponent(guts.getID()).m_faith << std::endl;
+	std::cout << "Luck:			" << getAbilityScoreComponent(guts.getID()).m_luck << std::endl;
 
 }

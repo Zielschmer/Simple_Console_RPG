@@ -3,18 +3,25 @@
 #include <stdint.h>
 #include <bitset>
 
-static uint16_t currentID = 0;
+#include "..\..\lib\includes\info.h"
+#include "..\..\lib\includes\ability-score.h"
+#include "..\..\lib\includes\armor.h"
+#include "..\..\lib\includes\main-hand.h"
+#include "..\..\lib\includes\second-hand.h"
+#include "..\..\lib\includes\magic.h"
 
 class Entity {
 
-	uint16_t m_id;
-	std::bitset<20> m_bitset;
+	int m_id;
+	std::bitset<6> m_bitset;
 
 public:
-	Entity(std::bitset<20> bitset);
+	Entity(std::string bitset, int& currentID);
 
 	bool checkComponent(int i);
 	void addComponent(int i);
 	void removeComponent(int i);
+	std::bitset<6>& checkBitset();
+	int getID();
 
 };
