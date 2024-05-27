@@ -1,8 +1,9 @@
 #include <vector>
 
 #include "includes\entity.h"
+#include "..\controller\includes\string-input.h"
 
-static int currentID = 0;
+//Extern variables and functions
 extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
 extern std::vector<Armor> armorComponents;
@@ -10,6 +11,19 @@ extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
 extern std::vector<Magic> magicComponents;
 
+Info& getInfoComponent(int componentID);
+
+AbilityScore& getAbilityScoreComponent(int componentID);
+
+Armor& getArmorComponent(int componentID);
+
+MainHand& getMainHandComponent(int componentID);
+
+SecondHand& getSecondHandComponent(int componentID);
+
+Magic& getMagicComponent(int componentID);
+
+//File functions
 int pickScore(std::vector<int>& scoreOrder) {
 	int score = rand() % 6;
 	for (int k = 0; k < scoreOrder.size(); k++) {
@@ -28,26 +42,18 @@ int calculateExtra(int& extraPoints) {
 	return currentExtra;
 }
 
-Entity& characterCreation() {
-	Entity* player = new Entity("000011", currentID);
+Entity& characterCreation(int currentID) {
+	Entity* character = new Entity("000011", currentID);
 
 	for (int i = 0; i < 6; i++) {
-		if (player->checkBitset()[i] == 1) {
+		if (character->checkBitset()[i] == 1) {
 			switch (i)
 			{
 			case 0:
 			{
-				Info info;
-				info.m_ownerID = player->getID();
-				info.m_name = "Guts";
-				info.m_description = "The black swordsmen";
-				infoComponents.push_back(info);
-				break;
-			}
-			case 1:
-			{
+
 				AbilityScore abilityScore;
-				abilityScore.m_ownerID = player->getID();
+				abilityScore.m_ownerID = character->getID();
 
 				srand(time(NULL));
 
@@ -62,15 +68,15 @@ Entity& characterCreation() {
 					if (i < 5) {
 						if (extraPoints > 0) {
 							int addExtra = calculateExtra(extraPoints);
-							scoreValues[scoreOrder[i]] = 6 + addExtra;
+							scoreValues[scoreOrder[i]] = 8 + addExtra;
 							extraPoints -= addExtra;
 						}
 						else {
-							scoreValues[scoreOrder[i]] = 6;
+							scoreValues[scoreOrder[i]] = 8;
 						}
 					}
 					else {
-						scoreValues[scoreOrder[i]] = 6 + extraPoints;
+						scoreValues[scoreOrder[i]] = 8 + extraPoints;
 					}
 				}
 
@@ -82,7 +88,50 @@ Entity& characterCreation() {
 				abilityScore.m_luck = scoreValues[5];
 
 				abilityScoreComponents.push_back(abilityScore);
+				break;
 
+			}
+			case 1:
+			{
+				Info info;
+				info.m_ownerID = character->getID();
+
+				std::string name = validStringInput();
+				if (infoComponents.size() > 0) {
+					for (int i = 0; i < infoComponents.size(); i++) {
+						if (name == infoComponents[i].m_name) {
+							name = validStringInput();
+						}
+					}
+				}
+				info.m_name = name;
+
+				std::string race;
+				if (getAbilityScoreComponent(character->getID()).m_strength > 15) {
+					race = "Dwarf";
+				}
+				else if (getAbilityScoreComponent(character->getID()).m_dexterity > 15) {
+					race = "Halfling";
+				}
+				else if (getAbilityScoreComponent(character->getID()).m_intelligence > 15) {
+					race = "Elf";
+				}
+				else {
+					race = "Human";
+				}
+
+				std::string sex;
+				if (getAbilityScoreComponent(character->getID()).m_faith > 13) {
+					sex = "woman";
+				}
+				else {
+					sex = "man";
+				}
+				
+				info.m_description = ("A brave " + sex + " of the " + race + " race.");
+
+				infoComponents.push_back(info);
+				break;
 			}
 			default:
 
@@ -91,53 +140,5 @@ Entity& characterCreation() {
 		}
 	}
 	currentID++;
-	return *player;
-}
-
-Info& getInfoComponent(int componentID) {
-	for (int i = 0; i < infoComponents.size(); i++) {
-		if (infoComponents[i].m_ownerID == componentID) {
-			return infoComponents[i];
-		}
-	}
-}
-
-AbilityScore& getAbilityScoreComponent(int componentID) {
-	for (int i = 0; i < abilityScoreComponents.size(); i++) {
-		if (abilityScoreComponents[i].m_ownerID == componentID) {
-			return abilityScoreComponents[i];
-		}
-	}
-}
-
-Armor& getArmorComponent(int componentID) {
-	for (int i = 0; i < armorComponents.size(); i++) {
-		if (armorComponents[i].m_ownerID == componentID) {
-			return armorComponents[i];
-		}
-	}
-}
-
-MainHand& getMainHandComponent(int componentID) {
-	for (int i = 0; i < mainHandComponents.size(); i++) {
-		if (mainHandComponents[i].m_ownerID == componentID) {
-			return mainHandComponents[i];
-		}
-	}
-}
-
-SecondHand& getSecondHandComponent(int componentID) {
-	for (int i = 0; i < secondHandComponents.size(); i++) {
-		if (secondHandComponents[i].m_ownerID == componentID) {
-			return secondHandComponents[i];
-		}
-	}
-}
-
-Magic& getMagicComponent(int componentID) {
-	for (int i = 0; i < magicComponents.size(); i++) {
-		if (magicComponents[i].m_ownerID == componentID) {
-			return magicComponents[i];
-		}
-	}
+	return *character;
 }

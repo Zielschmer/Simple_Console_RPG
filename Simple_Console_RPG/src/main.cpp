@@ -1,14 +1,14 @@
 #include <iostream>
 
 #include "model\includes\entity.h"
-#include "..\lib\includes\spell.h"
-#include "..\lib\includes\miracle.h"
-#include "..\lib\includes\melody.h"
+#include "model\includes\components-handling.h"
 #include "model\includes\character-creation.h"
+
+int currentID = 0;
 
 int main() {
 
-	Entity guts = characterCreation();
+	Entity guts = characterCreation(currentID);
 
 	std::cout << "Name: " << getInfoComponent(guts.getID()).m_name << std::endl;
 	std::cout << "Description: " << getInfoComponent(guts.getID()).m_description << std::endl;
