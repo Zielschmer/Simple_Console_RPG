@@ -5,6 +5,7 @@
 #include "model\includes\character-creation.h"
 #include "model\includes\mercenary-creation.h"
 #include "model\includes\enemy-creation.h"
+#include "model\includes\roll-dice.h"
 
 
 int currentID = 0;
@@ -34,8 +35,7 @@ int main() {
 		}
 		std::cout << "\n\n";
 	}
-
-
+	
 }
 
 

@@ -238,7 +238,7 @@ Entity& mercenaryCreation(int currentID) {
 							}
 							else {
 								mainHand.m_name = "Sword";
-								mainHand.m_baseAttack = 2;
+								mainHand.m_baseAttack = 6;
 								mainHand.m_attackModifier = 1;
 								mainHand.m_twoHanded = false;
 								mainHand.m_ranged = false;
@@ -277,7 +277,7 @@ Entity& mercenaryCreation(int currentID) {
 					else if (getArmorComponent(character->getID()).m_name == "Leather Armor") {
 						if (getAbilityScoreComponent(character->getID()).m_constitution < 11) {
 							mainHand.m_name = "Bow";
-							mainHand.m_baseAttack = 2;
+							mainHand.m_baseAttack = 6;
 							mainHand.m_attackModifier = 2;
 							mainHand.m_twoHanded = true;
 							mainHand.m_ranged = true;
@@ -287,7 +287,7 @@ Entity& mercenaryCreation(int currentID) {
 						}
 						else {
 							mainHand.m_name = "Dagger";
-							mainHand.m_baseAttack = 1;
+							mainHand.m_baseAttack = 4;
 							mainHand.m_attackModifier = 2;
 							mainHand.m_twoHanded = false;
 							mainHand.m_ranged = false;
@@ -299,7 +299,7 @@ Entity& mercenaryCreation(int currentID) {
 					else if (getArmorComponent(character->getID()).m_name == "Chain Mail" &&
 							getAbilityScoreComponent(character->getID()).m_faith > 13) {
 						mainHand.m_name = "Mace";
-						mainHand.m_baseAttack = 2;
+						mainHand.m_baseAttack = 6;
 						mainHand.m_attackModifier = 1;
 						mainHand.m_twoHanded = false;
 						mainHand.m_ranged = false;
@@ -311,7 +311,7 @@ Entity& mercenaryCreation(int currentID) {
 					}
 					else if (getAbilityScoreComponent(character->getID()).m_strength > 15) {
 						mainHand.m_name = "Hammer";
-						mainHand.m_baseAttack = 3;
+						mainHand.m_baseAttack = 8;
 						mainHand.m_attackModifier = 1;
 						mainHand.m_twoHanded = true;
 						mainHand.m_ranged = false;
@@ -321,7 +321,7 @@ Entity& mercenaryCreation(int currentID) {
 					}
 					else {
 						mainHand.m_name = "Sword";
-						mainHand.m_baseAttack = 2;
+						mainHand.m_baseAttack = 6;
 						mainHand.m_attackModifier = 1;
 						mainHand.m_twoHanded = false;
 						mainHand.m_ranged = false;
