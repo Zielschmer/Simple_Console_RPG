@@ -3,8 +3,13 @@
 #include "..\..\lib\includes\bestiary.h"
 
 //Extern variables and functions
+
+extern std::vector<Entity> entityControl;
+
 extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
+extern std::vector<HitPoints> hitPointsComponents;
+extern std::vector<int> spellSlotsComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
@@ -18,7 +23,7 @@ AbilityScore& getAbilityScoreComponent(int componentID);
 
 //File Functions
 Entity& enemyCreation(int currentID, int whatEnemy) {
-	Entity* character = new Entity("11000011", currentID);
+	Entity* character = new Entity("11000001011", currentID);
 
 	for (int i = 0; i < COMPONENTS_NUM; i++) {
 		if (character->checkBitset()[i] == 1) {
@@ -52,7 +57,17 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 					break;
 				}
 
-				case 6:
+				case 3:
+				{
+					HitPoints hitPoints;
+					hitPoints.m_ownerID = character->getID();
+					createMonsterHitPoints(hitPoints, whatEnemy);
+
+					hitPointsComponents.push_back(hitPoints);
+					break;
+				}
+
+				case 9:
 				{
 					NaturalArmor naturalArmor;
 					naturalArmor.m_ownerID = character->getID();
@@ -62,7 +77,7 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 					break;
 				}
 
-				case 7:
+				case 10:
 				{
 					NaturalWeapons naturalWeapons;
 					naturalWeapons.m_ownerID = character->getID();
@@ -80,5 +95,6 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 
 	}
 
+	entityControl.push_back(*character);
 	return *character;
 }

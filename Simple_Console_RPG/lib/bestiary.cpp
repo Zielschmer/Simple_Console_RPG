@@ -1,4 +1,5 @@
 #include "includes\monster.h"
+#include "..\..\src\model\includes\roll-dice.h"
 
 void createMonsterAbilityScore(AbilityScore& abilityScore, int whatEnemy) {
 
@@ -55,6 +56,31 @@ void createMonsterInfo(Info& info, int whatEnemy) {
 	case 2:
 		info.m_description = "Scorpion";
 		break;
+
+	default:
+		break;
+	}
+
+}
+
+void createMonsterHitPoints(HitPoints& hitPoints, int whatEnemy) {
+
+	switch (whatEnemy)
+	{
+	case 0:
+		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_currentHP = hitPoints.m_maxHP;
+		break;
+
+	case 1:
+		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_currentHP = hitPoints.m_maxHP;
+		break;
+
+	case 2:
+		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_currentHP = hitPoints.m_maxHP;
+		break;;
 
 	default:
 		break;

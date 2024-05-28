@@ -5,8 +5,14 @@
 #include "..\..\lib\includes\mercenary-names.h"
 
 //Extern variables and functions
+
+extern std::vector<Entity> entityControl;
+
 extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
+extern std::vector<int> levelComponents;
+extern std::vector<HitPoints> hitPointsComponents;
+extern std::vector<int> spellSlotsComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
@@ -15,6 +21,12 @@ extern std::vector<Cast> castComponents;
 Info& getInfoComponent(int componentID);
 
 AbilityScore& getAbilityScoreComponent(int componentID);
+
+int& getLevelComponent(int componentID);
+
+HitPoints& getHitPointsComponent(int componentID);
+
+int& getSpellSlotsComponent(int componentID);
 
 Armor& getArmorComponent(int componentID);
 
@@ -30,7 +42,7 @@ int calculateExtra(int& extraPoints);
 
 //File functions
 Entity& mercenaryCreation(int currentID) {
-	Entity* character = new Entity("00001111", currentID);
+	Entity* character = new Entity("00001101011", currentID);
 
 	for (int i = 0; i < COMPONENTS_NUM; i++) {
 		if (character->checkBitset()[i] == 1) {
@@ -41,7 +53,7 @@ Entity& mercenaryCreation(int currentID) {
 					AbilityScore abilityScore;
 					abilityScore.m_ownerID = character->getID();
 
-					srand(time(NULL)+currentID);
+					srand(time(NULL) + currentID);
 
 					std::vector<int> scoreOrder;
 					scoreOrder.push_back(rand() % 6);
@@ -50,19 +62,25 @@ Entity& mercenaryCreation(int currentID) {
 					}
 					int scoreValues[6];
 					int extraPoints = 27;
-					for (int i = 0; i < 6; i++) {
-						if (i < 5) {
-							if (extraPoints > 0) {
-								int addExtra = calculateExtra(extraPoints);
-								scoreValues[scoreOrder[i]] = 8 + addExtra;
-								extraPoints -= addExtra;
-							}
-							else {
-								scoreValues[scoreOrder[i]] = 8;
-							}
+					for (int j = 0; j < 6; j++) {
+						if (extraPoints > 0) {
+							int addExtra = calculateExtra(extraPoints);
+							scoreValues[scoreOrder[j]] = 8 + addExtra;
+							extraPoints -= addExtra;
 						}
 						else {
-							scoreValues[scoreOrder[i]] = 8 + extraPoints;
+							scoreValues[scoreOrder[j]] = 8;
+						}
+					}
+					int l = 0;
+					while (extraPoints > 0) {
+						if (scoreValues[scoreOrder[l]] < 18) {
+							scoreValues[scoreOrder[l]]++;
+							extraPoints--;
+						}
+						l++;
+						if (l == 6) {
+							l = 0;
 						}
 					}
 
@@ -142,12 +160,23 @@ Entity& mercenaryCreation(int currentID) {
 					infoComponents.push_back(info);
 					break;
 				}
-				case 2:
+				case 3:
+				{
+					HitPoints hitPoints;
+					hitPoints.m_ownerID = character->getID();
+					hitPoints.m_maxHP = getAbilityScoreComponent(character->getID()).m_constitution;
+					hitPoints.m_currentHP = hitPoints.m_maxHP;
+
+					hitPointsComponents.push_back(hitPoints);
+					break;
+				}
+				case 5:
 				{
 					Armor armor;
 					armor.m_ownerID = character->getID();
 
 					if (getAbilityScoreComponent(character->getID()).m_intelligence > 13 &&
+						getAbilityScoreComponent(character->getID()).m_dexterity < 15 &&
 						getAbilityScoreComponent(character->getID()).m_intelligence > getAbilityScoreComponent(character->getID()).m_faith &&
 						getAbilityScoreComponent(character->getID()).m_intelligence > getAbilityScoreComponent(character->getID()).m_luck) {
 
@@ -157,7 +186,7 @@ Entity& mercenaryCreation(int currentID) {
 						armor.m_fastCast = true;
 						armor.m_dexterityDebuff = false;
 
-						character->addComponent(5);
+						character->addComponent(8);
 					}
 					else if (getAbilityScoreComponent(character->getID()).m_faith > 13 &&
 							getAbilityScoreComponent(character->getID()).m_faith > getAbilityScoreComponent(character->getID()).m_luck) {
@@ -177,7 +206,7 @@ Entity& mercenaryCreation(int currentID) {
 							armor.m_dexterityDebuff = true;
 						}
 
-						character->addComponent(5);
+						character->addComponent(8);
 					}
 					else if (getAbilityScoreComponent(character->getID()).m_luck > 13 &&
 							getAbilityScoreComponent(character->getID()).m_strength < 14 &&
@@ -188,7 +217,7 @@ Entity& mercenaryCreation(int currentID) {
 						armor.m_fastCast = true;
 						armor.m_dexterityDebuff = false;
 
-						character->addComponent(5);
+						character->addComponent(8);
 					}
 					else if (getAbilityScoreComponent(character->getID()).m_dexterity > 13 &&
 						getAbilityScoreComponent(character->getID()).m_dexterity > getAbilityScoreComponent(character->getID()).m_strength) {
@@ -216,7 +245,7 @@ Entity& mercenaryCreation(int currentID) {
 					armorComponents.push_back(armor);
 					break;
 				}
-				case 3:
+				case 6:
 				{
 					MainHand mainHand;
 					mainHand.m_ownerID = character->getID();
@@ -246,7 +275,7 @@ Entity& mercenaryCreation(int currentID) {
 								mainHand.m_faithAdvantage = false;
 								mainHand.m_luckAdvantage = false;
 
-								character->addComponent(4);
+								character->addComponent(7);
 							}
 
 						}
@@ -307,7 +336,7 @@ Entity& mercenaryCreation(int currentID) {
 						mainHand.m_faithAdvantage = false;
 						mainHand.m_luckAdvantage = false;
 
-						character->addComponent(4);
+						character->addComponent(7);
 					}
 					else if (getAbilityScoreComponent(character->getID()).m_strength > 15) {
 						mainHand.m_name = "Hammer";
@@ -329,13 +358,13 @@ Entity& mercenaryCreation(int currentID) {
 						mainHand.m_faithAdvantage = false;
 						mainHand.m_luckAdvantage = false;
 
-						character->addComponent(4);
+						character->addComponent(7);
 					}
 
 					mainHandComponents.push_back(mainHand);
 					break;
 				}
-				case 4:
+				case 7:
 				{
 					SecondHand secondHand;
 					secondHand.m_ownerID = character->getID();
@@ -378,7 +407,7 @@ Entity& mercenaryCreation(int currentID) {
 					secondHandComponents.push_back(secondHand);
 					break;
 				}
-				case 5:
+				case 8:
 				{
 					Cast cast;
 					cast.m_ownerID = character->getID();
@@ -400,7 +429,7 @@ Entity& mercenaryCreation(int currentID) {
 						cast.m_melodies.push_back(getWither());
 					}
 
-					if (character->checkComponent(4)) {
+					if (character->checkComponent(7)) {
 						if (getSecondHandComponent(character->getID()).m_name == "Staff") {
 							cast.m_spells.push_back(getFlare());
 							cast.m_spells.push_back(getFreeze());
@@ -422,5 +451,6 @@ Entity& mercenaryCreation(int currentID) {
 			}
 		}
 	}
+	entityControl.push_back(*character);
 	return *character;
 }

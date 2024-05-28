@@ -3,8 +3,13 @@
 #include "entity.h"
 #include "..\..\..\lib\includes\monster.h"
 
+std::vector<Entity> entityControl;
+
 std::vector<Info> infoComponents;
 std::vector<AbilityScore> abilityScoreComponents;
+std::vector<int> levelComponents;
+std::vector<HitPoints> hitPointsComponents;
+std::vector<int> spellSlotsComponents;
 std::vector<Armor> armorComponents;
 std::vector<MainHand> mainHandComponents;
 std::vector<SecondHand> secondHandComponents;
@@ -15,6 +20,12 @@ std::vector<NaturalWeapons> naturalWeaponsComponents;
 Info& getInfoComponent(int componentID);
 
 AbilityScore& getAbilityScoreComponent(int componentID);
+
+int& getLevelComponent(int componentID);
+
+HitPoints& getHitPointsComponent(int componentID);
+
+int& getSpellSlotsComponent(int componentID);
 
 Armor& getArmorComponent(int componentID);
 

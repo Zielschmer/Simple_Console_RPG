@@ -4,8 +4,14 @@
 #include "..\controller\includes\string-input.h"
 
 //Extern variables and functions
+
+extern std::vector<Entity> entityControl;
+
 extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
+extern std::vector<int> levelComponents;
+extern std::vector<HitPoints> hitPointsComponents;
+extern std::vector<int> spellSlotsComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
@@ -14,6 +20,12 @@ extern std::vector<Cast> castComponents;
 Info& getInfoComponent(int componentID);
 
 AbilityScore& getAbilityScoreComponent(int componentID);
+
+int& getLevelComponent(int componentID);
+
+HitPoints& getHitPointsComponent(int componentID);
+
+int& getSpellSlotsComponent(int componentID);
 
 Armor& getArmorComponent(int componentID);
 
@@ -43,9 +55,9 @@ int calculateExtra(int& extraPoints) {
 }
 
 Entity& characterCreation(int currentID) {
-	Entity* character = new Entity("00000011", currentID);
+	Entity* character = new Entity("00000001011", currentID);
 
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < COMPONENTS_NUM; i++) {
 		if (character->checkBitset()[i] == 1) {
 			switch (i)
 			{
@@ -55,7 +67,7 @@ Entity& characterCreation(int currentID) {
 				AbilityScore abilityScore;
 				abilityScore.m_ownerID = character->getID();
 
-				srand(time(NULL) * rand() % 100 + currentID);
+				srand(time(NULL) + currentID);
 
 				std::vector<int> scoreOrder;
 				scoreOrder.push_back(rand() % 6);
@@ -64,19 +76,25 @@ Entity& characterCreation(int currentID) {
 				}
 				int scoreValues[6];
 				int extraPoints = 27;
-				for (int i = 0; i < 6; i++) {
-					if (i < 5) {
-						if (extraPoints > 0) {
-							int addExtra = calculateExtra(extraPoints);
-							scoreValues[scoreOrder[i]] = 8 + addExtra;
-							extraPoints -= addExtra;
-						}
-						else {
-							scoreValues[scoreOrder[i]] = 8;
-						}
+				for (int j = 0; j < 6; j++) {
+					if (extraPoints > 0) {
+						int addExtra = calculateExtra(extraPoints);
+						scoreValues[scoreOrder[j]] = 8 + addExtra;
+						extraPoints -= addExtra;
 					}
 					else {
-						scoreValues[scoreOrder[i]] = 8 + extraPoints;
+						scoreValues[scoreOrder[j]] = 8;
+					}
+				}
+				int l = 0;
+				while (extraPoints > 0) {
+					if (scoreValues[scoreOrder[l]] < 18) {
+						scoreValues[scoreOrder[l]]++;
+						extraPoints--;
+					}
+					l++;
+					if (l == 6) {
+						l = 0;
 					}
 				}
 
@@ -98,8 +116,8 @@ Entity& characterCreation(int currentID) {
 
 				std::string name = validStringInput();
 				if (infoComponents.size() > 0) {
-					for (int i = 0; i < infoComponents.size(); i++) {
-						if (name == infoComponents[i].m_name) {
+					for (int j = 0; j < infoComponents.size(); j++) {
+						if (name == infoComponents[j].m_name) {
 							name = validStringInput();
 						}
 					}
@@ -133,11 +151,24 @@ Entity& characterCreation(int currentID) {
 				infoComponents.push_back(info);
 				break;
 			}
+			case 2:
+				break;
+			case 3:
+			{
+				HitPoints hitPoints;
+				hitPoints.m_ownerID = character->getID();
+				hitPoints.m_maxHP = getAbilityScoreComponent(character->getID()).m_constitution;
+				hitPoints.m_currentHP = hitPoints.m_maxHP;
+
+				hitPointsComponents.push_back(hitPoints);
+				break;
+			}
 			default:
 
 				break;
 			}
 		}
 	}
+	entityControl.push_back(*character);
 	return *character;
 }

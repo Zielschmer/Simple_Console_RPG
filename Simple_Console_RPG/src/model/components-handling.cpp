@@ -5,6 +5,9 @@
 
 extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
+extern std::vector<int> levelComponents;
+extern std::vector<HitPoints> hitPointsComponents;
+extern std::vector<int> spellSlotsComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
@@ -27,6 +30,24 @@ AbilityScore& getAbilityScoreComponent(int componentID) {
 			return abilityScoreComponents[i];
 		}
 	}
+}
+
+int& getLevelComponent(int componentID) {
+	int i = 0;
+	return levelComponents[i];
+}
+
+HitPoints& getHitPointsComponent(int componentID) {
+	for (int i = 0; i < hitPointsComponents.size(); i++) {
+		if (hitPointsComponents[i].m_ownerID == componentID) {
+			return hitPointsComponents[i];
+		}
+	}
+}
+
+int& getSpellSlotsComponent(int componentID) {
+	int i = 0;
+	return spellSlotsComponents[i];
 }
 
 Armor& getArmorComponent(int componentID) {

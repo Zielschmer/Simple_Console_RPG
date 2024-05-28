@@ -7,9 +7,10 @@ int rollDice(int dice, int numDice) {
 
 	int resultDice = 0;
 
+	srand(time(NULL) + rand() % 100);
+
 	for (int i = 0; i < numDice; i++) {
-		srand(time(NULL));
-		resultDice =+ (rand() % dice + 1);
+		resultDice += (rand() % dice + 1);
 	}
 
 	return resultDice;

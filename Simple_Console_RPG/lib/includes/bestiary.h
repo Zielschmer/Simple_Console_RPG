@@ -6,6 +6,8 @@ void createMonsterAbilityScore(AbilityScore& abilityScore, int whatEnemy);
 
 void createMonsterInfo(Info& info, int whatEnemy);
 
+void createMonsterHitPoints(HitPoints& hitPoints, int whatEnemy);
+
 void createMonsterNaturalArmor(NaturalArmor& naturalArmor, int whatEnemy);
 
 void createMonsterNaturalWeapon(NaturalWeapons& naturalWeapons, int whatEnemy);

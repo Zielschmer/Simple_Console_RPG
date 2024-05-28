@@ -5,12 +5,13 @@
 
 #include "..\..\lib\includes\info.h"
 #include "..\..\lib\includes\ability-score.h"
+#include "..\..\lib\includes\hit-points.h"
 #include "..\..\lib\includes\armor.h"
 #include "..\..\lib\includes\main-hand.h"
 #include "..\..\lib\includes\second-hand.h"
 #include "..\..\lib\includes\cast.h"
 
-#define COMPONENTS_NUM 8
+#define COMPONENTS_NUM 11
 
 class Entity {
 

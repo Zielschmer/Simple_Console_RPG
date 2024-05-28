@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="lib\includes\ability-score.h" />
     <ClInclude Include="lib\includes\bestiary.h" />
+    <ClInclude Include="lib\includes\hit-points.h" />
     <ClInclude Include="lib\includes\melodies.h" />
     <ClInclude Include="lib\includes\mercenary-names.h" />
     <ClInclude Include="lib\includes\miracles.h" />
