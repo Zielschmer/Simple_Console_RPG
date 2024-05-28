@@ -43,7 +43,7 @@ int calculateExtra(int& extraPoints) {
 }
 
 Entity& characterCreation(int currentID) {
-	Entity* character = new Entity("000011", currentID);
+	Entity* character = new Entity("00000011", currentID);
 
 	for (int i = 0; i < 6; i++) {
 		if (character->checkBitset()[i] == 1) {

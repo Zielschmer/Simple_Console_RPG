@@ -10,10 +10,12 @@
 #include "..\..\lib\includes\second-hand.h"
 #include "..\..\lib\includes\cast.h"
 
+#define COMPONENTS_NUM 8
+
 class Entity {
 
 	int m_id;
-	std::bitset<6> m_bitset;
+	std::bitset<COMPONENTS_NUM> m_bitset;
 
 public:
 	Entity(std::string bitset, int& currentID);
@@ -22,7 +24,7 @@ public:
 	bool checkComponent(int i);
 	void addComponent(int i);
 	void removeComponent(int i);
-	std::bitset<6>& checkBitset();
+	std::bitset<COMPONENTS_NUM>& checkBitset();
 	int getID();
 
 };

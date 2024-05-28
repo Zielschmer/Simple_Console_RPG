@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lib\bestiary.cpp" />
     <ClCompile Include="src\controller\string-input.cpp" />
     <ClCompile Include="src\model\character-creation.cpp" />
     <ClCompile Include="src\model\components-handling.cpp" />
+    <ClCompile Include="src\model\enemy-creation.cpp" />
     <ClCompile Include="src\model\entity.cpp" />
     <ClCompile Include="lib\melody.cpp" />
     <ClCompile Include="lib\miracle.cpp" />
@@ -139,13 +141,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\includes\ability-score.h" />
+    <ClInclude Include="lib\includes\bestiary.h" />
     <ClInclude Include="lib\includes\melodies.h" />
     <ClInclude Include="lib\includes\mercenary-names.h" />
     <ClInclude Include="lib\includes\miracles.h" />
+    <ClInclude Include="lib\includes\monster.h" />
     <ClInclude Include="lib\includes\spells.h" />
     <ClInclude Include="src\controller\includes\string-input.h" />
     <ClInclude Include="src\model\includes\character-creation.h" />
     <ClInclude Include="src\model\includes\components-handling.h" />
+    <ClInclude Include="src\model\includes\enemy-creation.h" />
     <ClInclude Include="src\model\includes\entity.h" />
     <ClInclude Include="lib\includes\armor.h" />
     <ClInclude Include="lib\includes\info.h" />

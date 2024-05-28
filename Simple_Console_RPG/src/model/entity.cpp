@@ -3,7 +3,7 @@
 Entity::Entity(std::string bitset, int& currentID) {
 	m_id = currentID;
 	currentID++;
-	m_bitset = std::bitset<6>(bitset);
+	m_bitset = std::bitset<COMPONENTS_NUM>(bitset);
 }
 
 bool Entity::checkComponent(int i) {
@@ -18,7 +18,7 @@ void Entity::removeComponent(int i) {
 	m_bitset.reset(i);
 }
 
-std::bitset<6>& Entity::checkBitset() {
+std::bitset<COMPONENTS_NUM>& Entity::checkBitset() {
 	return m_bitset;
 }
 
