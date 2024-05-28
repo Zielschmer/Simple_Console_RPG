@@ -1,132 +1,151 @@
-#include "includes\melody.h"
+#include "includes\cast.h"
 
-Melody::Melody(std::string name, std::string description, bool isAlly, bool isAll, int type, int cost) {
+Melody getHaste () {
 
-	this->m_name = name;
-	this->m_description = description;
-	this->m_isAlly = isAlly;
-	this->m_isAll = isAll;
-	this->m_type = type;
-	this->m_cost = cost;
+	Melody newMelody;
+
+	newMelody.m_name = "Haste";
+	newMelody.m_description = "Increase speed and AC to one ally.";
+	newMelody.m_isAlly = true;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 0;
+	newMelody.m_cost = 1;
+
+	return newMelody;
 
 }
 
-Melody& Haste::get() {
-	static Haste haste(
-		"Haste",
-		"Increase speed and AC to one ally.",
-		true,
-		false,
-		0,
-		1
-	);
-	return haste;
+Melody getMighty() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Mighty";
+	newMelody.m_description = "Give an advantage on damage roll to one ally.";
+	newMelody.m_isAlly = true;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 1;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Mighty::get() {
-	static Mighty mighty(
-		"Mighty",
-		"Give an advantage on damage roll to one ally.",
-		true,
-		false,
-		1,
-		1
-	);
-	return mighty;
+Melody getPrecision() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Precision";
+	newMelody.m_description = "Give an advantage on attack roll to one ally.";
+	newMelody.m_isAlly = true;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 2;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Precision::get() {
-	static Precision precision(
-		"Precision",
-		"Give an advantage on attack roll to one ally.",
-		true,
-		false,
-		2,
-		1
-	);
-	return precision;
+Melody getBullseye() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Bullseye";
+	newMelody.m_description = "Give an advantage on magic roll to one ally.";
+	newMelody.m_isAlly = true;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 3;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Bullseye::get() {
-	static Bullseye bullseye(
-		"Bullseye",
-		"Give an advantage on magic roll to one ally.",
-		true,
-		false,
-		3,
-		1
-	);
-	return bullseye;
+Melody getSlow() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Slow";
+	newMelody.m_description = "Decrease speed, and DC of one enemy.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 0;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Slow::get() {
-	static Slow slow(
-		"Slow",
-		"Decrease speed, and DC of one enemy.",
-		false,
-		false,
-		0,
-		1
-	);
-	return slow;
+Melody getWither() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Wither";
+	newMelody.m_description = "Give a disadvantage on damage roll to one enemy.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 1;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Wither::get() {
-	static Wither wither(
-		"Wither",
-		"Give a disadvantage on damage roll to one enemy.",
-		false,
-		false,
-		1,
-		1
-	);
-	return wither;
+Melody getBlind() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Blind";
+	newMelody.m_description = "Give a disadvantage on attack roll to one enemy.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 2;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Blind::get() {
-	static Blind blind(
-		"Blind",
-		"Give a disadvantage on attack roll to one enemy.",
-		false,
-		false,
-		2,
-		1
-	);
-	return blind;
+Melody getSilence() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Silence";
+	newMelody.m_description = "Give silence condition to one enemy.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 3;
+	newMelody.m_cost = 1;
+
+	return newMelody;
+
 }
 
-Melody& Silence::get() {
-	static Silence silence(
-		"Silence",
-		"Give silence condition to one enemy.",
-		false,
-		false,
-		3,
-		1
-	);
-	return silence;
+Melody getHypnotize() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Hypnotize";
+	newMelody.m_description = "The hypnotized enemy will attack its allies.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = false;
+	newMelody.m_type = 4;
+	newMelody.m_cost = 2;
+
+	return newMelody;
+
 }
 
-Melody& Hypnotize::get() {
-	static Hypnotize hypnotize(
-		"Hypnotize",
-		"The hypnotized enemy will attack its allies.",
-		false,
-		false,
-		4,
-		2
-	);
-	return hypnotize;
-}
+Melody getDance() {
 
-Melody& Dance::get() {
-	static Dance dance(
-		"Dance",
-		"All enemies will spend their turn dancing.",
-		false,
-		false,
-		5,
-		3
-	);
-	return dance;
+	Melody newMelody;
+
+	newMelody.m_name = "Dance";
+	newMelody.m_description = "All enemies will spend their turn dancing.";
+	newMelody.m_isAlly = false;
+	newMelody.m_isAll = true;
+	newMelody.m_type = 5;
+	newMelody.m_cost = 3;
+
+	return newMelody;
+
 }

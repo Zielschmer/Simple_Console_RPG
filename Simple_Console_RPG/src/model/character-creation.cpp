@@ -9,7 +9,7 @@ extern std::vector<AbilityScore> abilityScoreComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
-extern std::vector<Magic> magicComponents;
+extern std::vector<Cast> castComponents;
 
 Info& getInfoComponent(int componentID);
 
@@ -21,7 +21,7 @@ MainHand& getMainHandComponent(int componentID);
 
 SecondHand& getSecondHandComponent(int componentID);
 
-Magic& getMagicComponent(int componentID);
+Cast& getCastComponent(int componentID);
 
 //File functions
 int pickScore(std::vector<int>& scoreOrder) {
@@ -55,7 +55,7 @@ Entity& characterCreation(int currentID) {
 				AbilityScore abilityScore;
 				abilityScore.m_ownerID = character->getID();
 
-				srand(time(NULL));
+				srand(time(NULL) * rand() % 100 + currentID);
 
 				std::vector<int> scoreOrder;
 				scoreOrder.push_back(rand() % 6);
@@ -139,6 +139,5 @@ Entity& characterCreation(int currentID) {
 			}
 		}
 	}
-	currentID++;
 	return *character;
 }

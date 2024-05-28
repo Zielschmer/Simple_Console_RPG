@@ -7,7 +7,7 @@ std::vector<AbilityScore> abilityScoreComponents;
 std::vector<Armor> armorComponents;
 std::vector<MainHand> mainHandComponents;
 std::vector<SecondHand> secondHandComponents;
-std::vector<Magic> magicComponents;
+std::vector<Cast> castComponents;
 
 Info& getInfoComponent(int componentID);
 
@@ -19,4 +19,4 @@ MainHand& getMainHandComponent(int componentID);
 
 SecondHand& getSecondHandComponent(int componentID);
 
-Magic& getMagicComponent(int componentID);
+Cast& getCastComponent(int componentID);

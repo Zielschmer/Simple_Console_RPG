@@ -8,7 +8,7 @@
 #include "..\..\lib\includes\armor.h"
 #include "..\..\lib\includes\main-hand.h"
 #include "..\..\lib\includes\second-hand.h"
-#include "..\..\lib\includes\magic.h"
+#include "..\..\lib\includes\cast.h"
 
 class Entity {
 
@@ -17,6 +17,7 @@ class Entity {
 
 public:
 	Entity(std::string bitset, int& currentID);
+	Entity() {};
 
 	bool checkComponent(int i);
 	void addComponent(int i);

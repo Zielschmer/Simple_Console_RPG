@@ -1,168 +1,188 @@
-#include "includes\spell.h"
+#include "includes\spells.h"
 
-Spell::Spell(std::string name, std::string description, bool isTeleport, bool isPortal, bool isArea, bool isAll, int damageType, int cost) {
+Spell getFlare() {
 
-	this->m_name = name;
-	this->m_description = description;
-	this->m_isTeleport = isTeleport;
-	this->m_isPortal = isPortal;
-	this->m_isArea = isArea;
-	this->m_isAll = isAll;
-	this->m_damageType = damageType;
-	this->m_cost = cost;
+	Spell newSpell;
+
+	newSpell.m_name = "Flare";
+	newSpell.m_description = "Set one enemy ablaze.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 1;
+	newSpell.m_cost = 1;
+
+	return newSpell;
 
 }
 
-Spell& Flare::get() {
-	static Flare flare(
-		"Flare",
-		"Set one enemy ablaze.",
-		false,
-		false,
-		false,
-		false,
-		0,
-		1
-	);
-	return flare;
+Spell getFreeze() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Freeze";
+	newSpell.m_description = "Freeze one enemy.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 2;
+	newSpell.m_cost = 1;
+
+	return newSpell;
+
 }
 
-Spell& Freeze::get() {
-	static Freeze freeze(
-		"Freeze",
-		"Freeze one enemy.",
-		false,
-		false,
-		false,
-		false,
-		1,
-		1
-	);
-	return freeze;
+Spell getShock() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Shock";
+	newSpell.m_description = "Eletrocute one enemy.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 3;
+	newSpell.m_cost = 1;
+
+	return newSpell;
+
 }
 
-Spell& Shock::get() {
-	static Shock shock(
-		"Shock",
-		"Eletrecute one enemy.",
-		false,
-		false,
-		false,
-		false,
-		2,
-		1
-	);
-	return shock;
+Spell getTeleport() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Teleport";
+	newSpell.m_description = "Escape the dungeon.";
+	newSpell.m_isTeleport = true;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 0;
+	newSpell.m_cost = 1;
+
+	return newSpell;
+
 }
 
-Spell& Teleport::get() {
-	static Teleport teleport(
-		"Teleport",
-		"EScape the dungeon.",
-		true,
-		false,
-		false,
-		false,
-		0,
-		1
-	);
-	return teleport;
+Spell getFlame() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Flame";
+	newSpell.m_description = "Set an enemy and adjacents ablaze.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = true;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 1;
+	newSpell.m_cost = 2;
+
+	return newSpell;
+
 }
 
-Spell& Flame::get() {
-	static Flame flame(
-		"Flame",
-		"Set an enemy and adjacents ablaze.",
-		false,
-		false,
-		true,
-		false,
-		0,
-		2
-	);
-	return flame;
+Spell getIce() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Ice";
+	newSpell.m_description = "Freeze an enemy and adjacents.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = true;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 2;
+	newSpell.m_cost = 2;
+
+	return newSpell;
+
 }
 
-Spell& Ice::get() {
-	static Ice ice(
-		"Ice",
-		"Freeze an enemy and adjacents.",
-		false,
-		false,
-		true,
-		false,
-		1,
-		2
-	);
-	return ice;
+Spell getLightning() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Lightning";
+	newSpell.m_description = "Eletrocute an enemy and adjacents.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = true;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 3;
+	newSpell.m_cost = 2;
+
+	return newSpell;
+
 }
 
-Spell& Lightning::get() {
-	static Lightning lightning(
-		"Lightning",
-		"Eletrocute an enemy and adjacents.",
-		false,
-		false,
-		true,
-		false,
-		2,
-		2
-	);
-	return lightning;
+Spell getPortal() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Portal";
+	newSpell.m_description = "Create a portal to the city and back.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = true;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 0;
+	newSpell.m_cost = 2;
+
+	return newSpell;
+
 }
 
-Spell& Portal::get() {
-	static Portal portal(
-		"Portal",
-		"Create a portal to the city and back.",
-		false,
-		true,
-		false,
-		false,
-		0,
-		2
-	);
-	return portal;
+Spell getInferno() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Inferno";
+	newSpell.m_description = "Set all enemies ablaze.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = true;
+	newSpell.m_damageType = 1;
+	newSpell.m_cost = 3;
+
+	return newSpell;
+
 }
 
-Spell& Inferno::get() {
-	static Inferno inferno(
-		"Inferno",
-		"Set all enemies ablaze.",
-		false,
-		false,
-		false,
-		true,
-		0,
-		3
-	);
-	return inferno;
+Spell getCocitus() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Cocitus";
+	newSpell.m_description = "Freeze all enemies.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = true;
+	newSpell.m_damageType = 2;
+	newSpell.m_cost = 3;
+
+	return newSpell;
+
 }
 
-Spell& Cocitus::get() {
-	static Cocitus cocitus(
-		"Cocitus",
-		"Freeze all enemies.",
-		false,
-		false,
-		false,
-		true,
-		1,
-		3
-	);
-	return cocitus;
-}
+Spell getTempest() {
 
-Spell& Tempest::get() {
-	static Tempest tempest(
-		"Tempest",
-		"Electrocute all enemies.",
-		false,
-		false,
-		false,
-		true,
-		2,
-		3
-	);
-	return tempest;
+	Spell newSpell;
+
+	newSpell.m_name = "Tempest";
+	newSpell.m_description = "Electrocute all enemies.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = true;
+	newSpell.m_damageType = 3;
+	newSpell.m_cost = 3;
+
+	return newSpell;
+
 }

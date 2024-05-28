@@ -5,9 +5,10 @@
 struct Armor {
 
 	int m_ownerID;
-	uint8_t m_baseArmor;
-	uint8_t m_armorModifier;
-	bool fastCast;
-	bool dexterityDebuff;
+	std::string m_name;
+	int m_baseArmor;
+	int m_armorModifier;
+	bool m_fastCast;
+	bool m_dexterityDebuff;
 
 };

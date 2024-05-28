@@ -7,15 +7,15 @@ Entity::Entity(std::string bitset, int& currentID) {
 }
 
 bool Entity::checkComponent(int i) {
-	return m_bitset[i];
+	return m_bitset.test(i);
 }
 
 void Entity::addComponent(int i) {
-	m_bitset[i] = 1;
+	m_bitset.set(i);
 }
 
 void Entity::removeComponent(int i) {
-	m_bitset[i] = 0;
+	m_bitset.reset(i);
 }
 
 std::bitset<6>& Entity::checkBitset() {

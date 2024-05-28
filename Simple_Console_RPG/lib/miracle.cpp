@@ -1,165 +1,181 @@
-#include "includes\miracle.h"
+#include "includes\cast.h"
 
-Miracle::Miracle(std::string name, std::string description, bool isRevive, bool isHeal, bool isCure, bool isRestore, bool isArea, bool isAll, int cost) {
+Miracle getHeal () {
 
-	this->m_name = name;
-	this->m_description = description;
-	this->m_isRevive = isRevive;
-	this->m_isHeal = isHeal;
-	this->m_isCure = isCure;
-	this->m_isRestore = isRestore;
-	this->m_isArea = isArea;
-	this->m_isAll = isAll;
-	this->m_cost = cost;
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Heal";
+	newMiracle.m_description = "Restore one ally's hit points.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = true;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 1;
+
+	return newMiracle;
 
 }
 
-Miracle& Heal::get() {
-	static Heal heal(
-		"Heal",
-		"Restore one ally's hit points.",
-		false,
-		true,
-		false,
-		false,
-		false,
-		false,
-		1
-	);
-	return heal;
+Miracle getCure() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Cure";
+	newMiracle.m_description = "Cure one ally's conditions.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = true;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 1;
+
+	return newMiracle;
+
 }
 
-Miracle& Cure::get() {
-	static Cure cure(
-		"Cure",
-		"Cure one ally's conditions.",
-		false,
-		false,
-		true,
-		false,
-		false,
-		false,
-		1
-	);
-	return cure;
+Miracle getRevive() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Revive";
+	newMiracle.m_description = "Revive one ally.";
+	newMiracle.m_isRevive = true;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 2;
+
+	return newMiracle;
+
 }
 
-Miracle& Revive::get() {
-	static Revive revive(
-		"Revive",
-		"Revive one ally.",
-		true,
-		false,
-		false,
-		false,
-		false,
-		false,
-		2
-	);
-	return revive;
+Miracle getPray() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Pray";
+	newMiracle.m_description = "Ask for divine punishment upon one enemy.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 1;
+
+	return newMiracle;
+
 }
 
-Miracle& Pray::get() {
-	static Pray pray(
-		"Pray",
-		"Ask for divine punishment upon one enemy.",
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		1
-	);
-	return pray;
+Miracle getMassHeal() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Mass Heal";
+	newMiracle.m_description = "Restore all allies hit points.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = true;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = true;
+	newMiracle.m_cost = 2;
+
+	return newMiracle;
+
 }
 
-Miracle& MassHeal::get() {
-	static MassHeal massHeal(
-		"Mass Heal",
-		"Restore all allies's hit points.",
-		false,
-		true,
-		false,
-		false,
-		false,
-		true,
-		2
-	);
-	return massHeal;
+Miracle getMassCure() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Mass Cure";
+	newMiracle.m_description = "Cure all allies conditions.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = true;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = true;
+	newMiracle.m_cost = 2;
+
+	return newMiracle;
+
 }
 
-Miracle& MassCure::get() {
-	static MassCure massCure(
-		"Mass Cure",
-		"Cure all allies's conditions.",
-		false,
-		false,
-		true,
-		false,
-		false,
-		true,
-		1
-	);
-	return massCure;
+Miracle getSmite() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Smite";
+	newMiracle.m_description = "Ask for divine punishment upon one enemy and adjacents.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = true;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 2;
+
+	return newMiracle;
+
 }
 
-Miracle& Smite::get() {
-	static Smite smite(
-		"Smite",
-		"Ask for divine punishment upon one enemy and adjacents.",
-		false,
-		false,
-		false,
-		false,
-		true,
-		false,
-		2
-	);
-	return smite;
+Miracle getRestore() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Restore";
+	newMiracle.m_description = "Fully restore one ally hit points.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = true;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 3;
+
+	return newMiracle;
+
 }
 
-Miracle& Restore::get() {
-	static Restore restore(
-		"Restore",
-		"Fully restore one allies's hit points.",
-		false,
-		false,
-		false,
-		true,
-		false,
-		false,
-		3
-	);
-	return restore;
+Miracle getReincarnate() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Reincarnate";
+	newMiracle.m_description = "Revive one ally and fully restore their hit points.";
+	newMiracle.m_isRevive = true;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = true;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 4;
+
+	return newMiracle;
+
 }
 
-Miracle& Reincarnate::get() {
-	static Reincarnate reincarnate(
-		"Reincarnate",
-		"Revive one ally and fully restore their hit points.",
-		true,
-		false,
-		false,
-		true,
-		false,
-		false,
-		4
-	);
-	return reincarnate;
-}
+Miracle getJudgment() {
 
-Miracle& Judgment::get() {
-	static Judgment judgment(
-		"Judgment",
-		"Ask for divine judgment upon all enemies.",
-		false,
-		false,
-		false,
-		false,
-		false,
-		true,
-		3
-	);
-	return judgment;
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Judgment";
+	newMiracle.m_description = "Ask for divine judgment upon all enemies.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = false;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = true;
+	newMiracle.m_cost = 4;
+
+	return newMiracle;
+
 }

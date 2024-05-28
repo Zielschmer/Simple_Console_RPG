@@ -7,7 +7,7 @@ extern std::vector<AbilityScore> abilityScoreComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
-extern std::vector<Magic> magicComponents;
+extern std::vector<Cast> castComponents;
 
 
 Info& getInfoComponent(int componentID) {
@@ -50,10 +50,10 @@ SecondHand& getSecondHandComponent(int componentID) {
 	}
 }
 
-Magic& getMagicComponent(int componentID) {
-	for (int i = 0; i < magicComponents.size(); i++) {
-		if (magicComponents[i].m_ownerID == componentID) {
-			return magicComponents[i];
+Cast& getCastComponent(int componentID) {
+	for (int i = 0; i < castComponents.size(); i++) {
+		if (castComponents[i].m_ownerID == componentID) {
+			return castComponents[i];
 		}
 	}
 }
