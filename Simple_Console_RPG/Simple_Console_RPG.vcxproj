@@ -138,6 +138,7 @@
     <ClCompile Include="lib\spell.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\model\mercenary-creation.cpp" />
+    <ClCompile Include="src\model\inventory.cpp" />
     <ClCompile Include="src\model\roll-dice.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="lib\includes\cast.h" />
     <ClInclude Include="lib\includes\main-hand.h" />
     <ClInclude Include="lib\includes\second-hand.h" />
+    <ClInclude Include="src\model\includes\inventory.h" />
     <ClInclude Include="src\model\includes\mercenary-creation.h" />
     <ClInclude Include="src\model\includes\roll-dice.h" />
   </ItemGroup>

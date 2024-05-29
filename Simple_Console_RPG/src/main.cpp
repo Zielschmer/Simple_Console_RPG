@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "model\includes\entity.h"
+#include "model\includes\inventory.h"
 #include "model\includes\components-handling.h"
 #include "model\includes\character-creation.h"
 #include "model\includes\mercenary-creation.h"
@@ -8,6 +9,23 @@
 #include "model\includes\roll-dice.h"
 
 int currentID = 0;
+Inventory inventory;
+
+void printInventory() {
+
+	std::cout << "Coins: " << inventory.checkCoins() << std::endl;
+	std::cout << "----------------------" << std::endl;
+	if (inventory.checkPotion() > 0) {
+		std::cout << "Potions: x" << inventory.checkPotion() << std::endl;
+	}
+	if (inventory.checkArrows() > 0) {
+		std::cout << "Arrows: x" << inventory.checkArrows() << std::endl;
+	}
+	if (inventory.checkDarts() > 0) {
+		std::cout << "Darts: x" << inventory.checkDarts() << std::endl;
+	}
+
+}
 
 void instantiatePlayer() {
 	Entity player = characterCreation(currentID);
@@ -107,7 +125,49 @@ void instantiateEnemies() {
 
 int main() {
 
-	instantiateMercenaries(20);
+	while (true) {
+		printInventory();
+
+		std::cin.get();
+		system("cls");
+
+		srand(time(NULL));
+
+		int amount = rand() % 11;
+
+		switch (rand() % 3)
+		{
+		case 0:
+			if (inventory.buyPotion(amount)) {
+				std::cout << "You bought " << amount << " potions!" << std::endl;
+			}
+			else {
+				std::cout << "You don't have enough coins!" << std::endl;
+			}
+			break;
+		case 1:
+			if (inventory.buyArrows(amount)) {
+				std::cout << "You bought " << amount * 20 << " arrows!" << std::endl;
+			}
+			else {
+				std::cout << "You don't have enough coins!" << std::endl;
+			}
+			break;
+		case 2:
+			if (inventory.buyDarts(amount)) {
+				std::cout << "You bought " << amount * 2 << " darts!" << std::endl;
+			}
+			else {
+				std::cout << "You don't have enough coins!" << std::endl;
+			}
+			break;
+		default:
+			break;
+		}
+
+		std::cout << std::endl;
+
+	}
 
 }
 
