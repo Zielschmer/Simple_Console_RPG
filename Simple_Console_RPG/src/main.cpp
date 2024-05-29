@@ -24,6 +24,7 @@ void instantiatePlayer() {
 	std::cout << "Luck:			" << getAbilityScoreComponent(player.getID()).m_luck << std::endl;
 	std::cout << "----------------------------------------------------------------" << std::endl;
 	std::cout << "Hit Points: " << getHitPointsComponent(player.getID()).m_currentHP << "/" << getHitPointsComponent(player.getID()).m_maxHP << std::endl;
+	std::cout << "Spell Slots: " << getSpellSlotsComponent(player.getID()).m_currentSpellSlots << "/" << getSpellSlotsComponent(player.getID()).m_maxSpellSlots << std::endl;
 }
 
 void instantiateMercenaries(int numMercenaries) {
@@ -46,6 +47,7 @@ void instantiateMercenaries(int numMercenaries) {
 		std::cout << "Luck:			" << getAbilityScoreComponent(mercenaries[i].getID()).m_luck << std::endl;
 		std::cout << "----------------------------------------------------------------" << std::endl;
 		std::cout << "Hit Points: " << getHitPointsComponent(mercenaries[i].getID()).m_currentHP << "/" << getHitPointsComponent(mercenaries[i].getID()).m_maxHP << std::endl;
+		std::cout << "Spell Slots: " << getSpellSlotsComponent(mercenaries[i].getID()).m_currentSpellSlots << "/" << getSpellSlotsComponent(mercenaries[i].getID()).m_maxSpellSlots << std::endl;
 		std::cout << "----------------------------------------------------------------" << std::endl;
 		std::cout << "Armor: " << getArmorComponent(mercenaries[i].getID()).m_name << std::endl;
 		std::cout << "Main Hand: " << getMainHandComponent(mercenaries[i].getID()).m_name << std::endl;
@@ -105,7 +107,7 @@ void instantiateEnemies() {
 
 int main() {
 
-	
+	instantiatePlayer();
 
 }
 

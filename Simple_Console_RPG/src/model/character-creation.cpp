@@ -11,7 +11,7 @@ extern std::vector<Info> infoComponents;
 extern std::vector<AbilityScore> abilityScoreComponents;
 extern std::vector<int> levelComponents;
 extern std::vector<HitPoints> hitPointsComponents;
-extern std::vector<int> spellSlotsComponents;
+extern std::vector<SpellSlots> spellSlotsComponents;
 extern std::vector<Armor> armorComponents;
 extern std::vector<MainHand> mainHandComponents;
 extern std::vector<SecondHand> secondHandComponents;
@@ -25,7 +25,7 @@ int& getLevelComponent(int componentID);
 
 HitPoints& getHitPointsComponent(int componentID);
 
-int& getSpellSlotsComponent(int componentID);
+SpellSlots& getSpellSlotsComponent(int componentID);
 
 Armor& getArmorComponent(int componentID);
 
@@ -55,7 +55,7 @@ int calculateExtra(int& extraPoints) {
 }
 
 Entity& characterCreation(int currentID) {
-	Entity* character = new Entity("00000001011", currentID);
+	Entity* character = new Entity("00000011011", currentID);
 
 	for (int i = 0; i < COMPONENTS_NUM; i++) {
 		if (character->checkBitset()[i] == 1) {
@@ -161,6 +161,16 @@ Entity& characterCreation(int currentID) {
 				hitPoints.m_currentHP = hitPoints.m_maxHP;
 
 				hitPointsComponents.push_back(hitPoints);
+				break;
+			}
+			case 4:
+			{
+				SpellSlots spellSlots;
+				spellSlots.m_ownerID = character->getID();
+				spellSlots.m_maxSpellSlots = (INITIAL_SPELLSLOTS + character->getModifier(4));
+				spellSlots.m_currentSpellSlots = spellSlots.m_maxSpellSlots;
+
+				spellSlotsComponents.push_back(spellSlots);
 				break;
 			}
 			default:
