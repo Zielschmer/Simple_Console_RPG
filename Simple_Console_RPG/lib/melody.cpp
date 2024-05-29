@@ -1,5 +1,20 @@
 #include "includes\cast.h"
 
+Melody getInspiration() {
+
+	Melody newMelody;
+
+	newMelody.m_name = "Inspiration";
+	newMelody.m_description = "Increase allies rolls.";
+	newMelody.m_isAlly = true;
+	newMelody.m_isAll = true;
+	newMelody.m_type = 6;
+	newMelody.m_cost = 0;
+
+	return newMelody;
+
+}
+
 Melody getHaste () {
 
 	Melody newMelody;

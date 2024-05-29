@@ -2,6 +2,8 @@
 
 #include "cast.h"
 
+Melody getInspiration();
+
 Melody getHaste();
 
 Melody getMighty();

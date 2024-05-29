@@ -1,5 +1,22 @@
 #include "includes\spells.h"
 
+Spell getMagicMissile() {
+
+	Spell newSpell;
+
+	newSpell.m_name = "Magic Missile";
+	newSpell.m_description = "Hit one enemy with a magical projectile.";
+	newSpell.m_isTeleport = false;
+	newSpell.m_isPortal = false;
+	newSpell.m_isArea = false;
+	newSpell.m_isAll = false;
+	newSpell.m_damageType = 0;
+	newSpell.m_cost = 0;
+
+	return newSpell;
+
+}
+
 Spell getFlare() {
 
 	Spell newSpell;

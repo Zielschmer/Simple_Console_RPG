@@ -1,5 +1,23 @@
 #include "includes\cast.h"
 
+Miracle getTend() {
+
+	Miracle newMiracle;
+
+	newMiracle.m_name = "Tend";
+	newMiracle.m_description = "Restore one ally's small amount of hit points.";
+	newMiracle.m_isRevive = false;
+	newMiracle.m_isHeal = true;
+	newMiracle.m_isCure = false;
+	newMiracle.m_isRestore = false;
+	newMiracle.m_isArea = false;
+	newMiracle.m_isAll = false;
+	newMiracle.m_cost = 0;
+
+	return newMiracle;
+
+}
+
 Miracle getHeal () {
 
 	Miracle newMiracle;

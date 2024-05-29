@@ -2,6 +2,8 @@
 
 #include "cast.h"
 
+Spell getMagicMissile();
+
 Spell getFlare();
 
 Spell getFreeze();

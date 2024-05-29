@@ -423,16 +423,19 @@ Entity& mercenaryCreation(int currentID) {
 					cast.m_ownerID = character->getID();
 
 					if (getMainHandComponent(character->getID()).m_name == "Staff") {
+						cast.m_spells.push_back(getMagicMissile());
 						cast.m_spells.push_back(getFlare());
 						cast.m_spells.push_back(getFreeze());
 						cast.m_spells.push_back(getShock());
 					}
 					else if (getMainHandComponent(character->getID()).m_name == "Rosary") {
+						cast.m_miracles.push_back(getTend());
 						cast.m_miracles.push_back(getHeal());
 						cast.m_miracles.push_back(getCure());
 						cast.m_miracles.push_back(getPray());
 					}
 					else if (getMainHandComponent(character->getID()).m_name == "Harp") {
+						cast.m_melodies.push_back(getInspiration());
 						cast.m_melodies.push_back(getHaste());
 						cast.m_melodies.push_back(getSlow());
 						cast.m_melodies.push_back(getMighty());
@@ -441,11 +444,13 @@ Entity& mercenaryCreation(int currentID) {
 
 					if (character->checkComponent(7)) {
 						if (getSecondHandComponent(character->getID()).m_name == "Staff") {
+							cast.m_spells.push_back(getMagicMissile());
 							cast.m_spells.push_back(getFlare());
 							cast.m_spells.push_back(getFreeze());
 							cast.m_spells.push_back(getShock());
 						}
 						else if (getSecondHandComponent(character->getID()).m_name == "Rosary") {
+							cast.m_miracles.push_back(getTend());
 							cast.m_miracles.push_back(getHeal());
 							cast.m_miracles.push_back(getCure());
 							cast.m_miracles.push_back(getPray());

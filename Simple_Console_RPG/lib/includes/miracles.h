@@ -2,6 +2,8 @@
 
 #include "cast.h"
 
+Miracle getTend();
+
 Miracle getHeal();
 
 Miracle getCure();

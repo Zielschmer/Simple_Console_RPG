@@ -107,7 +107,7 @@ void instantiateEnemies() {
 
 int main() {
 
-	instantiatePlayer();
+	instantiateMercenaries(20);
 
 }
 
