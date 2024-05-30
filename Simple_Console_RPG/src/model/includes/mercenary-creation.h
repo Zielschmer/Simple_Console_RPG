@@ -2,4 +2,4 @@
 
 #include "entity.h"
 
-Entity & mercenaryCreation(int currentID); 
+Entity& mercenaryCreation(int currentID); 

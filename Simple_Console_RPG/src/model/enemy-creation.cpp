@@ -4,18 +4,18 @@
 
 //Extern variables and functions
 
-extern std::vector<Entity> entityControl;
+extern std::vector<std::unique_ptr<Entity>> entityControl;
 
-extern std::vector<Info> infoComponents;
-extern std::vector<AbilityScore> abilityScoreComponents;
-extern std::vector<HitPoints> hitPointsComponents;
-extern std::vector<int> spellSlotsComponents;
-extern std::vector<Armor> armorComponents;
-extern std::vector<MainHand> mainHandComponents;
-extern std::vector<SecondHand> secondHandComponents;
-extern std::vector<Cast> castComponents;
-extern std::vector<NaturalArmor> naturalArmorComponents;
-extern std::vector<NaturalWeapons> naturalWeaponsComponents;
+extern std::vector<std::unique_ptr<Info>> infoComponents;
+extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
+extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
+extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
+extern std::vector<std::unique_ptr<Armor>> armorComponents;
+extern std::vector<std::unique_ptr<MainHand>> mainHandComponents;
+extern std::vector<std::unique_ptr<SecondHand>> secondHandComponents;
+extern std::vector<std::unique_ptr<Cast>> castComponents;
+extern std::vector<std::unique_ptr<NaturalArmor>> naturalArmorComponents;
+extern std::vector<std::unique_ptr<NaturalWeapons>> naturalWeaponsComponents;
 
 Info& getInfoComponent(int componentID);
 
@@ -30,60 +30,65 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 			switch (i) {
 				case 0:
 				{
-					AbilityScore abilityScore;
-					abilityScore.m_ownerID = character->getID();
-					createMonsterAbilityScore(abilityScore, whatEnemy);
+					AbilityScore* abilityScore = new AbilityScore;
+					abilityScore->m_ownerID = character->getID();
+					createMonsterAbilityScore(*abilityScore, whatEnemy);
 
-					abilityScoreComponents.push_back(abilityScore);
+					std::unique_ptr<AbilityScore> abilityScorePointer(abilityScore);
+					abilityScoreComponents.push_back(std::move(abilityScorePointer));
 					break;
 				}
 
 				case 1:
 				{
-					Info info;
-					info.m_ownerID = character->getID();
-					createMonsterInfo(info, whatEnemy);
+					Info* info = new Info;
+					info->m_ownerID = character->getID();
+					createMonsterInfo(*info, whatEnemy);
 
 					int nameNum = 1;
 					for (int j = 0; j < infoComponents.size(); j++) {
-						if (info.m_description == infoComponents[j].m_description) {
+						if (info->m_description == infoComponents[j]->m_description) {
 							nameNum++;
 						}
 					}
 
-					info.m_name = (info.m_description + " " + std::to_string(nameNum));
+					info->m_name = (info->m_description + " " + std::to_string(nameNum));
 
-					infoComponents.push_back(info);
+					std::unique_ptr<Info> infoPointer(info);
+					infoComponents.push_back(std::move(infoPointer));
 					break;
 				}
 
 				case 3:
 				{
-					HitPoints hitPoints;
-					hitPoints.m_ownerID = character->getID();
-					createMonsterHitPoints(hitPoints, whatEnemy);
+					HitPoints* hitPoints = new HitPoints;
+					hitPoints->m_ownerID = character->getID();
+					createMonsterHitPoints(*hitPoints, whatEnemy);
 
-					hitPointsComponents.push_back(hitPoints);
+					std::unique_ptr<HitPoints> hitPointsPointer(hitPoints);
+					hitPointsComponents.push_back(std::move(hitPointsPointer));
 					break;
 				}
 
 				case 9:
 				{
-					NaturalArmor naturalArmor;
-					naturalArmor.m_ownerID = character->getID();
-					createMonsterNaturalArmor(naturalArmor, whatEnemy);
+					NaturalArmor* naturalArmor = new NaturalArmor;
+					naturalArmor->m_ownerID = character->getID();
+					createMonsterNaturalArmor(*naturalArmor, whatEnemy);
 
-					naturalArmorComponents.push_back(naturalArmor);
+					std::unique_ptr<NaturalArmor> naturalArmorPointer(naturalArmor);
+					naturalArmorComponents.push_back(std::move(naturalArmorPointer));
 					break;
 				}
 
 				case 10:
 				{
-					NaturalWeapons naturalWeapons;
-					naturalWeapons.m_ownerID = character->getID();
-					createMonsterNaturalWeapon(naturalWeapons, whatEnemy);
+					NaturalWeapons* naturalWeapons = new NaturalWeapons;
+					naturalWeapons->m_ownerID = character->getID();
+					createMonsterNaturalWeapon(*naturalWeapons, whatEnemy);
 
-					naturalWeaponsComponents.push_back(naturalWeapons);
+					std::unique_ptr<NaturalWeapons> naturalWeaponsPointer(naturalWeapons);
+					naturalWeaponsComponents.push_back(std::move(naturalWeaponsPointer));
 					break;
 				}
 
@@ -95,6 +100,7 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 
 	}
 
-	entityControl.push_back(*character);
+	std::unique_ptr<Entity> characterPointer(character);
+	entityControl.push_back(std::move(characterPointer));
 	return *character;
 }

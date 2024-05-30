@@ -5,17 +5,14 @@
 
 //Extern variables and functions
 
-extern std::vector<Entity> entityControl;
+extern std::vector<std::unique_ptr<Entity>> entityControl;
 
-extern std::vector<Info> infoComponents;
-extern std::vector<AbilityScore> abilityScoreComponents;
-extern std::vector<int> levelComponents;
-extern std::vector<HitPoints> hitPointsComponents;
-extern std::vector<SpellSlots> spellSlotsComponents;
-extern std::vector<Armor> armorComponents;
-extern std::vector<MainHand> mainHandComponents;
-extern std::vector<SecondHand> secondHandComponents;
-extern std::vector<Cast> castComponents;
+extern std::vector<std::unique_ptr<Info>> infoComponents;
+extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
+extern std::vector<std::unique_ptr<int>> levelComponents;
+extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
+extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
+extern std::vector<std::unique_ptr<Armor>> armorComponents;
 
 Info& getInfoComponent(int componentID);
 
@@ -64,8 +61,8 @@ Entity& characterCreation(int currentID) {
 			case 0:
 			{
 
-				AbilityScore abilityScore;
-				abilityScore.m_ownerID = character->getID();
+				AbilityScore* abilityScore = new AbilityScore;
+				abilityScore->m_ownerID = character->getID();
 
 				srand(time(NULL) + currentID);
 
@@ -98,31 +95,32 @@ Entity& characterCreation(int currentID) {
 					}
 				}
 
-				abilityScore.m_strength = scoreValues[0];
-				abilityScore.m_dexterity = scoreValues[1];
-				abilityScore.m_constitution = scoreValues[2];
-				abilityScore.m_intelligence = scoreValues[3];
-				abilityScore.m_faith = scoreValues[4];
-				abilityScore.m_luck = scoreValues[5];
+				abilityScore->m_strength = scoreValues[0];
+				abilityScore->m_dexterity = scoreValues[1];
+				abilityScore->m_constitution = scoreValues[2];
+				abilityScore->m_intelligence = scoreValues[3];
+				abilityScore->m_faith = scoreValues[4];
+				abilityScore->m_luck = scoreValues[5];
 
-				abilityScoreComponents.push_back(abilityScore);
+				std::unique_ptr<AbilityScore> abilityScorePointer(abilityScore);
+				abilityScoreComponents.push_back(std::move(abilityScorePointer));
 				break;
 
 			}
 			case 1:
 			{
-				Info info;
-				info.m_ownerID = character->getID();
+				Info* info = new Info;
+				info->m_ownerID = character->getID();
 
 				std::string name = validStringInput();
 				if (infoComponents.size() > 0) {
 					for (int j = 0; j < infoComponents.size(); j++) {
-						if (name == infoComponents[j].m_name) {
+						if (name == infoComponents[j]->m_name) {
 							name = validStringInput();
 						}
 					}
 				}
-				info.m_name = name;
+				info->m_name = name;
 
 				std::string race;
 				if (getAbilityScoreComponent(character->getID()).m_strength > 15) {
@@ -146,31 +144,34 @@ Entity& characterCreation(int currentID) {
 					sex = "man";
 				}
 				
-				info.m_description = ("A brave " + sex + " of the " + race + " race.");
+				info->m_description = ("A brave " + sex + " of the " + race + " race.");
 
-				infoComponents.push_back(info);
+				std::unique_ptr<Info> infoPointer(info);
+				infoComponents.push_back(std::move(infoPointer));
 				break;
 			}
 			case 2:
 				break;
 			case 3:
 			{
-				HitPoints hitPoints;
-				hitPoints.m_ownerID = character->getID();
-				hitPoints.m_maxHP = getAbilityScoreComponent(character->getID()).m_constitution;
-				hitPoints.m_currentHP = hitPoints.m_maxHP;
+				HitPoints* hitPoints = new HitPoints;
+				hitPoints->m_ownerID = character->getID();
+				hitPoints->m_maxHP = getAbilityScoreComponent(character->getID()).m_constitution;
+				hitPoints->m_currentHP = hitPoints->m_maxHP;
 
-				hitPointsComponents.push_back(hitPoints);
+				std::unique_ptr<HitPoints> hitPointsPointer(hitPoints);
+				hitPointsComponents.push_back(std::move(hitPointsPointer));
 				break;
 			}
 			case 4:
 			{
-				SpellSlots spellSlots;
-				spellSlots.m_ownerID = character->getID();
-				spellSlots.m_maxSpellSlots = (INITIAL_SPELLSLOTS + character->getModifier(4));
-				spellSlots.m_currentSpellSlots = spellSlots.m_maxSpellSlots;
+				SpellSlots* spellSlots = new SpellSlots;
+				spellSlots->m_ownerID = character->getID();
+				spellSlots->m_maxSpellSlots = (INITIAL_SPELLSLOTS + character->getModifier(4));
+				spellSlots->m_currentSpellSlots = spellSlots->m_maxSpellSlots;
 
-				spellSlotsComponents.push_back(spellSlots);
+				std::unique_ptr<SpellSlots> spellSlotsPointer(spellSlots);
+				spellSlotsComponents.push_back(std::move(spellSlotsPointer));
 				break;
 			}
 			default:
@@ -179,6 +180,8 @@ Entity& characterCreation(int currentID) {
 			}
 		}
 	}
-	entityControl.push_back(*character);
+
+	std::unique_ptr<Entity> characterPointer(character);
+	entityControl.push_back(std::move(characterPointer));
 	return *character;
 }

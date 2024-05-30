@@ -6,6 +6,7 @@
 #include "model\includes\character-creation.h"
 #include "model\includes\mercenary-creation.h"
 #include "model\includes\enemy-creation.h"
+#include "model\includes\equip-player.h"
 #include "model\includes\roll-dice.h"
 
 int currentID = 0;
@@ -31,6 +32,7 @@ void instantiatePlayer() {
 	Entity player = characterCreation(currentID);
 	currentID++;
 
+	std::cout << std::endl;
 	std::cout << "Name: " << getInfoComponent(player.getID()).m_name << std::endl;
 	std::cout << "Description: " << getInfoComponent(player.getID()).m_description << std::endl;
 	std::cout << "----------------------------------------------------------------" << std::endl;
@@ -125,50 +127,97 @@ void instantiateEnemies() {
 
 int main() {
 
-	while (true) {
-		printInventory();
+	instantiatePlayer();
 
-		std::cin.get();
-		system("cls");
+	equipWeapon(*entityControl.at(0), 9);
 
-		srand(time(NULL));
-
-		int amount = rand() % 11;
-
-		switch (rand() % 3)
-		{
-		case 0:
-			if (inventory.buyPotion(amount)) {
-				std::cout << "You bought " << amount << " potions!" << std::endl;
-			}
-			else {
-				std::cout << "You don't have enough coins!" << std::endl;
-			}
-			break;
-		case 1:
-			if (inventory.buyArrows(amount)) {
-				std::cout << "You bought " << amount * 20 << " arrows!" << std::endl;
-			}
-			else {
-				std::cout << "You don't have enough coins!" << std::endl;
-			}
-			break;
-		case 2:
-			if (inventory.buyDarts(amount)) {
-				std::cout << "You bought " << amount * 2 << " darts!" << std::endl;
-			}
-			else {
-				std::cout << "You don't have enough coins!" << std::endl;
-			}
-			break;
-		default:
-			break;
-		}
-
-		std::cout << std::endl;
-
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
 	}
 
+	equipWeapon(*entityControl.at(0), 1);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
+
+	equipWeapon(*entityControl.at(0), 4);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
+
+	equipWeapon(*entityControl.at(0), 6);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
+
+	equipWeapon(*entityControl.at(0), 3);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
+
+	equipWeapon(*entityControl.at(0), 7);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
+
+	equipWeapon(*entityControl.at(0), 8);
+
+	std::cout << std::endl;
+	if (entityControl.at(0).get()->checkComponent(6)) {
+		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(7)) {
+		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
+	}
+	if (entityControl.at(0).get()->checkComponent(8)) {
+		std::cout << "Caster" << std::endl;
+	}
 }
-
-
