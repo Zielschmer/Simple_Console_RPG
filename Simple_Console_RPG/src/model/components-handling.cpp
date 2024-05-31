@@ -1,7 +1,5 @@
 #include "includes\components-handling.h"
 
-std::vector<std::unique_ptr<Entity>> entityControl;
-
 std::vector<std::unique_ptr<Info>> infoComponents;
 std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
 std::vector<std::unique_ptr<int>> levelComponents;

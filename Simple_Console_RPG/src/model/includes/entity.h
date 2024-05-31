@@ -15,6 +15,8 @@
 #define COMPONENTS_NUM 11
 #define INITIAL_SPELLSLOTS 4
 
+extern int currentID;
+
 class Entity {
 
 	int m_id;
@@ -34,3 +36,7 @@ public:
 	int getModifier(int whatMod);
 
 };
+
+extern std::vector<std::unique_ptr<Entity>> entityControl;
+
+Entity& getEntity(int entityID);

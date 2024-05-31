@@ -2,14 +2,13 @@
 
 bool checkKnowsSpell(int characterID, SpellList spellChoice) {
 
-	if(!getCastComponent(characterID).m_spells.empty()) {
-		for (auto spell : getCastComponent(characterID).m_spells) {
-			if (spell.m_name == spellLibrary(spellChoice)) {
-				return false;
-			}
+	for (auto spell : getCastComponent(characterID).m_spells) {
+		if (spell.m_name == spellLibrary(spellChoice)) {
+			return false;
 		}
+		return true;
 	}
-	return true;
+
 }
 
 void equipSpell(Entity& equippingCharacter, SpellList spellChoice) {

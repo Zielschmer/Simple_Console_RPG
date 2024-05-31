@@ -6,7 +6,6 @@
 #include "..\..\..\lib\includes\monster.h"
 
 //Entity and components Data Structures
-extern std::vector<std::unique_ptr<Entity>> entityControl;
 extern std::vector<std::unique_ptr<Info>> infoComponents;
 extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
 extern std::vector<std::unique_ptr<int>> levelComponents;

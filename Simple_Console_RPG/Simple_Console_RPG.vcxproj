@@ -128,7 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lib\bestiary.cpp" />
+    <ClCompile Include="lib\mercenary-names.cpp" />
     <ClCompile Include="src\controller\bool-input.cpp" />
+    <ClCompile Include="src\controller\choose-bool.cpp" />
+    <ClCompile Include="src\controller\choose-option.cpp" />
     <ClCompile Include="src\controller\string-input.cpp" />
     <ClCompile Include="src\model\character-creation.cpp" />
     <ClCompile Include="src\model\components-handling.cpp" />
@@ -143,6 +146,7 @@
     <ClCompile Include="src\model\equip_spell.cpp" />
     <ClCompile Include="src\model\equip_weapon.cpp" />
     <ClCompile Include="src\model\equip_miracle.cpp" />
+    <ClCompile Include="src\model\hire-mercenaries.cpp" />
     <ClCompile Include="src\model\mercenary-creation.cpp" />
     <ClCompile Include="src\model\inventory.cpp" />
     <ClCompile Include="src\controller\options-input.cpp" />
@@ -159,6 +163,8 @@
     <ClInclude Include="lib\includes\monster.h" />
     <ClInclude Include="lib\includes\spell.h" />
     <ClInclude Include="src\controller\includes\bool-input.h" />
+    <ClInclude Include="src\controller\includes\choose-bool.h" />
+    <ClInclude Include="src\controller\includes\choose-option.h" />
     <ClInclude Include="src\controller\includes\options-input.h" />
     <ClInclude Include="src\controller\includes\string-input.h" />
     <ClInclude Include="src\model\includes\character-creation.h" />
@@ -175,6 +181,7 @@
     <ClInclude Include="src\model\includes\equip-spell.h" />
     <ClInclude Include="src\model\includes\equip-miracle.h" />
     <ClInclude Include="src\model\includes\equip-weapon.h" />
+    <ClInclude Include="src\model\includes\hire-mercenary.h" />
     <ClInclude Include="src\model\includes\inventory.h" />
     <ClInclude Include="src\model\includes\mercenary-creation.h" />
     <ClInclude Include="src\model\includes\roll-dice.h" />

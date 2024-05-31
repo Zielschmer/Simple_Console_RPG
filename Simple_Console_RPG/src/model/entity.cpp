@@ -1,11 +1,27 @@
 #include "includes\entity.h"
 
+int currentID = 0;
+
+std::vector<std::unique_ptr<Entity>> entityControl;
+
 AbilityScore& getAbilityScoreComponent(int componentID);
 
 Entity::Entity(std::string bitset, int& currentID) {
 	m_id = currentID;
 	currentID++;
 	m_bitset = std::bitset<COMPONENTS_NUM>(bitset);
+}
+
+Entity& getEntity(int entityID) {
+
+	for (int i = 0; i < entityControl.size(); i++) {
+
+		if (entityControl.at(i).get()->getID() == entityID) {
+			return *entityControl.at(i).get();
+		}
+
+	}
+
 }
 
 int Entity::getID() {

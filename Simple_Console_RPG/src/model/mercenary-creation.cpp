@@ -1,6 +1,4 @@
-#include "includes\entity.h"
-#include "..\..\lib\includes\mercenary-names.h"
-#include "includes\components-handling.h"
+#include "includes\mercenary-creation.h"
 
 int pickScore(std::vector<int>& scoreOrder);
 
