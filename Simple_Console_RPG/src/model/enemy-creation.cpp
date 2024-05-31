@@ -1,27 +1,8 @@
 #include "includes\entity.h"
 #include <string>
 #include "..\..\lib\includes\bestiary.h"
+#include "includes\components-handling.h"
 
-//Extern variables and functions
-
-extern std::vector<std::unique_ptr<Entity>> entityControl;
-
-extern std::vector<std::unique_ptr<Info>> infoComponents;
-extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
-extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
-extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
-extern std::vector<std::unique_ptr<Armor>> armorComponents;
-extern std::vector<std::unique_ptr<MainHand>> mainHandComponents;
-extern std::vector<std::unique_ptr<SecondHand>> secondHandComponents;
-extern std::vector<std::unique_ptr<Cast>> castComponents;
-extern std::vector<std::unique_ptr<NaturalArmor>> naturalArmorComponents;
-extern std::vector<std::unique_ptr<NaturalWeapons>> naturalWeaponsComponents;
-
-Info& getInfoComponent(int componentID);
-
-AbilityScore& getAbilityScoreComponent(int componentID);
-
-//File Functions
 Entity& enemyCreation(int currentID, int whatEnemy) {
 	Entity* character = new Entity("11000001011", currentID);
 

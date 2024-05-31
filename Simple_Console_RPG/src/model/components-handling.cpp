@@ -1,19 +1,18 @@
-#include <vector>
+#include "includes\components-handling.h"
 
-#include "includes\entity.h"
-#include "..\..\lib\includes\monster.h"
+std::vector<std::unique_ptr<Entity>> entityControl;
 
-extern std::vector<std::unique_ptr<Info>> infoComponents;
-extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
-extern std::vector<std::unique_ptr<int>> levelComponents;
-extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
-extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
-extern std::vector<std::unique_ptr<Armor>> armorComponents;
-extern std::vector<std::unique_ptr<MainHand>> mainHandComponents;
-extern std::vector<std::unique_ptr<SecondHand>> secondHandComponents;
-extern std::vector<std::unique_ptr<Cast>> castComponents;
-extern std::vector<std::unique_ptr<NaturalArmor>> naturalArmorComponents;
-extern std::vector<std::unique_ptr<NaturalWeapons>> naturalWeaponsComponents;
+std::vector<std::unique_ptr<Info>> infoComponents;
+std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
+std::vector<std::unique_ptr<int>> levelComponents;
+std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
+std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
+std::vector<std::unique_ptr<Armor>> armorComponents;
+std::vector<std::unique_ptr<MainHand>> mainHandComponents;
+std::vector<std::unique_ptr<SecondHand>> secondHandComponents;
+std::vector<std::unique_ptr<Cast>> castComponents;
+std::vector<std::unique_ptr<NaturalArmor>> naturalArmorComponents;
+std::vector<std::unique_ptr<NaturalWeapons>> naturalWeaponsComponents;
 
 
 Info& getInfoComponent(int componentID) {

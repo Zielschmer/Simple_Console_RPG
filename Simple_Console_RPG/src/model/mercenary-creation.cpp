@@ -1,46 +1,11 @@
 #include "includes\entity.h"
-#include "..\..\lib\includes\spells.h"
-#include "..\..\lib\includes\miracles.h"
-#include "..\..\lib\includes\melodies.h"
 #include "..\..\lib\includes\mercenary-names.h"
-
-//Extern variables and functions
-
-extern std::vector<std::unique_ptr<Entity>> entityControl;
-
-extern std::vector<std::unique_ptr<Info>> infoComponents;
-extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
-extern std::vector<std::unique_ptr<int>> levelComponents;
-extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
-extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
-extern std::vector<std::unique_ptr<Armor>> armorComponents;
-extern std::vector<std::unique_ptr<MainHand>> mainHandComponents;
-extern std::vector<std::unique_ptr<SecondHand>> secondHandComponents;
-extern std::vector<std::unique_ptr<Cast>> castComponents;
-
-Info& getInfoComponent(int componentID);
-
-AbilityScore& getAbilityScoreComponent(int componentID);
-
-int& getLevelComponent(int componentID);
-
-HitPoints& getHitPointsComponent(int componentID);
-
-SpellSlots& getSpellSlotsComponent(int componentID);
-
-Armor& getArmorComponent(int componentID);
-
-MainHand& getMainHandComponent(int componentID);
-
-SecondHand& getSecondHandComponent(int componentID);
-
-Cast& getCastComponent(int componentID);
+#include "includes\components-handling.h"
 
 int pickScore(std::vector<int>& scoreOrder);
 
 int calculateExtra(int& extraPoints);
 
-//File functions
 Entity& mercenaryCreation(int currentID) {
 	Entity* character = new Entity("00001111011", currentID);
 
@@ -430,37 +395,37 @@ Entity& mercenaryCreation(int currentID) {
 					cast->m_ownerID = character->getID();
 
 					if (getMainHandComponent(character->getID()).m_name == "Staff") {
-						cast->m_spells.push_back(getMagicMissile());
-						cast->m_spells.push_back(getFlare());
-						cast->m_spells.push_back(getFreeze());
-						cast->m_spells.push_back(getShock());
+						cast->m_spells.emplace_back(getSpell(MAGIC_MISSILES));
+						cast->m_spells.emplace_back(getSpell(FLARE));
+						cast->m_spells.emplace_back(getSpell(FREEZE));
+						cast->m_spells.emplace_back(getSpell(SHOCK));
 					}
 					else if (getMainHandComponent(character->getID()).m_name == "Rosary") {
-						cast->m_miracles.push_back(getTend());
-						cast->m_miracles.push_back(getHeal());
-						cast->m_miracles.push_back(getCure());
-						cast->m_miracles.push_back(getPray());
+						cast->m_miracles.emplace_back(getMiracle(TEND));
+						cast->m_miracles.emplace_back(getMiracle(HEAL));
+						cast->m_miracles.emplace_back(getMiracle(CURE));
+						cast->m_miracles.emplace_back(getMiracle(PRAY));
 					}
 					else if (getMainHandComponent(character->getID()).m_name == "Harp") {
-						cast->m_melodies.push_back(getInspiration());
-						cast->m_melodies.push_back(getHaste());
-						cast->m_melodies.push_back(getSlow());
-						cast->m_melodies.push_back(getMighty());
-						cast->m_melodies.push_back(getWither());
+						cast->m_melodies.emplace_back(getMelody(INSPIRATION));
+						cast->m_melodies.emplace_back(getMelody(HASTE));
+						cast->m_melodies.emplace_back(getMelody(SLOW));
+						cast->m_melodies.emplace_back(getMelody(MIGHTY));
+						cast->m_melodies.emplace_back(getMelody(WITHER));
 					}
 
 					if (character->checkComponent(7)) {
 						if (getSecondHandComponent(character->getID()).m_name == "Staff") {
-							cast->m_spells.push_back(getMagicMissile());
-							cast->m_spells.push_back(getFlare());
-							cast->m_spells.push_back(getFreeze());
-							cast->m_spells.push_back(getShock());
+							cast->m_spells.emplace_back(getSpell(MAGIC_MISSILES));
+							cast->m_spells.emplace_back(getSpell(FLARE));
+							cast->m_spells.emplace_back(getSpell(FREEZE));
+							cast->m_spells.emplace_back(getSpell(SHOCK));
 						}
 						else if (getSecondHandComponent(character->getID()).m_name == "Rosary") {
-							cast->m_miracles.push_back(getTend());
-							cast->m_miracles.push_back(getHeal());
-							cast->m_miracles.push_back(getCure());
-							cast->m_miracles.push_back(getPray());
+							cast->m_miracles.emplace_back(getMiracle(TEND));
+							cast->m_miracles.emplace_back(getMiracle(HEAL));
+							cast->m_miracles.emplace_back(getMiracle(CURE));
+							cast->m_miracles.emplace_back(getMiracle(PRAY));
 						}
 					}
 

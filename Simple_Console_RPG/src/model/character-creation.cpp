@@ -2,37 +2,8 @@
 
 #include "includes\entity.h"
 #include "..\controller\includes\string-input.h"
+#include "includes\components-handling.h"
 
-//Extern variables and functions
-
-extern std::vector<std::unique_ptr<Entity>> entityControl;
-
-extern std::vector<std::unique_ptr<Info>> infoComponents;
-extern std::vector<std::unique_ptr<AbilityScore>> abilityScoreComponents;
-extern std::vector<std::unique_ptr<int>> levelComponents;
-extern std::vector<std::unique_ptr<HitPoints>> hitPointsComponents;
-extern std::vector<std::unique_ptr<SpellSlots>> spellSlotsComponents;
-extern std::vector<std::unique_ptr<Armor>> armorComponents;
-
-Info& getInfoComponent(int componentID);
-
-AbilityScore& getAbilityScoreComponent(int componentID);
-
-int& getLevelComponent(int componentID);
-
-HitPoints& getHitPointsComponent(int componentID);
-
-SpellSlots& getSpellSlotsComponent(int componentID);
-
-Armor& getArmorComponent(int componentID);
-
-MainHand& getMainHandComponent(int componentID);
-
-SecondHand& getSecondHandComponent(int componentID);
-
-Cast& getCastComponent(int componentID);
-
-//File functions
 int pickScore(std::vector<int>& scoreOrder) {
 	int score = rand() % 6;
 	for (int k = 0; k < scoreOrder.size(); k++) {

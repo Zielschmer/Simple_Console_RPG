@@ -54,13 +54,25 @@
     <ClCompile Include="src\model\inventory.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\equip-player.cpp">
+    <ClCompile Include="src\model\equip-armor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="src\controller\bool-input.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="src\controller\options-input.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\equip_weapon.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\equip_spell.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\equip_miracle.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\equip-melody.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,13 +113,13 @@
     <ClInclude Include="lib\includes\mercenary-names.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\spells.h">
+    <ClInclude Include="lib\includes\spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\miracles.h">
+    <ClInclude Include="lib\includes\miracle.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\melodies.h">
+    <ClInclude Include="lib\includes\melody.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="src\model\includes\enemy-creation.h">
@@ -131,13 +143,25 @@
     <ClInclude Include="src\model\includes\inventory.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-player.h">
+    <ClInclude Include="src\model\includes\equip-armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="src\controller\includes\bool-input.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="src\controller\includes\options-input.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\equip-spell.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\equip-miracle.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\equip-melody.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\equip-weapon.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

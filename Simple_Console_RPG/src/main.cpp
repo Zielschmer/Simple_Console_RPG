@@ -6,7 +6,11 @@
 #include "model\includes\character-creation.h"
 #include "model\includes\mercenary-creation.h"
 #include "model\includes\enemy-creation.h"
-#include "model\includes\equip-player.h"
+#include "model\includes\equip-armor.h"
+#include "model\includes\equip-weapon.h"
+#include "model\includes\equip-spell.h"
+#include "model\includes\equip-miracle.h"
+#include "model\includes\equip-melody.h"
 #include "model\includes\roll-dice.h"
 
 int currentID = 0;
@@ -129,7 +133,7 @@ int main() {
 
 	instantiatePlayer();
 
-	equipWeapon(*entityControl.at(0), 9);
+	equipWeapon(*entityControl.at(0), STAFF);
 
 	std::cout << std::endl;
 	if (entityControl.at(0).get()->checkComponent(6)) {
@@ -142,34 +146,15 @@ int main() {
 		std::cout << "Caster" << std::endl;
 	}
 
-	equipWeapon(*entityControl.at(0), 1);
+	equipSpell(*entityControl.at(0), FLARE);
 
-	std::cout << std::endl;
-	if (entityControl.at(0).get()->checkComponent(6)) {
-		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(7)) {
-		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
-
-	}
-	if (entityControl.at(0).get()->checkComponent(8)) {
-		std::cout << "Caster" << std::endl;
+	if (getCastComponent(entityControl.at(0)->getID()).m_spells.size() > 0) {
+		for (auto spell : getCastComponent(entityControl.at(0)->getID()).m_spells) {
+			std::cout << "Spell: " << spell.m_name << std::endl;
+		}
 	}
 
-	equipWeapon(*entityControl.at(0), 4);
-
-	std::cout << std::endl;
-	if (entityControl.at(0).get()->checkComponent(6)) {
-		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(7)) {
-		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(8)) {
-		std::cout << "Caster" << std::endl;
-	}
-
-	equipWeapon(*entityControl.at(0), 6);
+	equipWeapon(*entityControl.at(0), ROSARY);
 
 	std::cout << std::endl;
 	if (entityControl.at(0).get()->checkComponent(6)) {
@@ -182,7 +167,15 @@ int main() {
 		std::cout << "Caster" << std::endl;
 	}
 
-	equipWeapon(*entityControl.at(0), 3);
+	equipMiracle(*entityControl.at(0), HEAL);
+
+	if (getCastComponent(entityControl.at(0)->getID()).m_miracles.size() > 0) {
+		for (auto miracle : getCastComponent(entityControl.at(0)->getID()).m_miracles) {
+			std::cout << "Miracle: " << miracle.m_name << std::endl;
+		}
+	}
+
+	equipWeapon(*entityControl.at(0), HARP);
 
 	std::cout << std::endl;
 	if (entityControl.at(0).get()->checkComponent(6)) {
@@ -195,29 +188,12 @@ int main() {
 		std::cout << "Caster" << std::endl;
 	}
 
-	equipWeapon(*entityControl.at(0), 7);
+	equipMelody(*entityControl.at(0), DANCE);
 
-	std::cout << std::endl;
-	if (entityControl.at(0).get()->checkComponent(6)) {
-		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
+	if (getCastComponent(entityControl.at(0)->getID()).m_melodies.size() > 0) {
+		for (auto melody : getCastComponent(entityControl.at(0)->getID()).m_melodies) {
+			std::cout << "Melody: " << melody.m_name << std::endl;
+		}
 	}
-	if (entityControl.at(0).get()->checkComponent(7)) {
-		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(8)) {
-		std::cout << "Caster" << std::endl;
-	}
-
-	equipWeapon(*entityControl.at(0), 8);
-
-	std::cout << std::endl;
-	if (entityControl.at(0).get()->checkComponent(6)) {
-		std::cout << "Main Hand: " << getMainHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(7)) {
-		std::cout << "Second Hand: " << getSecondHandComponent(0).m_name << std::endl;
-	}
-	if (entityControl.at(0).get()->checkComponent(8)) {
-		std::cout << "Caster" << std::endl;
-	}
+	
 }
