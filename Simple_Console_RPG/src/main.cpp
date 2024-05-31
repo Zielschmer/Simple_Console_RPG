@@ -13,6 +13,8 @@
 #include "model\includes\equip-melody.h"
 #include "model\includes\hire-mercenary.h"
 #include "model\includes\random-encounter.h"
+#include "model\includes\combat-map.h"
+#include "controller\includes\choose-coordinate.h"
 #include "model\includes\roll-dice.h"
 
 Inventory inventory;
@@ -101,6 +103,31 @@ void equipTest() {
 	equipSpell(*entityControl.at(0), FLARE);
 }
 
+void drawCombatArea() {
+	char column = 65;
+	std::cout << "\n\n    1   2   3   4   5   6  " << std::endl;
+	std::cout << "  +---+---+---+---+---+---+" << std::endl;
+	for (auto axysY : combatArea) {
+		std::cout << column <<" |";
+		for (auto axysX : axysY) {
+			if (axysX == NULL) {
+				std::cout << "   |";
+			}
+			else {
+				if (axysX < 10) {
+					std::cout << " " << axysX << " |";
+				}
+				else {
+					std::cout << axysX << " |";
+				}
+			}
+		}
+		column++;
+		std::cout << std::endl;
+		std::cout << "  +---+---+---+---+---+---+" << std::endl;
+	}
+}
+
 int main() {
 
 	instantiateMercenaries();
@@ -118,5 +145,16 @@ int main() {
 	for (auto partyIndex : enemyParty) {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
-	
+
+	combatAreaSetup(partyID, enemyParty);
+
+	drawCombatArea();
+
+	if (moveCharacter(partyID[0], validCoordinateInput(), getEntity(partyID[0]).getSpeed())) {
+		drawCombatArea();
+	}
+	else {
+		std::cout << "\n\nInvalid Input!" << std::endl;
+	}
+
 }

@@ -35,6 +35,8 @@ public:
 
 	int getModifier(int whatMod);
 
+	int getSpeed();
+
 };
 
 extern std::vector<std::unique_ptr<Entity>> entityControl;

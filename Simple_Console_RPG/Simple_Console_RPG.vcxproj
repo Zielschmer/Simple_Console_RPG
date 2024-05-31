@@ -131,9 +131,11 @@
     <ClCompile Include="lib\mercenary-names.cpp" />
     <ClCompile Include="src\controller\bool-input.cpp" />
     <ClCompile Include="src\controller\choose-bool.cpp" />
+    <ClCompile Include="src\controller\choose-coordinate.cpp" />
     <ClCompile Include="src\controller\choose-option.cpp" />
     <ClCompile Include="src\controller\string-input.cpp" />
     <ClCompile Include="src\model\character-creation.cpp" />
+    <ClCompile Include="src\model\combat-map.cpp" />
     <ClCompile Include="src\model\components-handling.cpp" />
     <ClCompile Include="src\model\enemy-creation.cpp" />
     <ClCompile Include="src\model\entity.cpp" />
@@ -165,10 +167,12 @@
     <ClInclude Include="lib\includes\spell.h" />
     <ClInclude Include="src\controller\includes\bool-input.h" />
     <ClInclude Include="src\controller\includes\choose-bool.h" />
+    <ClInclude Include="src\controller\includes\choose-coordinate.h" />
     <ClInclude Include="src\controller\includes\choose-option.h" />
     <ClInclude Include="src\controller\includes\options-input.h" />
     <ClInclude Include="src\controller\includes\string-input.h" />
     <ClInclude Include="src\model\includes\character-creation.h" />
+    <ClInclude Include="src\model\includes\combat-map.h" />
     <ClInclude Include="src\model\includes\components-handling.h" />
     <ClInclude Include="src\model\includes\enemy-creation.h" />
     <ClInclude Include="src\model\includes\entity.h" />

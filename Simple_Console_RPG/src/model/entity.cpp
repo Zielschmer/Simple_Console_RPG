@@ -1,6 +1,6 @@
 #include "includes\entity.h"
 
-int currentID = 0;
+int currentID = 1;
 
 std::vector<std::unique_ptr<Entity>> entityControl;
 
@@ -73,5 +73,11 @@ int Entity::getModifier(int whatModifier) {
 		}
 		return modifier;
 	}
+
+}
+
+int Entity::getSpeed() {
+
+	return (5 - this->getModifier(2));
 
 }
