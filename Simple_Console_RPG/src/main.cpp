@@ -12,6 +12,7 @@
 #include "model\includes\equip-miracle.h"
 #include "model\includes\equip-melody.h"
 #include "model\includes\hire-mercenary.h"
+#include "model\includes\random-encounter.h"
 #include "model\includes\roll-dice.h"
 
 Inventory inventory;
@@ -53,7 +54,7 @@ void instantiatePlayer() {
 
 void instantiateEnemies() {
 
-	Entity monsters[3];
+	/*Entity monsters[3];
 
 	for (int i = 0; i < 3; i++) {
 		monsters[i] = enemyCreation(currentID, i);
@@ -77,7 +78,7 @@ void instantiateEnemies() {
 			std::cout << "Natural Weapon: " << getNaturalWeaponsComponent(monsters[i].getID()).m_naturalWeapons[j].m_name << std::endl;
 		}
 		std::cout << "\n\n";
-	}
+	}*/
 
 }
 
@@ -107,6 +108,14 @@ int main() {
 	system("cls");
 	std::cout << "Party:\n" << std::endl;
 	for(auto partyIndex : partyID)	{
+		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
+	}
+
+	std::vector<int> enemyParty;
+	randomEncounter(partyID, enemyParty);
+
+	std::cout << "\nEnemies:\n" << std::endl;
+	for (auto partyIndex : enemyParty) {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
 	

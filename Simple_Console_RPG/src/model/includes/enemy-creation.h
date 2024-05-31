@@ -2,4 +2,4 @@
 
 #include "entity.h"
 
-Entity& enemyCreation(int currentID, int whatEnemy);
+int enemyCreation(int currentID, int whatEnemy);

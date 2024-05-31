@@ -3,7 +3,7 @@
 #include "..\..\lib\includes\bestiary.h"
 #include "includes\components-handling.h"
 
-Entity& enemyCreation(int currentID, int whatEnemy) {
+int enemyCreation(int currentID, int whatEnemy) {
 	Entity* character = new Entity("11000001011", currentID);
 
 	for (int i = 0; i < COMPONENTS_NUM; i++) {
@@ -83,5 +83,5 @@ Entity& enemyCreation(int currentID, int whatEnemy) {
 
 	std::unique_ptr<Entity> characterPointer(character);
 	entityControl.push_back(std::move(characterPointer));
-	return *character;
+	return character->getID();
 }

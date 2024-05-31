@@ -150,6 +150,7 @@
     <ClCompile Include="src\model\mercenary-creation.cpp" />
     <ClCompile Include="src\model\inventory.cpp" />
     <ClCompile Include="src\controller\options-input.cpp" />
+    <ClCompile Include="src\model\random-encounter.cpp" />
     <ClCompile Include="src\model\roll-dice.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +185,7 @@
     <ClInclude Include="src\model\includes\hire-mercenary.h" />
     <ClInclude Include="src\model\includes\inventory.h" />
     <ClInclude Include="src\model\includes\mercenary-creation.h" />
+    <ClInclude Include="src\model\includes\random-encounter.h" />
     <ClInclude Include="src\model\includes\roll-dice.h" />
   </ItemGroup>
   <ItemGroup>
