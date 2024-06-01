@@ -132,7 +132,7 @@ void drawCombatArea() {
 
 int main() {
 
-	instantiateMercenaries();
+	/*instantiateMercenaries();
 
 	system("cls");
 	std::cout << "Party:\n" << std::endl;
@@ -148,7 +148,7 @@ int main() {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
 
-	/*combatAreaSetup(partyID, enemyParty);
+	combatAreaSetup(partyID, enemyParty);
 
 	drawCombatArea();
 
@@ -165,9 +165,10 @@ int main() {
 		for (auto target : inRangeTargets) {
 			std::cout << "- " << getInfoComponent(target).m_name << std::endl;
 		}
-	}*/
+	}
 
 	std::cout << std::endl;
-	makeAttack(partyID[0], enemyParty[0]);
+	makeAttack(partyID[0], enemyParty[0]);*/
+
 
 }
