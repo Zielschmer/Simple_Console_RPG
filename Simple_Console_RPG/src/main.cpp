@@ -14,6 +14,7 @@
 #include "model\includes\hire-mercenary.h"
 #include "model\includes\random-encounter.h"
 #include "model\includes\combat-map.h"
+#include "model\includes\turn-order.h"
 #include "controller\includes\choose-coordinate.h"
 #include "model\includes\roll-dice.h"
 
@@ -146,7 +147,7 @@ int main() {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
 
-	combatAreaSetup(partyID, enemyParty);
+	/*combatAreaSetup(partyID, enemyParty);
 
 	drawCombatArea();
 
@@ -155,6 +156,8 @@ int main() {
 	}
 	else {
 		std::cout << "\n\nInvalid Input!" << std::endl;
-	}
+	}*/
+
+	combatInitative(partyID, enemyParty);
 
 }
