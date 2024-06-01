@@ -68,17 +68,17 @@ void createMonsterHitPoints(HitPoints& hitPoints, int whatEnemy) {
 	switch (whatEnemy)
 	{
 	case 0:
-		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_maxHP = rollDice(3, 1, NORMAL);
 		hitPoints.m_currentHP = hitPoints.m_maxHP;
 		break;
 
 	case 1:
-		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_maxHP = rollDice(3, 1, NORMAL);
 		hitPoints.m_currentHP = hitPoints.m_maxHP;
 		break;
 
 	case 2:
-		hitPoints.m_maxHP = rollDice(3, 1);
+		hitPoints.m_maxHP = rollDice(3, 1, NORMAL);
 		hitPoints.m_currentHP = hitPoints.m_maxHP;
 		break;;
 

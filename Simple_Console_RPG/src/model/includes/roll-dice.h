@@ -1,5 +1,16 @@
 #pragma once
 
-int rollDice(int dice, int numDice);
+#include <cstdlib>
+#include <time.h>
 
-int rollDice(int dice, int numDice, int modifier);
+enum TypeRoll {
+
+	DISADVANTAGE,
+	NORMAL,
+	ADVANTAGE
+
+};
+
+int rollDice(int dice, int numDice, TypeRoll typeRoll);
+
+int rollDice(int dice, int numDice, TypeRoll typeRoll, int modifier);

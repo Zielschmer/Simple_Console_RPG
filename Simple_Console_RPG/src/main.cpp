@@ -16,6 +16,7 @@
 #include "model\includes\combat-map.h"
 #include "model\includes\turn-order.h"
 #include "controller\includes\choose-coordinate.h"
+#include "model\includes\attack-action.h"
 #include "model\includes\roll-dice.h"
 
 Inventory inventory;
@@ -147,7 +148,7 @@ int main() {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
 
-	combatAreaSetup(partyID, enemyParty);
+	/*combatAreaSetup(partyID, enemyParty);
 
 	drawCombatArea();
 
@@ -164,6 +165,9 @@ int main() {
 		for (auto target : inRangeTargets) {
 			std::cout << "- " << getInfoComponent(target).m_name << std::endl;
 		}
-	}
+	}*/
+
+	std::cout << std::endl;
+	makeAttack(partyID[0], enemyParty[0]);
 
 }

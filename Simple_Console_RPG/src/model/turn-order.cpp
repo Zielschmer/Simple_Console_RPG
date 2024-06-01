@@ -15,7 +15,7 @@ void combatInitative(std::vector<int>& partyID, std::vector<int>& enemies) {
 	std::vector<int> initiativeRolls;
 
 	for (auto combatant : turnOrder) {
-		initiativeRolls.emplace_back(rollDice(20, 1, getEntity(combatant).getModifier(2)));
+		initiativeRolls.emplace_back(rollDice(20, 1, NORMAL, getEntity(combatant).getModifier(2)));
 	}
 
 	for (int i = 0; i < 2; i++) {
