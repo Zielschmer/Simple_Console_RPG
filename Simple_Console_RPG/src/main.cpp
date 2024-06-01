@@ -147,7 +147,7 @@ int main() {
 		std::cout << "- " << getInfoComponent(partyIndex).m_name << std::endl;
 	}
 
-	/*combatAreaSetup(partyID, enemyParty);
+	combatAreaSetup(partyID, enemyParty);
 
 	drawCombatArea();
 
@@ -156,8 +156,14 @@ int main() {
 	}
 	else {
 		std::cout << "\n\nInvalid Input!" << std::endl;
-	}*/
+	}
 
-	combatInitative(partyID, enemyParty);
+	std::vector<int> inRangeTargets;
+	if (checkRange(partyID[0], getMainHandComponent(partyID[0]).m_range, enemyParty, inRangeTargets)) {
+		std::cout << "\nTarget:\n" << std::endl;
+		for (auto target : inRangeTargets) {
+			std::cout << "- " << getInfoComponent(target).m_name << std::endl;
+		}
+	}
 
 }

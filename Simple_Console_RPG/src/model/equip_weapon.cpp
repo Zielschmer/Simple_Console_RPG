@@ -15,7 +15,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -27,7 +27,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 4;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 2;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -39,7 +39,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -50,7 +50,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 8;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -61,7 +61,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 2;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = true;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 16;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -73,7 +73,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = true;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -85,7 +85,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = true;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
@@ -97,7 +97,7 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
 		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_ranged = false;
+		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
 		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
 		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = true;

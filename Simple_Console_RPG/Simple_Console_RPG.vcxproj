@@ -134,6 +134,7 @@
     <ClCompile Include="src\controller\choose-coordinate.cpp" />
     <ClCompile Include="src\controller\choose-option.cpp" />
     <ClCompile Include="src\controller\string-input.cpp" />
+    <ClCompile Include="src\model\attack-action.cpp" />
     <ClCompile Include="src\model\character-creation.cpp" />
     <ClCompile Include="src\model\combat-map.cpp" />
     <ClCompile Include="src\model\components-handling.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="src\model\equip_weapon.cpp" />
     <ClCompile Include="src\model\equip_miracle.cpp" />
     <ClCompile Include="src\model\hire-mercenaries.cpp" />
+    <ClCompile Include="src\model\includes\attack-action.h" />
     <ClCompile Include="src\model\mercenary-creation.cpp" />
     <ClCompile Include="src\model\inventory.cpp" />
     <ClCompile Include="src\controller\options-input.cpp" />

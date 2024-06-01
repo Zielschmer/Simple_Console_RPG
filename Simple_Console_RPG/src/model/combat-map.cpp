@@ -104,3 +104,99 @@ bool moveCharacter(int characterID, std::string coordinate, int speed) {
 	return true;
 
 }
+
+bool validTarget(int axysY, int axysX, std::vector<int>& targetParty) {
+	if (combatArea[axysY][axysX] != NULL) {
+		for (auto target : targetParty) {
+			if (combatArea[axysY][axysX] == target) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool checkRange(int attackerID, int range, std::vector<int>& targetParty, std::vector<int>& inRangeTargets) {
+
+	int currentY = 0;
+	int currentX = 0;
+
+	currentCoordinate(attackerID, currentY, currentX);
+
+	//check positive Y axys
+	for (int y = 0; y <= range && y < 6; y++) {
+		if(currentY + y < 6) {
+			//check positive X axys
+			for (int x = 0; x <= range && x < 6; x++) {
+				if(currentX + x < 6) {
+					if (abs(y) == abs(x)) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+					else if (abs(y) + abs(x) <= range) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+				}
+			}
+			//check negative X axys
+			for (int x = (-1); abs(x) <= range && abs(x) < 6; x--) {
+				if (currentX + x >= 0) {
+					if (abs(y) == abs(x)) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+					else if (abs(y) + abs(x) <= range) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+				}
+			}
+		}
+	}
+	//check negative Y axys
+	for (int y = (-1); abs(y) <= range && abs(y) < 6; y--) {
+		if (currentY + y >= 0) {
+			//check positive X axys
+			for (int x = 0; x <= range && x < 6; x++) {
+				if (currentX + x < 6) {
+					if (abs(y) == abs(x)) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+					else if (abs(y) + abs(x) <= range) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+				}
+			}
+			//check negative X axys
+			for (int x = (-1); abs(x) <= range && abs(x) < 6; x--) {
+				if (currentX + x >= 0) {
+					if (abs(y) == abs(x)) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+					else if (abs(y) + abs(x) <= range) {
+						if (validTarget((currentY + y), (currentX + x), targetParty)) {
+							inRangeTargets.emplace_back(combatArea[currentY + y][currentX + x]);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (inRangeTargets.empty())	{
+		return false;
+	}
+	return true;
+
+}

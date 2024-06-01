@@ -238,7 +238,7 @@ Entity& mercenaryCreation(int currentID) {
 								mainHand->m_baseAttack = 0;
 								mainHand->m_attackModifier = 0;
 								mainHand->m_twoHanded = false;
-								mainHand->m_ranged = false;
+								mainHand->m_range = 1;
 								mainHand->m_intelligenceAdvantage = true;
 								mainHand->m_faithAdvantage = false;
 								mainHand->m_luckAdvantage = false;
@@ -248,7 +248,7 @@ Entity& mercenaryCreation(int currentID) {
 								mainHand->m_baseAttack = 6;
 								mainHand->m_attackModifier = 1;
 								mainHand->m_twoHanded = false;
-								mainHand->m_ranged = false;
+								mainHand->m_range = 1;
 								mainHand->m_intelligenceAdvantage = false;
 								mainHand->m_faithAdvantage = false;
 								mainHand->m_luckAdvantage = false;
@@ -264,7 +264,7 @@ Entity& mercenaryCreation(int currentID) {
 							mainHand->m_baseAttack = 0;
 							mainHand->m_attackModifier = 0;
 							mainHand->m_twoHanded = false;
-							mainHand->m_ranged = false;
+							mainHand->m_range = 1;
 							mainHand->m_intelligenceAdvantage = false;
 							mainHand->m_faithAdvantage = true;
 							mainHand->m_luckAdvantage = false;
@@ -274,7 +274,7 @@ Entity& mercenaryCreation(int currentID) {
 							mainHand->m_baseAttack = 0;
 							mainHand->m_attackModifier = 0;
 							mainHand->m_twoHanded = true;
-							mainHand->m_ranged = false;
+							mainHand->m_range = 1;
 							mainHand->m_intelligenceAdvantage = false;
 							mainHand->m_faithAdvantage = false;
 							mainHand->m_luckAdvantage = true;
@@ -287,7 +287,7 @@ Entity& mercenaryCreation(int currentID) {
 							mainHand->m_baseAttack = 6;
 							mainHand->m_attackModifier = 2;
 							mainHand->m_twoHanded = true;
-							mainHand->m_ranged = true;
+							mainHand->m_range = 16;
 							mainHand->m_intelligenceAdvantage = false;
 							mainHand->m_faithAdvantage = false;
 							mainHand->m_luckAdvantage = false;
@@ -297,7 +297,7 @@ Entity& mercenaryCreation(int currentID) {
 							mainHand->m_baseAttack = 4;
 							mainHand->m_attackModifier = 2;
 							mainHand->m_twoHanded = false;
-							mainHand->m_ranged = false;
+							mainHand->m_range = 1;
 							mainHand->m_intelligenceAdvantage = false;
 							mainHand->m_faithAdvantage = false;
 							mainHand->m_luckAdvantage = false;
@@ -309,7 +309,7 @@ Entity& mercenaryCreation(int currentID) {
 						mainHand->m_baseAttack = 6;
 						mainHand->m_attackModifier = 1;
 						mainHand->m_twoHanded = false;
-						mainHand->m_ranged = false;
+						mainHand->m_range = 1;
 						mainHand->m_intelligenceAdvantage = false;
 						mainHand->m_faithAdvantage = false;
 						mainHand->m_luckAdvantage = false;
@@ -321,7 +321,7 @@ Entity& mercenaryCreation(int currentID) {
 						mainHand->m_baseAttack = 8;
 						mainHand->m_attackModifier = 1;
 						mainHand->m_twoHanded = true;
-						mainHand->m_ranged = false;
+						mainHand->m_range = 1;
 						mainHand->m_intelligenceAdvantage = false;
 						mainHand->m_faithAdvantage = false;
 						mainHand->m_luckAdvantage = false;
@@ -331,7 +331,7 @@ Entity& mercenaryCreation(int currentID) {
 						mainHand->m_baseAttack = 6;
 						mainHand->m_attackModifier = 1;
 						mainHand->m_twoHanded = false;
-						mainHand->m_ranged = false;
+						mainHand->m_range = 1;
 						mainHand->m_intelligenceAdvantage = false;
 						mainHand->m_faithAdvantage = false;
 						mainHand->m_luckAdvantage = false;

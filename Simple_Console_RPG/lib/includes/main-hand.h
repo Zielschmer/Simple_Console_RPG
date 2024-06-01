@@ -9,7 +9,7 @@ struct MainHand {
 	int m_baseAttack;
 	int m_attackModifier;
 	bool m_twoHanded;
-	bool m_ranged;
+	int m_range;
 	bool m_intelligenceAdvantage;
 	bool m_faithAdvantage;
 	bool m_luckAdvantage;

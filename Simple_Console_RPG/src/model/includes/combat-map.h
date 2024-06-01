@@ -10,3 +10,5 @@ extern std::array<std::array<int, 6>, 6> combatArea;
 void combatAreaSetup(std::vector<int>& party, std::vector<int>& enemies);
 
 bool moveCharacter(int characterID, std::string coordinate, int speed);
+
+bool checkRange(int attackerID, int range, std::vector<int>& targetParty, std::vector<int>& inRangeTargets);

@@ -78,6 +78,6 @@ int Entity::getModifier(int whatModifier) {
 
 int Entity::getSpeed() {
 
-	return (5 - this->getModifier(2));
+	return (5 + this->getModifier(2));
 
 }
