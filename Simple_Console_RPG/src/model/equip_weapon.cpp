@@ -1,106 +1,110 @@
-#include "includes\equip-weapon.h"
+#include "includes\equip_weapon.h"
 
-void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
+#include "includes\system_components.h"
+#include "..\control\includes\bool-input.h"
+#include "..\control\includes\options-input.h"
 
-	switch (weaponChoice) {
+void equipMainHand(Entity& entity, WeaponList weapon) {
+
+	switch (weapon) {
 	case 0:
 	{
-		equippingCharacter.removeComponent(6);
-		deleteArmorComponent(equippingCharacter.getID());
+		entity.rmv_comp(RHAND);
+		delRHandComp(entity.getID());
 		break;
 	}
 	case 1:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Sword";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Sword";
+		getRHandComp(entity.getID())->m_diceAtk = D6;
+		getRHandComp(entity.getID())->m_atkMod = STR;
+		getRHandComp(entity.getID())->m_twoHanded = false;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 2:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Dagger";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 4;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 2;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Dagger";
+		getRHandComp(entity.getID())->m_diceAtk = D4;
+		getRHandComp(entity.getID())->m_atkMod = DEX;
+		getRHandComp(entity.getID())->m_twoHanded = false;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 3:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Mace";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Mace";
+		getRHandComp(entity.getID())->m_diceAtk = D6;
+		getRHandComp(entity.getID())->m_atkMod = STR;
+		getRHandComp(entity.getID())->m_twoHanded = false;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 4:
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Hammer";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 8;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Hammer";
+		getRHandComp(entity.getID())->m_diceAtk = D8;
+		getRHandComp(entity.getID())->m_atkMod = STR;
+		getRHandComp(entity.getID())->m_twoHanded = true;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	case 5:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Bow";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 2;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 16;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Bow";
+		getRHandComp(entity.getID())->m_diceAtk = D6;
+		getRHandComp(entity.getID())->m_atkMod = DEX;
+		getRHandComp(entity.getID())->m_twoHanded = true;
+		getRHandComp(entity.getID())->m_range = 16;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 6:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Staff";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = true;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Staff";
+		getRHandComp(entity.getID())->m_diceAtk = D0;
+		getRHandComp(entity.getID())->m_atkMod = NOMOD;
+		getRHandComp(entity.getID())->m_twoHanded = false;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = true;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 7:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Rosary";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = false;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = true;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = false;
+		getRHandComp(entity.getID())->m_name = "Rosary";
+		getRHandComp(entity.getID())->m_diceAtk = D0;
+		getRHandComp(entity.getID())->m_atkMod = NOMOD;
+		getRHandComp(entity.getID())->m_twoHanded = false;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = true;
+		getRHandComp(entity.getID())->m_castSong = false;
 		break;
 	}
 	case 8:
 	{
-		getMainHandComponent(equippingCharacter.getID()).m_name = "Harp";
-		getMainHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getMainHandComponent(equippingCharacter.getID()).m_twoHanded = true;
-		getMainHandComponent(equippingCharacter.getID()).m_range = 1;
-		getMainHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
-		getMainHandComponent(equippingCharacter.getID()).m_luckAdvantage = true;
+		getRHandComp(entity.getID())->m_name = "Harp";
+		getRHandComp(entity.getID())->m_diceAtk = D0;
+		getRHandComp(entity.getID())->m_atkMod = NOMOD;
+		getRHandComp(entity.getID())->m_twoHanded = true;
+		getRHandComp(entity.getID())->m_range = 1;
+		getRHandComp(entity.getID())->m_castSpell = false;
+		getRHandComp(entity.getID())->m_castPray = false;
+		getRHandComp(entity.getID())->m_castSong = true;
 		break;
 	}
 	default:
@@ -109,73 +113,73 @@ void equipMainHand(Entity& equippingCharacter, int weaponChoice) {
 
 }
 
-void equipSecondHand(Entity& equippingCharacter, int weaponChoice) {
+void equipSecondHand(Entity& entity, int weapon) {
 
-	switch (weaponChoice) {
+	switch (weapon) {
 	case 0:
 	{
-		equippingCharacter.removeComponent(7);
-		deleteArmorComponent(equippingCharacter.getID());
+		entity.rmv_comp(LHAND);
+		delLHandComp(entity.getID());
 		break;
 	}
 	case 1:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Sword";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
+		getLHandComp(entity.getID())->m_name = "Sword";
+		getLHandComp(entity.getID())->m_diceAtk = D6;
+		getLHandComp(entity.getID())->m_atkMod = STR;
+		getLHandComp(entity.getID())->m_armorClass = 0;
+		getLHandComp(entity.getID())->m_castSpell = false;
+		getLHandComp(entity.getID())->m_castPray = false;
 		break;
 	}
 	case 2:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Dagger";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 4;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 2;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
+		getLHandComp(entity.getID())->m_name = "Dagger";
+		getLHandComp(entity.getID())->m_diceAtk = D4;
+		getLHandComp(entity.getID())->m_atkMod = DEX;
+		getLHandComp(entity.getID())->m_armorClass = 0;
+		getLHandComp(entity.getID())->m_castSpell = false;
+		getLHandComp(entity.getID())->m_castPray = false;
 		break;
 	}
 	case 3:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Mace";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 6;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 1;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
+		getLHandComp(entity.getID())->m_name = "Mace";
+		getLHandComp(entity.getID())->m_diceAtk = D6;
+		getLHandComp(entity.getID())->m_atkMod = STR;
+		getLHandComp(entity.getID())->m_armorClass = 0;
+		getLHandComp(entity.getID())->m_castSpell = false;
+		getLHandComp(entity.getID())->m_castPray = false;
 		break;
 	}
 	case 6:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Staff";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = true;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
+		getLHandComp(entity.getID())->m_name = "Staff";
+		getLHandComp(entity.getID())->m_diceAtk = D0;
+		getLHandComp(entity.getID())->m_atkMod = NOMOD;
+		getLHandComp(entity.getID())->m_armorClass = 0;
+		getLHandComp(entity.getID())->m_castSpell = true;
+		getLHandComp(entity.getID())->m_castPray = false;
 		break;
 	}
 	case 7:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Rosary";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = true;
+		getLHandComp(entity.getID())->m_name = "Rosary";
+		getLHandComp(entity.getID())->m_diceAtk = D0;
+		getLHandComp(entity.getID())->m_atkMod = NOMOD;
+		getLHandComp(entity.getID())->m_armorClass = 0;
+		getLHandComp(entity.getID())->m_castSpell = false;
+		getLHandComp(entity.getID())->m_castPray = true;
 		break;
 	}
 	case 9:
 	{
-		getSecondHandComponent(equippingCharacter.getID()).m_name = "Shield";
-		getSecondHandComponent(equippingCharacter.getID()).m_baseAttack = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_attackModifier = 0;
-		getSecondHandComponent(equippingCharacter.getID()).m_baseArmor = 2;
-		getSecondHandComponent(equippingCharacter.getID()).m_intelligenceAdvantage = false;
-		getSecondHandComponent(equippingCharacter.getID()).m_faithAdvantage = false;
+		getLHandComp(entity.getID())->m_name = "Shield";
+		getLHandComp(entity.getID())->m_diceAtk = D0;
+		getLHandComp(entity.getID())->m_atkMod = NOMOD;
+		getLHandComp(entity.getID())->m_armorClass = 2;
+		getLHandComp(entity.getID())->m_castSpell = false;
+		getLHandComp(entity.getID())->m_castPray = false;
 		break;
 	}
 	default:
@@ -184,63 +188,62 @@ void equipSecondHand(Entity& equippingCharacter, int weaponChoice) {
 
 }
 
-void equipWeapon(Entity& equippingCharacter, WeaponList weaponChoice) {
+void equipWeapon(Entity& entity, WeaponList weapon) {
 
-	if (equippingCharacter.checkComponent(6) && equippingCharacter.checkComponent(7)) {
-		switch (weaponChoice)
+	if (entity.chk_comp(RHAND) && entity.chk_comp(LHAND)) {
+		switch (weapon)
 		{
 		case 0:
 			if (validOptionInput(UNEQUIP)) {
-				equippingCharacter.removeComponent(6);
-				deleteMainHandComponent(equippingCharacter.getID());
+				entity.rmv_comp(RHAND);
+				delRHandComp(entity.getID());
 			}
 			else
 			{
-				equippingCharacter.removeComponent(7);
-				deleteSecondHandComponent(equippingCharacter.getID());
+				entity.rmv_comp(LHAND);
+				delLHandComp(entity.getID());
 			}
 			break;
 		case 4:	case 5:	case 8:
 			if (validBoolInput(TWOHAND_DELETE_R_L)) {
-				equipMainHand(equippingCharacter, weaponChoice);
-				equippingCharacter.removeComponent(7);
-				deleteSecondHandComponent(equippingCharacter.getID());
+				equipMainHand(entity, weapon);
+				entity.rmv_comp(LHAND);
+				delLHandComp(entity.getID());
 			}
 			else {
 				break;
 			}
 			break;
 		case 9:
-			equipSecondHand(equippingCharacter, weaponChoice);
+			equipSecondHand(entity, weapon);
 			break;
 		default:
 			if (validOptionInput(EQUIP_HAND)) {
-				equipSecondHand(equippingCharacter, weaponChoice);
+				equipSecondHand(entity, weapon);
 			}
 			else
 			{
-				equipMainHand(equippingCharacter, weaponChoice);
+				equipMainHand(entity, weapon);
 			}
 			break;
 		}
 	}
-	else if (!equippingCharacter.checkComponent(6) && equippingCharacter.checkComponent(7)) {
-		switch (weaponChoice)
+	else if (!entity.chk_comp(RHAND) && entity.chk_comp(LHAND)) {
+		switch (weapon)
 		{
 		case 0:
-			equippingCharacter.removeComponent(7);
-			deleteSecondHandComponent(equippingCharacter.getID());
+			entity.rmv_comp(LHAND);
+			delLHandComp(entity.getID());
 			break;
 		case 4: case 5: case 8:
 			if (validBoolInput(TWOHAND_DELETE_L)) {
-				equippingCharacter.addComponent(6);
-				MainHand* mainHand = new MainHand;
-				mainHand->m_ownerID = equippingCharacter.getID();
-				std::unique_ptr<MainHand> mainHandPointer(mainHand);
-				mainHandComponents.push_back(std::move(mainHandPointer));
-				equipMainHand(equippingCharacter, weaponChoice);
-				equippingCharacter.removeComponent(7);
-				deleteSecondHandComponent(equippingCharacter.getID());
+				entity.add_comp(RHAND);
+				RHand_ptr rHand(new RHand_Comp);
+				rHand->m_ownerID = entity.getID();
+				rHandContainer.push_back(std::move(rHand));
+				equipMainHand(entity, weapon);
+				entity.rmv_comp(LHAND);
+				delLHandComp(entity.getID());
 			}
 			else {
 				break;
@@ -248,28 +251,27 @@ void equipWeapon(Entity& equippingCharacter, WeaponList weaponChoice) {
 		case 9:
 			break;
 		default:
-			equippingCharacter.addComponent(6);
-			MainHand* mainHand = new MainHand;
-			mainHand->m_ownerID = equippingCharacter.getID();
-			std::unique_ptr<MainHand> mainHandPointer(mainHand);
-			mainHandComponents.push_back(std::move(mainHandPointer));
-			equipMainHand(equippingCharacter, weaponChoice);
+			entity.add_comp(RHAND);
+			RHand_ptr rHand(new RHand_Comp);
+			rHand->m_ownerID = entity.getID();
+			rHandContainer.push_back(std::move(rHand));
+			equipMainHand(entity, weapon);
 			break;
 		}
 	}
-	else if (equippingCharacter.checkComponent(6) && !equippingCharacter.checkComponent(7)) {
+	else if (entity.chk_comp(RHAND) && !entity.chk_comp(LHAND)) {
 
-		switch (weaponChoice)
+		switch (weapon)
 		{
 		case 0:
 		{
-			equippingCharacter.removeComponent(6);
-			deleteMainHandComponent(equippingCharacter.getID());
+			entity.rmv_comp(RHAND);
+			delRHandComp(entity.getID());
 			break;
 		}
 		case 4: case 5: case 8:
 			if (validBoolInput(TWOHAND_DELETE_R)) {
-				equipMainHand(equippingCharacter, weaponChoice);
+				equipMainHand(entity, weapon);
 			}
 			else {
 				break;
@@ -277,9 +279,9 @@ void equipWeapon(Entity& equippingCharacter, WeaponList weaponChoice) {
 			break;
 		default:
 		{
-			if (getMainHandComponent(equippingCharacter.getID()).m_twoHanded) {
+			if (getRHandComp(entity.getID())->m_twoHanded) {
 				if (validBoolInput(ONEHAND_DELETE_TWOHAND)) {
-					equipMainHand(equippingCharacter, weaponChoice);
+					equipMainHand(entity, weapon);
 				}
 				else {
 					break;
@@ -287,12 +289,11 @@ void equipWeapon(Entity& equippingCharacter, WeaponList weaponChoice) {
 			}
 			else
 			{
-				equippingCharacter.addComponent(7);
-				SecondHand* secondHand = new SecondHand;
-				secondHand->m_ownerID = equippingCharacter.getID();
-				std::unique_ptr<SecondHand> secondHandPointer(secondHand);
-				secondHandComponents.push_back(std::move(secondHandPointer));
-				equipSecondHand(equippingCharacter, weaponChoice);
+				entity.add_comp(LHAND);
+				LHand_ptr lHand(new LHand_Comp);
+				lHand->m_ownerID = entity.getID();
+				lHandContainer.push_back(std::move(lHand));
+				equipSecondHand(entity, weapon);
 			}
 			break;
 		}
@@ -300,80 +301,76 @@ void equipWeapon(Entity& equippingCharacter, WeaponList weaponChoice) {
 		return;
 	}
 	else {
-		switch (weaponChoice)
+		switch (weapon)
 		{
 		case 0:
 			break;
 		case 9:
 		{
-			equippingCharacter.addComponent(7);
-			SecondHand* secondHand = new SecondHand;
-			secondHand->m_ownerID = equippingCharacter.getID();
-			std::unique_ptr<SecondHand> secondHandPointer(secondHand);
-			secondHandComponents.push_back(std::move(secondHandPointer));
-			equipSecondHand(equippingCharacter, weaponChoice);
+			entity.add_comp(LHAND);
+			LHand_ptr lHand(new LHand_Comp);
+			lHand->m_ownerID = entity.getID();
+			lHandContainer.push_back(std::move(lHand));
+			equipSecondHand(entity, weapon);
 			break;
 		}
 		default:
 		{
-			equippingCharacter.addComponent(6);
-			MainHand* mainHand = new MainHand;
-			mainHand->m_ownerID = equippingCharacter.getID();
-			std::unique_ptr<MainHand> mainHandPointer(mainHand);
-			mainHandComponents.push_back(std::move(mainHandPointer));
-			equipMainHand(equippingCharacter, weaponChoice);
+			entity.add_comp(RHAND);
+			RHand_ptr rHand(new RHand_Comp);
+			rHand->m_ownerID = entity.getID();
+			rHandContainer.push_back(std::move(rHand));
+			equipMainHand(entity, weapon);
 			break;
 		}
 		}
 	}
 
-	if (!equippingCharacter.checkComponent(8)) {
-		if (equippingCharacter.checkComponent(6)) {
-			if (getMainHandComponent(equippingCharacter.getID()).m_name == "Staff" ||
-				getMainHandComponent(equippingCharacter.getID()).m_name == "Rosary" ||
-				getMainHandComponent(equippingCharacter.getID()).m_name == "Harp")
+	if (!entity.chk_comp(CAST)) {
+		if (entity.chk_comp(RHAND)) {
+			if (getRHandComp(entity.getID())->m_name == "Staff" ||
+				getRHandComp(entity.getID())->m_name == "Rosary" ||
+				getRHandComp(entity.getID())->m_name == "Harp")
 			{
-				equippingCharacter.addComponent(8);
-				Cast* cast = new Cast;
-				cast->m_ownerID = equippingCharacter.getID();
-				std::unique_ptr<Cast> castPointer(cast);
-				castComponents.push_back(std::move(castPointer));
+				entity.add_comp(CAST);
+				Cast_ptr cast(new Cast_Comp);
+				cast->m_ownerID = entity.getID();
+				castContainer.push_back(std::move(cast));
 			}
 		}
-		if (equippingCharacter.checkComponent(7)) {
-			if (getSecondHandComponent(equippingCharacter.getID()).m_name == "Staff" ||
-				getSecondHandComponent(equippingCharacter.getID()).m_name == "Rosary")
+		if (entity.chk_comp(LHAND)) {
+			if (getLHandComp(entity.getID())->m_name == "Staff" ||
+				getLHandComp(entity.getID())->m_name == "Rosary")
 			{
-				equippingCharacter.addComponent(8);
-				Cast* cast = new Cast;
-				cast->m_ownerID = equippingCharacter.getID();
-				std::unique_ptr<Cast> castPointer(cast);
-				castComponents.push_back(std::move(castPointer));
+				entity.add_comp(CAST);
+				Cast_ptr cast(new Cast_Comp);
+				cast->m_ownerID = entity.getID();
+				castContainer.push_back(std::move(cast));
 			}
 		}
 
 	}
 	else {
 		bool stage1 = true;
-		if (equippingCharacter.checkComponent(6)) {
-			if (getMainHandComponent(equippingCharacter.getID()).m_name == "Staff" ||
-				getMainHandComponent(equippingCharacter.getID()).m_name == "Rosary" ||
-				getMainHandComponent(equippingCharacter.getID()).m_name == "Harp")
+		if (entity.chk_comp(RHAND)) {
+			if (getRHandComp(entity.getID())->m_name == "Staff" ||
+				getRHandComp(entity.getID())->m_name == "Rosary" ||
+				getRHandComp(entity.getID())->m_name == "Harp")
 			{
 				stage1 = false;
 			}
 		}
-		if (equippingCharacter.checkComponent(7)) {
+		if (entity.chk_comp(LHAND)) {
 			if (stage1 == true &&
-				getSecondHandComponent(equippingCharacter.getID()).m_name == "Staff" ||
-				getSecondHandComponent(equippingCharacter.getID()).m_name == "Rosary")
+				getLHandComp(entity.getID())->m_name == "Staff" ||
+				getLHandComp(entity.getID())->m_name == "Rosary")
 			{
 				stage1 = false;
 			}
 		}
 		if (stage1) {
-			equippingCharacter.removeComponent(8);
-			deleteCastComponent(equippingCharacter.getID());
+			entity.rmv_comp(CAST);
+			delCastComp(entity.getID());
 		}
 	}
 

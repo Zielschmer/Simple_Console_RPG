@@ -18,49 +18,19 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\entity.cpp">
+    <ClCompile Include="src\model\creation_enemy.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="lib\spell.cpp">
+    <ClCompile Include="lib\lib_enemy.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="lib\melody.cpp">
+    <ClCompile Include="src\model\system_dice.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="lib\miracle.cpp">
+    <ClCompile Include="src\model\system_inventory.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\character-creation.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\controller\string-input.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\components-handling.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\mercenary-creation.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\enemy-creation.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\bestiary.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\roll-dice.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\inventory.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model\equip-armor.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\controller\bool-input.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\controller\options-input.cpp">
+    <ClCompile Include="src\model\equip_armor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="src\model\equip_weapon.cpp">
@@ -69,150 +39,186 @@
     <ClCompile Include="src\model\equip_spell.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\equip_miracle.cpp">
+    <ClCompile Include="src\model\equip_pray.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\equip-melody.cpp">
+    <ClCompile Include="src\model\equip_song.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\hire-mercenaries.cpp">
+    <ClCompile Include="src\model\system_hiring.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\controller\choose-option.cpp">
+    <ClCompile Include="src\model\system_encounter.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\controller\choose-bool.cpp">
+    <ClCompile Include="src\model\combat_map.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="lib\mercenary-names.cpp">
+    <ClCompile Include="src\model\combat_initiative.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\random-encounter.cpp">
+    <ClCompile Include="src\model\combat_attack.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\combat-map.cpp">
+    <ClCompile Include="src\model\includes\combat_attack.h">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\controller\choose-coordinate.cpp">
+    <ClCompile Include="lib\lib_names.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\turn-order.cpp">
+    <ClCompile Include="src\control\bool-input.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\attack-action.cpp">
+    <ClCompile Include="src\control\choose-bool.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="src\model\includes\attack-action.h">
+    <ClCompile Include="src\control\choose-coordinate.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\control\choose-option.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\control\string-input.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\system_components.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\lib_entity.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cast_song.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cast_pray.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cast_spell.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\control\options-input.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\creation_playable.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\model\includes\entity.h">
+    <ClInclude Include="src\model\includes\creation_enemy.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\ability-score.h">
+    <ClInclude Include="src\model\includes\system_dice.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\info.h">
+    <ClInclude Include="src\model\includes\system_inventory.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\armor.h">
+    <ClInclude Include="src\model\includes\equip_armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\cast.h">
+    <ClInclude Include="src\model\includes\equip_spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\main-hand.h">
+    <ClInclude Include="src\model\includes\equip_pray.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\second-hand.h">
+    <ClInclude Include="src\model\includes\equip_song.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\character-creation.h">
+    <ClInclude Include="src\model\includes\equip_weapon.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\string-input.h">
+    <ClInclude Include="src\model\includes\system_hiring.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\components-handling.h">
+    <ClInclude Include="src\model\includes\system_encounter.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\mercenary-creation.h">
+    <ClInclude Include="src\model\includes\combat_map.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\mercenary-names.h">
+    <ClInclude Include="src\model\includes\combat_initiative.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\spell.h">
+    <ClInclude Include="lib\includes\comp_level.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\miracle.h">
+    <ClInclude Include="lib\includes\comp_nat-weapon.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\melody.h">
+    <ClInclude Include="lib\includes\comp_score.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\enemy-creation.h">
+    <ClInclude Include="lib\includes\comp_stats.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\bestiary.h">
+    <ClInclude Include="lib\includes\lib_enemy.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\monster.h">
+    <ClInclude Include="lib\includes\comp_points.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\roll-dice.h">
+    <ClInclude Include="lib\includes\cast_song.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\hit-points.h">
+    <ClInclude Include="lib\includes\lib_names.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="lib\includes\spell-slots.h">
+    <ClInclude Include="lib\includes\cast_pray.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\inventory.h">
+    <ClInclude Include="lib\includes\comp_nat-armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-armor.h">
+    <ClInclude Include="lib\includes\cast_spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\bool-input.h">
+    <ClInclude Include="lib\includes\lib_primitives.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\options-input.h">
+    <ClInclude Include="src\control\includes\bool-input.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-spell.h">
+    <ClInclude Include="src\control\includes\choose-bool.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-miracle.h">
+    <ClInclude Include="src\control\includes\choose-coordinate.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-melody.h">
+    <ClInclude Include="src\control\includes\choose-option.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\equip-weapon.h">
+    <ClInclude Include="src\control\includes\options-input.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\hire-mercenary.h">
+    <ClInclude Include="src\control\includes\string-input.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\choose-option.h">
+    <ClInclude Include="src\model\includes\system_components.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\choose-bool.h">
+    <ClInclude Include="lib\includes\lib_entity.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\random-encounter.h">
+    <ClInclude Include="lib\includes\comp_armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\combat-map.h">
+    <ClInclude Include="lib\includes\comp_info.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\includes\choose-coordinate.h">
+    <ClInclude Include="lib\includes\comp_cast.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\model\includes\turn-order.h">
+    <ClInclude Include="lib\includes\comp_rhand.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\includes\comp_lhand.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\includes\hand_weapon.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\includes\creation_playable.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

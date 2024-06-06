@@ -1,9 +1,11 @@
-#include "includes\equip-spell.h"
+#include "includes\equip_spell.h"
 
-bool checkKnowsSpell(int characterID, SpellList spellChoice) {
+#include "includes\system_components.h"
 
-	for (auto spell : getCastComponent(characterID).m_spells) {
-		if (spell.m_name == spellLibrary(spellChoice)) {
+bool chkSpell(ID entityID, SpellList spell) {
+
+	for (auto member : getCastComp(entityID)->m_spells) {
+		if (member.m_name == spellLibrary(spell)) {
 			return false;
 		}
 		return true;
@@ -11,13 +13,13 @@ bool checkKnowsSpell(int characterID, SpellList spellChoice) {
 
 }
 
-void equipSpell(Entity& equippingCharacter, SpellList spellChoice) {
+void equipSpell(Entity& entity, SpellList spell) {
 
-	if (getMainHandComponent(equippingCharacter.getID()).m_name == "Staff" ||
-		getSecondHandComponent(equippingCharacter.getID()).m_name == "Staff")
+	if (getRHandComp(entity.getID())->m_name == "Staff" ||
+		getLHandComp(entity.getID())->m_name == "Staff")
 	{
-		if (checkKnowsSpell(equippingCharacter.getID(), spellChoice)) {
-			getCastComponent(equippingCharacter.getID()).m_spells.emplace_back(getSpell(spellChoice));
+		if (chkSpell(entity.getID(), spell)) {
+			getCastComp(entity.getID())->m_spells.emplace_back(getSpell(spell));
 		}
 	}
 
