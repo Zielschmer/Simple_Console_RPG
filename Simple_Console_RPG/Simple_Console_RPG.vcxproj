@@ -24,6 +24,7 @@
     <ProjectGuid>{d3236085-8026-40eb-84df-1572400331cc}</ProjectGuid>
     <RootNamespace>SimpleConsoleRPG</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ECS_Library</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,6 +77,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,80 +132,56 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lib\lib_enemy.cpp" />
-    <ClCompile Include="lib\lib_names.cpp" />
-    <ClCompile Include="src\control\bool-input.cpp" />
-    <ClCompile Include="src\control\choose-bool.cpp" />
-    <ClCompile Include="src\control\choose-coordinate.cpp" />
-    <ClCompile Include="src\control\choose-option.cpp" />
-    <ClCompile Include="src\control\string-input.cpp" />
-    <ClCompile Include="src\model\combat_attack.cpp" />
-    <ClCompile Include="src\model\creation_playable.cpp" />
-    <ClCompile Include="src\model\combat_map.cpp" />
-    <ClCompile Include="src\model\system_components.cpp" />
-    <ClCompile Include="src\model\creation_enemy.cpp" />
-    <ClCompile Include="lib\lib_entity.cpp" />
-    <ClCompile Include="lib\cast_song.cpp" />
-    <ClCompile Include="lib\cast_pray.cpp" />
-    <ClCompile Include="lib\cast_spell.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\model\equip_song.cpp" />
-    <ClCompile Include="src\model\equip_armor.cpp" />
-    <ClCompile Include="src\model\equip_spell.cpp" />
-    <ClCompile Include="src\model\equip_weapon.cpp" />
-    <ClCompile Include="src\model\equip_pray.cpp" />
-    <ClCompile Include="src\model\system_hiring.cpp" />
-    <ClCompile Include="src\model\includes\combat_attack.h" />
-    <ClCompile Include="src\model\system_inventory.cpp" />
-    <ClCompile Include="src\control\options-input.cpp" />
-    <ClCompile Include="src\model\system_encounter.cpp" />
-    <ClCompile Include="src\model\system_dice.cpp" />
-    <ClCompile Include="src\model\combat_initiative.cpp" />
+    <ClCompile Include="Entity\enemies.cpp" />
+    <ClCompile Include="Entity\names.cpp" />
+    <ClCompile Include="Systems\combat_attack.cpp" />
+    <ClCompile Include="Systems\creation_playable.cpp" />
+    <ClCompile Include="Systems\combat_map.cpp" />
+    <ClCompile Include="Systems\system_components.cpp" />
+    <ClCompile Include="Systems\creation_enemy.cpp" />
+    <ClCompile Include="Entity\entity.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Systems\equip_song.cpp" />
+    <ClCompile Include="Systems\equip_armor.cpp" />
+    <ClCompile Include="Systems\equip_spell.cpp" />
+    <ClCompile Include="Systems\equip_weapon.cpp" />
+    <ClCompile Include="Systems\equip_pray.cpp" />
+    <ClCompile Include="Systems\system_hiring.cpp" />
+    <ClCompile Include="Systems\includes\combat_attack.h" />
+    <ClCompile Include="Systems\system_inventory.cpp" />
+    <ClCompile Include="Systems\system_encounter.cpp" />
+    <ClCompile Include="Systems\system_dice.cpp" />
+    <ClCompile Include="Systems\combat_initiative.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\includes\comp_level.h" />
-    <ClInclude Include="lib\includes\comp_nat-weapon.h" />
-    <ClInclude Include="lib\includes\comp_score.h" />
-    <ClInclude Include="lib\includes\comp_stats.h" />
-    <ClInclude Include="lib\includes\hand_weapon.h" />
-    <ClInclude Include="lib\includes\lib_enemy.h" />
-    <ClInclude Include="lib\includes\comp_points.h" />
-    <ClInclude Include="lib\includes\cast_song.h" />
-    <ClInclude Include="lib\includes\lib_names.h" />
-    <ClInclude Include="lib\includes\cast_pray.h" />
-    <ClInclude Include="lib\includes\comp_nat-armor.h" />
-    <ClInclude Include="lib\includes\cast_spell.h" />
-    <ClInclude Include="lib\includes\lib_primitives.h" />
-    <ClInclude Include="src\control\includes\bool-input.h" />
-    <ClInclude Include="src\control\includes\choose-bool.h" />
-    <ClInclude Include="src\control\includes\choose-coordinate.h" />
-    <ClInclude Include="src\control\includes\choose-option.h" />
-    <ClInclude Include="src\control\includes\options-input.h" />
-    <ClInclude Include="src\control\includes\string-input.h" />
-    <ClInclude Include="src\model\includes\creation_playable.h" />
-    <ClInclude Include="src\model\includes\combat_map.h" />
-    <ClInclude Include="src\model\includes\system_components.h" />
-    <ClInclude Include="src\model\includes\creation_enemy.h" />
-    <ClInclude Include="lib\includes\lib_entity.h" />
-    <ClInclude Include="lib\includes\comp_armor.h" />
-    <ClInclude Include="lib\includes\comp_info.h" />
-    <ClInclude Include="lib\includes\comp_cast.h" />
-    <ClInclude Include="lib\includes\comp_rhand.h" />
-    <ClInclude Include="lib\includes\comp_lhand.h" />
-    <ClInclude Include="src\model\includes\equip_song.h" />
-    <ClInclude Include="src\model\includes\equip_armor.h" />
-    <ClInclude Include="src\model\includes\equip_spell.h" />
-    <ClInclude Include="src\model\includes\equip_pray.h" />
-    <ClInclude Include="src\model\includes\equip_weapon.h" />
-    <ClInclude Include="src\model\includes\system_hiring.h" />
-    <ClInclude Include="src\model\includes\system_inventory.h" />
-    <ClInclude Include="src\model\includes\system_encounter.h" />
-    <ClInclude Include="src\model\includes\system_dice.h" />
-    <ClInclude Include="src\model\includes\combat_initiative.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.gitignore" />
-    <None Include="..\README.md" />
+    <ClInclude Include="Components\comp_armor.h" />
+    <ClInclude Include="Components\comp_level.h" />
+    <ClInclude Include="Components\comp_nat-armor.h" />
+    <ClInclude Include="Components\comp_nat-weapon.h" />
+    <ClInclude Include="Components\comp_equips.h" />
+    <ClInclude Include="Components\comp_score.h" />
+    <ClInclude Include="Components\comp_stats.h" />
+    <ClInclude Include="Entity\enemies.h" />
+    <ClInclude Include="Components\comp_points.h" />
+    <ClInclude Include="Entity\names.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="Systems\includes\creation_playable.h" />
+    <ClInclude Include="Systems\includes\combat_map.h" />
+    <ClInclude Include="Systems\includes\system_components.h" />
+    <ClInclude Include="Systems\includes\creation_enemy.h" />
+    <ClInclude Include="Entity\entity.h" />
+    <ClInclude Include="Components\comp_info.h" />
+    <ClInclude Include="Components\comp_cast.h" />
+    <ClInclude Include="Systems\includes\equip_song.h" />
+    <ClInclude Include="Systems\includes\equip_armor.h" />
+    <ClInclude Include="Systems\includes\equip_spell.h" />
+    <ClInclude Include="Systems\includes\equip_pray.h" />
+    <ClInclude Include="Systems\includes\equip_weapon.h" />
+    <ClInclude Include="Systems\includes\system_hiring.h" />
+    <ClInclude Include="Systems\includes\system_inventory.h" />
+    <ClInclude Include="Systems\includes\system_encounter.h" />
+    <ClInclude Include="Systems\includes\system_dice.h" />
+    <ClInclude Include="Systems\includes\combat_initiative.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
