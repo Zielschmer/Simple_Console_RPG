@@ -1,4 +1,4 @@
-#include "includes\cast_spell.h"
+#include "cast_spell.h"
 
 Spell getSpell(SpellList spellList) {
 

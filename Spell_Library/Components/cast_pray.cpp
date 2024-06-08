@@ -1,4 +1,4 @@
-#include "includes\cast_pray.h"
+#include "cast_pray.h"
 
 Pray getPray(PrayList prayList) {
 

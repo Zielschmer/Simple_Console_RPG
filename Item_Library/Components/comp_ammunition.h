@@ -3,7 +3,7 @@
 
 #include "..\utils.h"
 
-struct CompTarget {
+struct CompAmmunition {
 	ID m_ownerID;
 	AmmoList m_ammo;
 	bool m_loading;

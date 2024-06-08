@@ -3,9 +3,7 @@
 
 #include "..\utils.h"
 
-struct CompTarget {
-	ID m_ownerID;
-	Turns m_turns;
+struct CompPointsRegen {
 	HP m_regenHP;
 	SP m_regenSP;
 };

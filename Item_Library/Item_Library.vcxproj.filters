@@ -36,8 +36,31 @@
     <ClInclude Include="Components\comp_consumable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Components\comp_target.h">
+    <ClInclude Include="Components\comp_ammunition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Components\comp_cast-focus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_points-regen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\blueprint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\healing_potion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Entity\item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\healing_potion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

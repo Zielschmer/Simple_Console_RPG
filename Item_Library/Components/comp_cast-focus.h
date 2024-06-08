@@ -3,7 +3,7 @@
 
 #include "..\utils.h"
 
-struct CompTarget {
+struct CompCastFocus {
 	ID m_ownerID;
 	bool m_spell;
 	bool m_pray;

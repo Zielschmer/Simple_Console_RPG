@@ -1,29 +1,14 @@
 #ifndef UTILS
 #define UTILS
 
-#include <bitset>
 #include <vector>
 #include <inttypes.h>
-#include <array>
+#include <unordered_map>
+#include <memory>
+#include <string>
+#include <any>
 
 const int COMPONENTS_NUM = 11;
-
-using ID = uint16_t;
-using Lvl = uint16_t;
-using EXP = uint16_t;
-using HP = uint16_t;
-using SP = uint16_t;
-using Scr = uint16_t;
-using Mod = int16_t;
-using AC = uint16_t;
-using Range = uint16_t;
-using Turns = uint16_t;
-using Party = std::vector<ID>;
-using Resistance = std::vector<DamageList>;
-using Weakness = std::vector<DamageList>;
-using CompSet = std::bitset<COMPONENTS_NUM>;
-
-template<class T> using Container = std::vector<T>;
 
 enum DiceList {
 	D1 = 1,
@@ -64,12 +49,12 @@ enum DamageList {
 };
 
 enum CompList {
-	COMP_CONSUMABLE,
-	COMP_POINTSREGEN,
-	COMP_ATTACK,
-	COMP_DEFENSE,
-	AMMUNITION,
-	CAST_FOCUS
+	CONSUMABLE_COMP,
+	POINTSREGEN_COMP,
+	ATTACK_COMP,
+	DEFENSE_COMP,
+	AMMUNITION_COMP,
+	CAST_FOCUS_COMP
 };
 
 enum AmmoList {
@@ -84,4 +69,21 @@ enum TargetList {
 	TARGET_ENEMY,
 	TARGET_AREA
 };
+
+using ID = uint16_t;
+using Lvl = uint16_t;
+using EXP = uint16_t;
+using HP = uint16_t;
+using SP = uint16_t;
+using Scr = uint16_t;
+using Mod = int16_t;
+using AC = uint16_t;
+using Range = uint16_t;
+using Turns = uint16_t;
+using Party = std::vector<ID>;
+using Resistance = std::vector<DamageList>;
+using Weakness = std::vector<DamageList>;
+
+using CompSet = std::unordered_map<CompList, std::any>;
+
 #endif
