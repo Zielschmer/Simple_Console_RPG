@@ -51,10 +51,13 @@ enum DamageList {
 enum CompList {
 	CONSUMABLE_COMP,
 	POINTSREGEN_COMP,
+	EQUIPABLE_COMP,
 	ATTACK_COMP,
+	DAMAGE_COMP,
 	DEFENSE_COMP,
 	AMMUNITION_COMP,
-	CAST_FOCUS_COMP
+	CAST_FOCUS_COMP,
+	CONDITIONS_COMP
 };
 
 enum AmmoList {
@@ -68,6 +71,16 @@ enum TargetList {
 	TARGET_ALLY,
 	TARGET_ENEMY,
 	TARGET_AREA
+};
+
+enum EquipType {
+	ARMOR,
+	WEAPON,
+	SHIELD
+};
+
+enum ConditionList {
+
 };
 
 using ID = uint16_t;
@@ -85,5 +98,8 @@ using Resistance = std::vector<DamageList>;
 using Weakness = std::vector<DamageList>;
 
 using CompSet = std::unordered_map<CompList, std::any>;
+
+template <typename T>
+using Container = std::unordered_map<ID, T>;
 
 #endif

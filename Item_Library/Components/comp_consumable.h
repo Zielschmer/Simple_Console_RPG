@@ -2,10 +2,13 @@
 #define COMP_CONSUMABLE
 
 #include "..\utils.h"
+#include "Component.h"
 
-struct CompConsumable {
+struct CompConsumable : public Component {
+	using Component::Component;
 	TargetList m_target;
-	Range m_range;
 };
+
+using Consumable_ptr = std::unique_ptr<CompConsumable>;
 
 #endif

@@ -2,15 +2,14 @@
 #define COMP_ATTACK
 
 #include "..\utils.h"
+#include "Component.h"
 
-struct CompAttack {
-	ID m_ownerID;
+struct CompAttack : public Component {
+	using Component::Component;
 	Range m_range;
 	ScoreList m_mod;
-	DiceList m_dmgDice;
-	DamageList m_dmgType;
-	bool m_twoHand;
-	bool m_light;
 };
+
+using Attack_ptr = std::unique_ptr<CompAttack>;
 
 #endif

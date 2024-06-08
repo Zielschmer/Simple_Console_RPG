@@ -21,12 +21,6 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\weapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity\armor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Components\comp_attack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,10 +39,25 @@
     <ClInclude Include="Components\comp_points-regen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\blueprint.h">
+    <ClInclude Include="Systems\System_Blueprint\blueprint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\healing_potion.h">
+    <ClInclude Include="Systems\System_Blueprint\blueprint_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_conditions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_damage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_equipable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Containers\Containers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,7 +65,16 @@
     <ClCompile Include="Entity\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\healing_potion.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_potions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_swords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Containers\Containers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

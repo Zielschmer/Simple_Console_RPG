@@ -5,28 +5,30 @@
 
 class Item {
 public:
-	Item(ID& nextID, std::string name, std::string desc);
+	Item(ID& nextID, const ID& ownerID, std::string name, std::string desc);
 
-	ID m_ID;
-	CompSet components;
-	std::string m_name;
-	std::string m_desc;
+	const ID m_ID;
 
 	template <typename T>
 	void addComponent(std::shared_ptr<T>& component, CompList comp) {
-		components.emplace(comp, std::move(component));
+		m_components.emplace(comp, std::move(component));
 	}
 
 	template <typename T>
 	std::shared_ptr<T>& getComponent(CompList comp) {
-		auto it = components.find(comp);
-		if (it != components.end())
+		auto it = m_components.find(comp);
+		if (it != m_components.end())
 		{
 			return std::any_cast<std::shared_ptr<T>&>(it->second);
 		}
 		static std::shared_ptr<T> nullPtr;
 		return nullPtr;
 	}
+private:
+	ID m_ownerID;
+	CompSet m_components;
+	std::string m_name;
+	std::string m_desc;
 };
 
 using Item_ptr = std::unique_ptr<Item>;

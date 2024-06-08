@@ -2,11 +2,14 @@
 #define COMP_TARGET
 
 #include "..\utils.h"
+#include "Component.h"
 
-struct CompAmmunition {
-	ID m_ownerID;
+struct CompAmmunition : public Component {
+	using Component::Component;
 	AmmoList m_ammo;
 	bool m_loading;
 };
+
+using Ammunition_ptr = std::unique_ptr<CompAmmunition>;
 
 #endif
