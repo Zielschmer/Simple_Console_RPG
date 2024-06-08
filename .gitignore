@@ -4,4 +4,13 @@
 
 /x64/
 
-/x64/debug/
+/x64/Debug/
+
+/x64/Release/
+
+Item_Library_Test/x64
+
+Item_Library_Test/x64/Debug
+
+Item_Library_Test/x64/Release
+
