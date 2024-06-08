@@ -142,6 +142,7 @@
     <ClInclude Include="Components\comp_equipable.h" />
     <ClInclude Include="Components\comp_points-regen.h" />
     <ClInclude Include="Entity\item.h" />
+    <ClInclude Include="Systems\Item_Interface.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_list.h" />
     <ClInclude Include="Systems\System_Containers\Containers.h" />

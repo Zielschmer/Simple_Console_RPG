@@ -7,8 +7,9 @@
 #include <memory>
 #include <string>
 #include <any>
+#include <bitset>
 
-const int COMPONENTS_NUM = 11;
+const int ITEM_COMP_NUM = 9;
 
 enum DiceList {
 	D1 = 1,
@@ -97,7 +98,7 @@ using Party = std::vector<ID>;
 using Resistance = std::vector<DamageList>;
 using Weakness = std::vector<DamageList>;
 
-using CompSet = std::unordered_map<CompList, std::any>;
+using CompSet = std::bitset<ITEM_COMP_NUM>;
 
 template <typename T>
 using Container = std::unordered_map<ID, T>;
