@@ -9,7 +9,7 @@
 #include <any>
 #include <bitset>
 
-const int CAST_COMP_NUM = 10;
+const int CAST_COMP_NUM = 9;
 
 enum DiceList {
 	D1 = 1,
@@ -51,7 +51,15 @@ enum DamageList {
 };
 
 enum CastCompList {
-	
+	CASTING_COMP,
+	UPCAST_COMP,
+	SAVING_COMP,
+	DAMAGE_COMP,
+	HEALING_COMP,
+	TELEPORT_COMP,
+	CONDITIONS_COMP,
+	RANGE_COMP,
+	RICOCHET_COMP
 };
 
 enum TargetList {

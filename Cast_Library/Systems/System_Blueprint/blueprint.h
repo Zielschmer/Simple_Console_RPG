@@ -9,21 +9,25 @@
 #include "..\..\utils.h"
 #include "..\..\Entity\cast.h"
 #include "..\..\Components\comp_casting.h"
+#include "..\..\Components\comp_upcast.h"
+#include "..\..\Components\comp_saving.h"
 #include "..\..\Components\comp_damage.h"
 #include "..\..\Components\comp_healing.h"
 #include "..\..\Components\comp_teleport.h"
 #include "..\..\Components\comp_conditions.h"
 #include "..\..\Components\comp_range.h"
-#include "..\..\Components\comp_upcast.h"
+#include "..\..\Components\comp_ricochet.h"
 
 extern Container<Cast_ptr> castContainer;
 extern Container<Casting_ptr> castingContainer;
+extern Container<Upcast_ptr> upcastContainer;
+extern Container<Saving_ptr> savingContainer;
 extern Container<Damage_ptr> damageContainer;
 extern Container<Healing_ptr> healingContainer;
 extern Container<Teleport_ptr> teleportContainer;
 extern Container<Conditions_ptr> conditionsContainer;
 extern Container<Range_ptr> rangeContainer;
-extern Container<Upcast_ptr> upcastContainer;
+extern Container<Ricochet_ptr> ricochetContainer;
 
 static ID CAST_ID = 2001;
 
@@ -54,6 +58,14 @@ public:
 		castingContainer;
 	}
 	template <>
+	void registerComponent(std::unique_ptr<CompUpcast> component) {
+		upcastContainer;
+	}
+	template <>
+	void registerComponent(std::unique_ptr<CompSaving> component) {
+		upcastContainer;
+	}
+	template <>
 	void registerComponent(std::unique_ptr<CompDamage> component) {
 		damageContainer;
 	}
@@ -74,7 +86,7 @@ public:
 		rangeContainer;
 	}
 	template <>
-	void registerComponent(std::unique_ptr<CompUpcast> component) {
+	void registerComponent(std::unique_ptr<CompRicochet> component) {
 		upcastContainer;
 	}
 };

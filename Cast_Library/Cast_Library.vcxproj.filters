@@ -30,7 +30,7 @@
     <ClCompile Include="Components\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\blueprint_spells\example_blueprints.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_spells\spells_blueprints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Systems\System_Containers\Containers.cpp">
@@ -80,13 +80,25 @@
     <ClInclude Include="Systems\System_Blueprint\blueprint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\System_Blueprint\blueprint_list.h">
+    <ClInclude Include="Systems\System_Blueprint\blueprint_prays\blueprint_prays.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Systems\System_Containers\Containers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Systems\Cast_Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_songs\blueprint_songs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_spells\blueprint_spells.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_ricochet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_saving.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
