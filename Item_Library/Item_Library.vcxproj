@@ -155,7 +155,7 @@
   <ItemGroup>
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Entity\item.cpp" />
-    <ClCompile Include="Systems\System_Blueprint\blueprint_armor\item_blueprints.cpp" />
+    <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_blueprints.cpp" />
     <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprints.cpp" />
     <ClCompile Include="Systems\System_Containers\Containers.cpp" />
   </ItemGroup>

@@ -80,7 +80,7 @@
     <ClCompile Include="Entity\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\blueprint_armor\item_blueprints.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_blueprints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprints.cpp">
