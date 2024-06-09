@@ -41,8 +41,8 @@ public:
 		compSet.set(static_cast<int>(compList));
 	}
 
-	Cast_ptr instantiateCast(const ID& ownerID, std::string name, std::string desc) {
-		Cast* cast = new Cast(CAST_ID, ownerID, compSet, name, desc);
+	Cast_ptr instantiateCast(const ID& ownerID, CastType type, std::string name, std::string desc) {
+		Cast* cast = new Cast(CAST_ID, ownerID, compSet, type, name, desc);
 		for (auto& adder : componentAdders) {
 			adder(*cast);
 		}

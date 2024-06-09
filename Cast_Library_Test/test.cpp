@@ -17,4 +17,5 @@ TEST(BlueprintTest, AcidSplash) {
   EXPECT_EQ(testComponent(cast, RANGE_COMP), false);
   EXPECT_EQ(testComponent(cast, RICOCHET_COMP), true);
   EXPECT_EQ(getCastName(cast), "Acid Splash");
+  EXPECT_EQ(getCastType(cast), SPELL);
 }

@@ -1,4 +1,4 @@
-#include "..\blueprint_list.h"
+#include "item_blueprint.h"
 
 #include "..\blueprint.h"
 #include "..\..\..\Components\comp_consumable.h"

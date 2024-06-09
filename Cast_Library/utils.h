@@ -50,6 +50,13 @@ enum DamageList {
 	NECROTIC
 };
 
+enum CastType {
+	NOCAST,
+	SPELL,
+	PRAY,
+	SONG
+};
+
 enum CastCompList {
 	CASTING_COMP,
 	UPCAST_COMP,

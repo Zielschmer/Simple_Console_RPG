@@ -31,3 +31,8 @@ std::string getCastName(ID castID) {
 	auto it = castContainer.find(castID);
 	return it->second->chk_name();
 }
+
+CastType getCastType(ID castID) {
+	auto it = castContainer.find(castID);
+	return it->second->m_type;
+}

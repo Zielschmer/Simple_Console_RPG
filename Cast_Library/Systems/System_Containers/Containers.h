@@ -7,4 +7,6 @@ bool testComponent(ID castID, CastCompList comp);
 
 std::string getCastName(ID castID);
 
+CastType getCastType(ID castID);
+
 #endif

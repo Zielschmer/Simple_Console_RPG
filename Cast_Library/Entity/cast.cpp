@@ -1,7 +1,7 @@
 #include "cast.h"
 
-Cast::Cast(ID& nextID, const ID& ownerID, CompSet& compSet, std::string name, std::string desc)
-	: m_ID(nextID), m_ownerID(ownerID), m_compSet(compSet), m_name(name), m_desc(desc) {}
+Cast::Cast(ID& nextID, const ID& ownerID, CompSet& compSet, CastType type, std::string name, std::string desc)
+	: m_ID(nextID), m_ownerID(ownerID), m_compSet(compSet), m_type(type), m_name(name), m_desc(desc) {}
 
 void Cast::add_comp(CastCompList comp) {
 	m_compSet.set(static_cast<int>(comp));
