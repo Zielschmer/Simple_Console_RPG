@@ -1,5 +1,5 @@
-#ifndef COMP_TARGET
-#define COMP_TARGET
+#ifndef COMP_AMMUNITION
+#define COMP_AMMUNITION
 
 #include "..\utils.h"
 #include "Component.h"

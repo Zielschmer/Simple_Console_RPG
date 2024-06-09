@@ -15,6 +15,8 @@
 #include "..\..\Components\comp_damage.h"
 #include "..\..\Components\comp_defense.h"
 #include "..\..\Components\comp_ammunition.h"
+#include "..\..\Components\comp_ammo.h"
+#include "..\..\Components\comp_throwable.h"
 #include "..\..\Components\comp_cast-focus.h"
 #include "..\..\Components\comp_conditions.h"
 #include "..\System_Containers\Containers.h"
@@ -27,6 +29,8 @@ extern Container<Defense_ptr> defenseContainer;
 extern Container<Equipable_ptr> equipableContainer;
 extern Container<Damage_ptr> damageContainer;
 extern Container<Ammunition_ptr> ammunitionContainer;
+extern Container<Ammo_ptr> ammoContainer;
+extern Container<Throwable_ptr> throwableContainer;
 extern Container<CastFocus_ptr> castFocusContainer;
 extern Container<Conditions_ptr> conditionsContainer;
 
@@ -63,6 +67,10 @@ public:
 		pointsRegenContainer;
 	}
 	template <>
+	void registerComponent(std::unique_ptr<CompEquipable> component) {
+		equipableContainer;
+	}
+	template <>
 	void registerComponent(std::unique_ptr<CompAttack> component) {
 		attackContainer;
 	}
@@ -75,8 +83,16 @@ public:
 		defenseContainer;
 	}
 	template <>
-	void registerComponent(std::unique_ptr<CompEquipable> component) {
-		equipableContainer;
+	void registerComponent(std::unique_ptr<CompAmmunition> component) {
+		ammunitionContainer;
+	}
+	template <>
+	void registerComponent(std::unique_ptr<CompAmmo> component) {
+		ammoContainer;
+	}
+	template <>
+	void registerComponent(std::unique_ptr<CompThrowable> component) {
+		throwableContainer;
 	}
 	template <>
 	void registerComponent(std::unique_ptr<CompCastFocus> component) {

@@ -9,7 +9,7 @@
 #include <any>
 #include <bitset>
 
-const int ITEM_COMP_NUM = 9;
+const int ITEM_COMP_NUM = 10;
 
 enum DiceList {
 	D1 = 1,
@@ -23,7 +23,7 @@ enum DiceList {
 };
 
 enum ScoreList {
-	NONE,
+	NOMOD,
 	STR,
 	DEX,
 	CON,
@@ -34,6 +34,7 @@ enum ScoreList {
 };
 
 enum DamageList {
+	NODMG,
 	PIERCING,
 	SLASHING,
 	BLUDGEONING,
@@ -57,12 +58,13 @@ enum CompList {
 	DAMAGE_COMP,
 	DEFENSE_COMP,
 	AMMUNITION_COMP,
+	AMMO_COMP,
+	THROWABLE_COMP,
 	CAST_FOCUS_COMP,
 	CONDITIONS_COMP
 };
 
 enum AmmoList {
-	AMMO_SELF,
 	AMMO_BOLT,
 	AMMO_ARROW
 };

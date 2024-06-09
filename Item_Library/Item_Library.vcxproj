@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Components\Component.h" />
+    <ClInclude Include="Components\comp_ammo.h" />
     <ClInclude Include="Components\comp_attack.h" />
     <ClInclude Include="Components\comp_cast-focus.h" />
     <ClInclude Include="Components\comp_conditions.h" />
@@ -141,9 +142,12 @@
     <ClInclude Include="Components\comp_ammunition.h" />
     <ClInclude Include="Components\comp_equipable.h" />
     <ClInclude Include="Components\comp_points-regen.h" />
+    <ClInclude Include="Components\comp_throwable.h" />
     <ClInclude Include="Entity\item.h" />
     <ClInclude Include="Systems\Item_Interface.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint.h" />
+    <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.cpp" />
+    <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_list.h" />
     <ClInclude Include="Systems\System_Containers\Containers.h" />
     <ClInclude Include="utils.h" />
@@ -151,8 +155,8 @@
   <ItemGroup>
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Entity\item.cpp" />
-    <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_potions.cpp" />
-    <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_swords.cpp" />
+    <ClCompile Include="Systems\System_Blueprint\blueprint_armor\item_blueprints.cpp" />
+    <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprints.cpp" />
     <ClCompile Include="Systems\System_Containers\Containers.cpp" />
   </ItemGroup>
   <ItemGroup>

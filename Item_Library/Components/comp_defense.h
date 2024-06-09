@@ -7,6 +7,7 @@
 struct CompDefense : public Component {
 	using Component::Component;
 	AC m_AC;
+	ScoreList m_mod;
 	Resistance m_resist;
 	Weakness m_weak;
 	bool m_heavy;

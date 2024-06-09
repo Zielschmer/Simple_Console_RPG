@@ -63,15 +63,27 @@
     <ClInclude Include="Systems\Item_Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Components\comp_throwable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_ammo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_potions.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_armor\item_blueprints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_swords.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Components\Component.cpp">

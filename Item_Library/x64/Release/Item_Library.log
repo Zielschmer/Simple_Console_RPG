@@ -1,3 +1,6 @@
-﻿  item_potions.cpp
-  weapon_swords.cpp
+﻿  Component.cpp
+  item.cpp
+  item_blueprints.cpp
+  weapon_blueprints.cpp
+  Containers.cpp
   Item_Library.vcxproj -> C:\Users\welli\source\repos\Simple_Console_RPG\x64\Release\Item_Library.lib
