@@ -42,7 +42,7 @@ public:
 
 	CompSet compSet;
 
-	void addComponent(CompList compList) {
+	void addComponent(ItemCompList compList) {
 		compSet.set(static_cast<int>(compList));
 	}
 

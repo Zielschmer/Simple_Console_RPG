@@ -3,7 +3,7 @@
 
 #include "..\..\utils.h"
 
-bool testComponent(ID itemID, CompList comp);
+bool testComponent(ID itemID, ItemCompList comp);
 
 std::string getItemName(ID itemID);
 

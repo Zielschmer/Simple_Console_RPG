@@ -9,7 +9,7 @@
 #include <any>
 #include <bitset>
 
-const int ITEM_COMP_NUM = 10;
+const int CAST_COMP_NUM = 10;
 
 enum DiceList {
 	D1 = 1,
@@ -50,23 +50,8 @@ enum DamageList {
 	NECROTIC
 };
 
-enum ItemCompList {
-	CONSUMABLE_COMP,
-	POINTSREGEN_COMP,
-	EQUIPABLE_COMP,
-	ATTACK_COMP,
-	DAMAGE_COMP,
-	DEFENSE_COMP,
-	AMMUNITION_COMP,
-	AMMO_COMP,
-	THROWABLE_COMP,
-	CAST_FOCUS_COMP,
-	CONDITIONS_COMP
-};
-
-enum AmmoList {
-	AMMO_BOLT,
-	AMMO_ARROW
+enum CastCompList {
+	
 };
 
 enum TargetList {
@@ -74,12 +59,6 @@ enum TargetList {
 	TARGET_ALLY,
 	TARGET_ENEMY,
 	TARGET_AREA
-};
-
-enum EquipType {
-	ARMOR,
-	WEAPON,
-	SHIELD
 };
 
 enum ConditionList {
@@ -96,11 +75,10 @@ using Mod = int16_t;
 using AC = uint16_t;
 using Range = uint16_t;
 using Turns = uint16_t;
-using Party = std::vector<ID>;
 using Resistance = std::vector<DamageList>;
 using Weakness = std::vector<DamageList>;
 
-using CompSet = std::bitset<ITEM_COMP_NUM>;
+using CompSet = std::bitset<CAST_COMP_NUM>;
 
 template <typename T>
 using Container = std::unordered_map<ID, T>;

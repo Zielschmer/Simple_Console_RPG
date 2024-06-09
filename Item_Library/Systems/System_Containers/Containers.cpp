@@ -26,7 +26,7 @@ Container<Throwable_ptr> throwableContainer;
 Container<CastFocus_ptr> castFocusContainer;
 Container<Conditions_ptr> conditionsContainer;
 
-bool testComponent(ID itemID, CompList comp) {
+bool testComponent(ID itemID, ItemCompList comp) {
 	auto it = itemContainer.find(itemID);
 	return it->second->chk_comp(comp);
 }

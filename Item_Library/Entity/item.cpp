@@ -3,11 +3,11 @@
 Item::Item(ID& nextID, const ID& ownerID, CompSet& compSet, std::string name, std::string desc)
 	: m_ID(nextID), m_ownerID(ownerID), m_compSet(compSet), m_name(name), m_desc(desc) {}
 
-void Item::add_comp(CompList comp) {
+void Item::add_comp(ItemCompList comp) {
 	m_compSet.set(static_cast<int>(comp));
 }
 
-bool Item::chk_comp(CompList comp) {
+bool Item::chk_comp(ItemCompList comp) {
 	return m_compSet.test(comp);
 }
 

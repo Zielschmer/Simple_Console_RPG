@@ -8,8 +8,8 @@ public:
 	const ID m_ID;
 
 	Item(ID& nextID, const ID& ownerID, CompSet& compSet, std::string name, std::string desc);
-	void add_comp(CompList comp);
-	bool chk_comp(CompList comp);
+	void add_comp(ItemCompList comp);
+	bool chk_comp(ItemCompList comp);
 	std::string chk_name();
 private:
 	ID m_ownerID;
