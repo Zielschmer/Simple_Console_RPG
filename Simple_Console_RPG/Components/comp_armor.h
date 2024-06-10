@@ -1,15 +1,12 @@
 #ifndef COMP_ARMOR
 #define COMP_ARMOR
 
-#include <memory>
-
 #include "..\utils.h"
+#include "Component.h"
 
-struct CompArmor {
-
-	ID m_ownerID;
-	AC m_AC;
-
+struct CompArmor : public Component {
+	using Component::Component;
+	ID m_armor;
 };
 
 using Armor_ptr = std::unique_ptr<CompArmor>;

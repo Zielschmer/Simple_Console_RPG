@@ -18,99 +18,123 @@
     <ClCompile Include="main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\creation_enemy.cpp">
+    <ClCompile Include="Systems\System_Blueprint\creation_enemy.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\enemies.cpp">
+    <ClCompile Include="Systems\System_Blueprint\blueprint_beasts\blueprints_rating0.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\system_dice.cpp">
+    <ClCompile Include="Systems\Old\system_dice.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\system_inventory.cpp">
+    <ClCompile Include="Systems\Old\system_inventory.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\equip_armor.cpp">
+    <ClCompile Include="Systems\Old\equip_armor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\equip_weapon.cpp">
+    <ClCompile Include="Systems\Old\equip_weapon.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\equip_spell.cpp">
+    <ClCompile Include="Systems\Old\equip_spell.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\equip_pray.cpp">
+    <ClCompile Include="Systems\Old\equip_pray.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\equip_song.cpp">
+    <ClCompile Include="Systems\Old\equip_song.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\system_hiring.cpp">
+    <ClCompile Include="Systems\Old\system_hiring.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\system_encounter.cpp">
+    <ClCompile Include="Systems\Old\system_encounter.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\combat_map.cpp">
+    <ClCompile Include="Systems\Old\combat_map.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\combat_initiative.cpp">
+    <ClCompile Include="Systems\Old\combat_initiative.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\combat_attack.cpp">
+    <ClCompile Include="Systems\Old\combat_attack.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\includes\combat_attack.h">
+    <ClCompile Include="Systems\Old\includes\combat_attack.h">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\names.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Systems\system_components.cpp">
+    <ClCompile Include="Systems\System_Blueprint\generate_name.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Entity\entity.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\creation_playable.cpp">
+    <ClCompile Include="Systems\System_Blueprint\creation_playable.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Containers\Containers.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_score.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Component.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_info.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_armor.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_main-hand.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_off-hand.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\generate_cast.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\System_Blueprint\blueprint_playable\blueprint_player.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Systems\includes\creation_enemy.h">
+    <ClInclude Include="Systems\Old\includes\creation_enemy.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\system_dice.h">
+    <ClInclude Include="Systems\Old\includes\system_dice.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\system_inventory.h">
+    <ClInclude Include="Systems\Old\includes\system_inventory.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\equip_armor.h">
+    <ClInclude Include="Systems\Old\includes\equip_armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\equip_spell.h">
+    <ClInclude Include="Systems\Old\includes\equip_spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\equip_pray.h">
+    <ClInclude Include="Systems\Old\includes\equip_pray.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\equip_song.h">
+    <ClInclude Include="Systems\Old\includes\equip_song.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\equip_weapon.h">
+    <ClInclude Include="Systems\Old\includes\equip_weapon.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\system_hiring.h">
+    <ClInclude Include="Systems\Old\includes\system_hiring.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\system_encounter.h">
+    <ClInclude Include="Systems\Old\includes\system_encounter.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\combat_map.h">
+    <ClInclude Include="Systems\Old\includes\combat_map.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\combat_initiative.h">
+    <ClInclude Include="Systems\Old\includes\combat_initiative.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_level.h">
@@ -122,19 +146,13 @@
     <ClInclude Include="Components\comp_stats.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\enemies.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Components\comp_points.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity\names.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="utils.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\system_components.h">
+    <ClInclude Include="Systems\Old\includes\system_components.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Entity\entity.h">
@@ -146,19 +164,40 @@
     <ClInclude Include="Components\comp_cast.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\includes\creation_playable.h">
+    <ClInclude Include="Systems\Old\includes\creation_playable.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Components\comp_equips.h">
+    <ClInclude Include="Components\comp_main-hand.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_nat-armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Components\comp_nat-weapon.h">
+    <ClInclude Include="Components\comp_nat-weapons.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_armor.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\comp_off-hand.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Conditions\CondEffect.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Containers\Containers.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Component.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_playable\blueprint_playable.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\generate_components.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

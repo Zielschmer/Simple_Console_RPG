@@ -1,17 +1,14 @@
 #ifndef COMP_NAT_ARMOR
 #define	COMP_NAT_ARMOR
 
-#include <memory>
-
 #include "..\utils.h"
+#include "Component.h"
 
-struct NatArmor_Comp {
-
-	ID m_ownerID;
+struct CompNatArmor : public Component{
+	using Component::Component;
 	AC m_AC;
-
 };
 
-using NatArmor_ptr = std::unique_ptr<NatArmor_Comp>;
+using NatArmor_ptr = std::unique_ptr<CompNatArmor>;
 
 #endif

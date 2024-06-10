@@ -1,10 +1,6 @@
 #include "entity.h"
 
-Entity::Entity(CompSet& compset, ID& nextID) : m_ID(nextID), m_compset(compset) { nextID++; }
-
-ID& Entity::getID() { return m_ID; }
-
-CompSet& Entity::getCompset() {	return m_compset; }
+Entity::Entity(ID& nextID, CompSet& compset) : m_ID(nextID), m_compset(compset) { nextID++; }
 
 bool Entity::chk_comp(CompList compList) {
 	return m_compset.test(compList);

@@ -1,18 +1,15 @@
 #ifndef COMP_LEVEL
 #define COMP_LEVEL
 
-#include <memory>
-
 #include "..\utils.h"
+#include "Component.h"
 
-struct Level_Comp {
-
-	ID m_ownerID;
+struct CompLevel : public Component{
+	using Component::Component;
 	Lvl m_level;
 	EXP m_currentExp;
-
 };
 
-using Level_ptr = std::unique_ptr<Level_Comp>;
+using Level_ptr = std::unique_ptr<CompLevel>;
 
 #endif

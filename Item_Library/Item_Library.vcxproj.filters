@@ -57,7 +57,7 @@
     <ClInclude Include="Systems\System_Containers\Containers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Item_Interface.h">
+    <ClInclude Include="Item_Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_throwable.h">

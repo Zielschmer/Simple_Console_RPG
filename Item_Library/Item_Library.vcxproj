@@ -144,7 +144,7 @@
     <ClInclude Include="Components\comp_points-regen.h" />
     <ClInclude Include="Components\comp_throwable.h" />
     <ClInclude Include="Entity\item.h" />
-    <ClInclude Include="Systems\Item_Interface.h" />
+    <ClInclude Include="Item_Interface.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.cpp" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_armor\armor_blueprint.h" />

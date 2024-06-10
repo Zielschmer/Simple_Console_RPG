@@ -86,7 +86,7 @@
     <ClInclude Include="Systems\System_Containers\Containers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Cast_Interface.h">
+    <ClInclude Include="Cast_Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Systems\System_Blueprint\blueprint_songs\blueprint_songs.h">

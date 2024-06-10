@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Release\\combat_attack.h.obj",
+            "outputs": [
+                "C:\\Users\\welli\\source\\repos\\Simple_Console_RPG\\Simple_Console_RPG\\x64\\Release\\vc143.pdb",
+                "x64\\Release\\",
+                "C:\\Users\\welli\\source\\repos\\Simple_Console_RPG\\Simple_Console_RPG\\x64\\Release\\combat_attack.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "Systems\\Old\\includes\\combat_attack.h",
+                    "source-path": "c:\\users\\welli\\source\\repos\\simple_console_rpg\\simple_console_rpg\\systems\\old\\includes\\combat_attack.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

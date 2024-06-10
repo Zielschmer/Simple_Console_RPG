@@ -1,22 +1,16 @@
 #ifndef COMP_CAST
 #define COMP_CAST
 
-#include <vector>
-#include <memory>
-
 #include "..\utils.h"
+#include "Component.h"
 
-#include "cast.h"
-
-struct Cast_Comp {
-
-	ID m_ownerID;
-	std::vector<Spell&> m_spells;
-	std::vector<Pray&> m_prays;
-	std::vector<Song&> m_songs;
-
+struct CompCast : public Component {
+	using Component::Component;
+	std::vector<ID> m_spells;
+	std::vector<ID> m_prays;
+	std::vector<ID> m_songs;
 };
 
-using Cast_ptr = std::unique_ptr<Cast_Comp>;
+using Cast_ptr = std::unique_ptr<CompCast>;
 
 #endif

@@ -34,7 +34,7 @@ extern Container<Throwable_ptr> throwableContainer;
 extern Container<CastFocus_ptr> castFocusContainer;
 extern Container<Conditions_ptr> conditionsContainer;
 
-static ID ITEM_ID = 1001;
+static ID ITEM_ID = 1;
 
 class Blueprint {
 public:
