@@ -18,6 +18,7 @@
 #include "..\..\Components\comp_ammo.h"
 #include "..\..\Components\comp_throwable.h"
 #include "..\..\Components\comp_cast-focus.h"
+#include "..\..\Components\comp_saving.h"
 #include "..\..\Components\comp_conditions.h"
 #include "..\System_Containers\Containers.h"
 
@@ -32,9 +33,10 @@ extern Container<Ammunition_ptr> ammunitionContainer;
 extern Container<Ammo_ptr> ammoContainer;
 extern Container<Throwable_ptr> throwableContainer;
 extern Container<CastFocus_ptr> castFocusContainer;
+extern Container<Saving_ptr> savingContainer;
 extern Container<Conditions_ptr> conditionsContainer;
 
-static ID ITEM_ID = 1;
+static ID ITEM_ID = 1000;
 
 class Blueprint {
 public:
@@ -97,6 +99,10 @@ public:
 	template <>
 	void registerComponent(std::unique_ptr<CompCastFocus> component) {
 		castFocusContainer;
+	}
+	template <>
+	void registerComponent(std::unique_ptr<CompSaving> component) {
+		savingContainer;
 	}
 	template <>
 	void registerComponent(std::unique_ptr<CompConditions> component) {

@@ -26,6 +26,13 @@ enum DiceList {
 };
 
 enum RollType {
+	ROLL_SCORE,
+	ROLL_SAVING,
+	ROLL_ATK,
+	ROLL_AC
+};
+
+enum RollAdv {
 	DISROLL,
 	NMLROLL,
 	ADVROLL
@@ -91,7 +98,7 @@ enum TargetList {
 };
 
 enum ConditionList {
-
+	POISONED
 };
 
 using ID = uint16_t;

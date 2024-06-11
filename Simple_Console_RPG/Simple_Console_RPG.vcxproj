@@ -143,9 +143,7 @@
     <ClCompile Include="Systems\System_Blueprint\generate_score.cpp" />
     <ClCompile Include="Systems\System_Blueprint\generate_name.cpp" />
     <ClCompile Include="Systems\Old\combat_attack.cpp" />
-    <ClCompile Include="Systems\System_Blueprint\creation_playable.cpp" />
     <ClCompile Include="Systems\Old\combat_map.cpp" />
-    <ClCompile Include="Systems\System_Blueprint\creation_enemy.cpp" />
     <ClCompile Include="Entity\entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Systems\Old\equip_song.cpp" />
@@ -173,6 +171,7 @@
     <ClInclude Include="Components\comp_stats.h" />
     <ClInclude Include="Components\comp_points.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint.h" />
+    <ClInclude Include="Systems\System_Blueprint\blueprint_beasts\blueprint_beasts.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_playable\blueprint_playable.h" />
     <ClInclude Include="Systems\System_Blueprint\generate_components.h" />
     <ClInclude Include="Systems\System_Conditions\CondEffect.h" />

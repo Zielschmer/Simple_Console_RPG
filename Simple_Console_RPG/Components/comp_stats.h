@@ -7,10 +7,10 @@
 
 struct CompStats : public Component {
 	using Component::Component;
-	std::unordered_map<ScoreList, RollType> m_scrRoll;
-	std::unordered_map<ScoreList, RollType> m_svgRoll;
-	RollType m_atkRoll;
-	RollType m_AC;
+	std::unordered_map<ScoreList, RollAdv> m_scrRoll;
+	std::unordered_map<ScoreList, RollAdv> m_svgRoll;
+	RollAdv m_atkRoll;
+	RollAdv m_ACRoll;
 	std::unordered_map<ConditionList, CondEffect> m_conditions;
 };
 

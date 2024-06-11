@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\creation_enemy.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Systems\System_Blueprint\blueprint_beasts\blueprints_rating0.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -67,9 +64,6 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Entity\entity.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Systems\System_Blueprint\creation_playable.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Systems\System_Containers\Containers.cpp">
@@ -198,6 +192,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Systems\System_Blueprint\generate_components.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\System_Blueprint\blueprint_beasts\blueprint_beasts.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

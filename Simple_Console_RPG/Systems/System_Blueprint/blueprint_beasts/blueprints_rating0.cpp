@@ -2,7 +2,7 @@
 
 #include "..\blueprint.h"
 #include "..\generate_components.h"
-#include "..\..\Old\includes\system_dice.h"
+#include "..\..\System_Dice\system_dice.h"
 #include "..\..\System_Containers\Containers.h"
 #include "..\..\..\Components\comp_score.h"
 #include "..\..\..\Components\comp_info.h"
@@ -15,13 +15,14 @@
 #include "..\..\..\Components\comp_cast.h"
 #include "..\..\..\Components\comp_nat-armor.h"
 #include "..\..\..\Components\comp_nat-weapons.h"
+#include "..\..\..\Item_Library\Item_Interface.h"
 
 const ID createBat() {
 
 	Blueprint blueprint;
 
 	//Register Score component
-	auto compScore = std::make_unique<CompScore>(ENTITY_ID));
+	auto compScore = std::make_unique<CompScore>(ENTITY_ID);
 	compScore->m_str = 2;
 	compScore->m_dex = 15;
 	compScore->m_con = 8;
@@ -42,7 +43,7 @@ const ID createBat() {
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
-	compPoints->m_maxHP = getDice(D4, 1, NORMAL, (-1));
+	compPoints->m_maxHP = rollDice(D4, (-1));
 	compPoints->m_currentHP = compPoints->m_maxHP;
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
@@ -57,6 +58,7 @@ const ID createBat() {
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
+	compNatWeapons->m_weapons.emplace_back(createBite(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
 	blueprint.addComponent(NAT_WEAPONS);
 
@@ -96,7 +98,7 @@ const ID createRat() {
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
-	compPoints->m_maxHP = getDice(D4, 1, NORMAL, (-1));
+	compPoints->m_maxHP = rollDice(D4, (-1));
 	compPoints->m_currentHP = compPoints->m_maxHP;
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
@@ -111,6 +113,7 @@ const ID createRat() {
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
+	compNatWeapons->m_weapons.emplace_back(createBite(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
 	blueprint.addComponent(NAT_WEAPONS);
 
@@ -150,7 +153,7 @@ const ID createScorpion() {
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
-	compPoints->m_maxHP = getDice(D4, 1, NORMAL, (-1));
+	compPoints->m_maxHP = rollDice(D4, (-1));
 	compPoints->m_currentHP = compPoints->m_maxHP;
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
@@ -165,6 +168,7 @@ const ID createScorpion() {
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
+	compNatWeapons->m_weapons.emplace_back(createSting(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
 	blueprint.addComponent(NAT_WEAPONS);
 
@@ -177,45 +181,3 @@ const ID createScorpion() {
 	return entityID;
 
 }
-
-/*
-case BAT:
-{
-	Weapon newWeapon;
-	newWeapon.m_name = "Bite";
-	newWeapon.m_diceAtk = 0;
-	newWeapon.m_savingThrow = 0;
-	newWeapon.m_DC = 0;
-	newWeapon.m_extraDice = 0;
-	newWeapon.m_passEffect = false;
-
-	natWeapon.m_weapons.push_back(newWeapon);
-	break;
-}
-case RAT:
-{
-	Weapon newWeapon;
-	newWeapon.m_name = "Bite";
-	newWeapon.m_diceAtk = 0;
-	newWeapon.m_savingThrow = 0;
-	newWeapon.m_DC = 0;
-	newWeapon.m_extraDice = 0;
-	newWeapon.m_passEffect = false;
-
-	natWeapon.m_weapons.push_back(newWeapon);
-	break;
-}
-case SCORPION:
-{
-	Weapon newWeapon;
-	newWeapon.m_name = "Sting";
-	newWeapon.m_diceAtk = 0;
-	newWeapon.m_savingThrow = 3;
-	newWeapon.m_DC = 9;
-	newWeapon.m_extraDice = 3;
-	newWeapon.m_passEffect = true;
-
-	natWeapon.m_weapons.push_back(newWeapon);
-	break;
-}
-*/

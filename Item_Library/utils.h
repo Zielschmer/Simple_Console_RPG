@@ -61,6 +61,7 @@ enum ItemCompList {
 	AMMO_COMP,
 	THROWABLE_COMP,
 	CAST_FOCUS_COMP,
+	SAVING_COMP,
 	CONDITIONS_COMP
 };
 
@@ -79,11 +80,13 @@ enum TargetList {
 enum EquipType {
 	ARMOR,
 	WEAPON,
-	SHIELD
+	SHIELD,
+	NATARMOR,
+	NATWEAPON
 };
 
 enum ConditionList {
-
+	POISONED,
 };
 
 using ID = uint16_t;
@@ -94,6 +97,7 @@ using SP = uint16_t;
 using Scr = uint16_t;
 using Mod = int16_t;
 using AC = uint16_t;
+using DC = uint16_t;
 using Range = uint16_t;
 using Turns = uint16_t;
 using Party = std::vector<ID>;

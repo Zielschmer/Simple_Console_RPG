@@ -60,3 +60,27 @@ Scr chkScore(ID& entityID, ScoreList score) {
 Mod getMod(ID& entityID, ScoreList score) {
 	return (chkScore(entityID, score) - 10) / 2;
 }
+
+RollAdv& getRollAdv(ID& entityID, RollType type, ScoreList score) {
+	switch (type)
+	{
+	case ROLL_SCORE:
+		auto stats = statsContainer.find(entityID);
+		auto roll = stats->second.get()->m_scrRoll.find(score);
+		return roll->second;
+		break;
+	case ROLL_SAVING:
+		auto stats = statsContainer.find(entityID);
+		auto roll = stats->second.get()->m_svgRoll.find(score);
+		return roll->second;
+		break;
+	case ROLL_ATK:
+		auto it = statsContainer.find(entityID);
+		return it->second.get()->m_atkRoll;
+		break;
+	case ROLL_AC:
+		auto it = statsContainer.find(entityID);
+		return it->second.get()->m_ACRoll;
+		break;
+	}
+}

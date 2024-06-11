@@ -61,4 +61,6 @@ std::unique_ptr<T> getComponent(ID& entityID, CompList comp) {
 
 Mod getMod(ID& entityID, ScoreList score);
 
+RollAdv& getRollAdv(ID& entityID, RollType type, ScoreList score);
+
 #endif

@@ -11,6 +11,7 @@
 #include "..\..\Components\comp_ammo.h"
 #include "..\..\Components\comp_throwable.h"
 #include "..\..\Components\comp_cast-focus.h"
+#include "..\..\Components\comp_saving.h"
 #include "..\..\Components\comp_conditions.h"
 
 Container<Item_ptr> itemContainer;
@@ -24,6 +25,7 @@ Container<Ammunition_ptr> ammunitionContainer;
 Container<Ammo_ptr> ammoContainer;
 Container<Throwable_ptr> throwableContainer;
 Container<CastFocus_ptr> castFocusContainer;
+Container<Saving_ptr> savingContainer;
 Container<Conditions_ptr> conditionsContainer;
 
 bool testComponent(ID itemID, ItemCompList comp) {
