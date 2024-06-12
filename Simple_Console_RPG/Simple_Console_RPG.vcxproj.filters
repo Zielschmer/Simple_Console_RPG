@@ -21,25 +21,25 @@
     <ClCompile Include="Systems\System_Blueprint\blueprint_beasts\blueprints_rating0.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\system_dice.cpp">
+    <ClCompile Include="Systems\System_Dice\system_dice.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\system_inventory.cpp">
+    <ClCompile Include="Systems\System_Inventory\system_inventory.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\equip_armor.cpp">
+    <ClCompile Include="Systems\System_Inventory\equip_armor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\equip_weapon.cpp">
+    <ClCompile Include="Systems\System_Inventory\equip_weapon.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\equip_spell.cpp">
+    <ClCompile Include="Systems\System_Inventory\equip_spell.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\equip_pray.cpp">
+    <ClCompile Include="Systems\System_Inventory\equip_pray.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\equip_song.cpp">
+    <ClCompile Include="Systems\System_Inventory\equip_song.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Systems\Old\system_hiring.cpp">
@@ -48,16 +48,16 @@
     <ClCompile Include="Systems\Old\system_encounter.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\combat_map.cpp">
+    <ClCompile Include="Systems\System_Combat\combat_map.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\combat_initiative.cpp">
+    <ClCompile Include="Systems\System_Combat\combat_initiative.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\combat_attack.cpp">
+    <ClCompile Include="Systems\System_Combat\combat_attack.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\Old\includes\combat_attack.h">
+    <ClCompile Include="Systems\System_Combat\combat_attack.h">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Systems\System_Blueprint\generate_name.cpp">
@@ -95,40 +95,37 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Systems\Old\includes\creation_enemy.h">
+    <ClInclude Include="Systems\System_Dice\system_dice.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\system_dice.h">
+    <ClInclude Include="Systems\System_Inventory\system_inventory.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\system_inventory.h">
+    <ClInclude Include="Systems\System_Inventory\equip_armor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\equip_armor.h">
+    <ClInclude Include="Systems\System_Inventory\equip_spell.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\equip_spell.h">
+    <ClInclude Include="Systems\System_Inventory\equip_pray.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\equip_pray.h">
+    <ClInclude Include="Systems\System_Inventory\equip_song.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\equip_song.h">
+    <ClInclude Include="Systems\System_Inventory\equip_weapon.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\equip_weapon.h">
+    <ClInclude Include="Systems\Old\system_hiring.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\system_hiring.h">
+    <ClInclude Include="Systems\Old\system_encounter.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\system_encounter.h">
+    <ClInclude Include="Systems\System_Combat\combat_map.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\combat_map.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Systems\Old\includes\combat_initiative.h">
+    <ClInclude Include="Systems\System_Combat\combat_initiative.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_level.h">
@@ -146,9 +143,6 @@
     <ClInclude Include="utils.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\Old\includes\system_components.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Entity\entity.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -156,9 +150,6 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_cast.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Systems\Old\includes\creation_playable.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Components\comp_main-hand.h">

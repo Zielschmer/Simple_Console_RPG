@@ -1,9 +1,10 @@
-#pragma once
+#ifndef COMBAT_INITIATIVE
+#define COMBAT_INITIATIVE
 
-#include <vector>
+#include "..\..\utils.h"
 
-#include "..\..\..\lib\includes\lib_primitives.h"
-
-extern std::vector<int> turnOrder;
+extern std::vector<Roll> turnOrder;
 
 void getInitative(Party& partyID, Party& enemiesID);
+
+#endif

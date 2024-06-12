@@ -37,3 +37,18 @@ std::string getItemName(ID itemID) {
 	auto it = itemContainer.find(itemID);
 	return it->second->chk_name();
 }
+
+ScoreList getWeaponMod(ID itemID) {
+	auto it = attackContainer.find(itemID);
+	return it->second.get()->m_mod;
+}
+
+AC getEquipAC(ID itemID) {
+	auto it = defenseContainer.find(itemID)->second.get();
+	return it->m_AC;
+}
+
+DiceList getEquipDmg(ID itemID) {
+	auto it = damageContainer.find(itemID);
+	return it->second.get()->m_dmgDice;
+}

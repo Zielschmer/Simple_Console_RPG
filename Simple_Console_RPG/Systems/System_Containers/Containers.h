@@ -16,11 +16,9 @@ extern Container<Cast_ptr> castContainer;
 extern Container<NatArmor_ptr> natArmorContainer;
 extern Container<NatWeapons_ptr> natWeaponsContainer;
 
-bool testComponent(ID& entityID, CompList comp);
-Scr chkScore(ID& entityID, ScoreList score);
-
+bool testComponent(ID entityID, CompList comp);
 template <typename T>
-std::unique_ptr<T> getComponent(ID& entityID, CompList comp) {
+std::unique_ptr<T> getComponent(ID entityID, CompList comp) {
 	switch (comp)
 	{
 	case SCORE:
@@ -59,8 +57,23 @@ std::unique_ptr<T> getComponent(ID& entityID, CompList comp) {
 	}
 }
 
-Mod getMod(ID& entityID, ScoreList score);
+//Component Info specifics
+std::string getName(ID entityID);
 
-RollAdv& getRollAdv(ID& entityID, RollType type, ScoreList score);
+//Component Score specifics
+Scr chkScore(ID entityID, ScoreList score);
+Mod getMod(ID entityID, ScoreList score);
+
+
+//Component Points specifics
+HP chkHP(ID entityID);
+HP chkMaxHP(ID entityID);
+void takeDamage(ID entityID, HP damage);
+
+//Component Stats specifics
+RollAdv& getRollAdv(ID entityID, RollType type, ScoreList score);
+
+//Weapon components
+ID getWeapon(ID entityID, CompList hand);
 
 #endif

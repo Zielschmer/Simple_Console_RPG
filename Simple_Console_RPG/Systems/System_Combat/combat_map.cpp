@@ -1,6 +1,6 @@
-#include "includes\combat_map.h"
+#include "combat_map.h"
 
-#include "..\..\lib\includes\lib_primitives.h"
+#include "..\..\utils.h"
 
 Map<6> map;
 

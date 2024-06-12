@@ -1,12 +1,11 @@
-#include "includes\combat_initiative.h"
+#include "combat_initiative.h"
 
 #include <algorithm>
 
-#include "..\..\lib\includes\lib_entity.h"
-#include "includes\system_components.h"
-#include "includes\system_dice.h"
+#include "..\System_Containers\Containers.h"
+#include "..\System_Dice\system_dice.h"
 
-std::vector<int> turnOrder;
+std::vector<ID> turnOrder;
 
 void getInitative(Party& partyID, Party& enemiesID) {	
 
@@ -18,10 +17,10 @@ void getInitative(Party& partyID, Party& enemiesID) {
 		turnOrder.emplace_back(member);
 	}
 
-	std::vector<int> initiativeRolls;
+	std::vector<Roll> initiativeRolls;
 
 	for (auto member : turnOrder) {
-		initiativeRolls.emplace_back(getDice(D20, 1, NORMAL, getScoreMod(member, DEX)));
+		initiativeRolls.emplace_back(rollDice(D20, getMod(member, DEX)));
 	}
 
 	for (int i = 0; i < 2; i++) {

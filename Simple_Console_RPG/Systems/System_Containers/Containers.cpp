@@ -27,11 +27,18 @@ Container<Cast_ptr> castContainer;
 Container<NatArmor_ptr> natArmorContainer;
 Container<NatWeapons_ptr> natWeaponsContainer;
 
-bool testComponent(ID& entityID, CompList comp) {
+bool testComponent(ID entityID, CompList comp) {
 	return entityContainer.find(entityID)->second.get()->chk_comp(comp);
 }
 
-Scr chkScore(ID& entityID, ScoreList score) {
+//Component Info specifics
+std::string getName(ID entityID) {
+	auto it = infoContainer.find(entityID)->second.get();
+	return it->m_name;
+}
+
+//Component Score specifics
+Scr chkScore(ID entityID, ScoreList score) {
 	auto it = scoreContainer.find(entityID);
 	switch (score)
 	{
@@ -56,12 +63,31 @@ Scr chkScore(ID& entityID, ScoreList score) {
 	}
 	
 }
-
-Mod getMod(ID& entityID, ScoreList score) {
+Mod getMod(ID entityID, ScoreList score) {
 	return (chkScore(entityID, score) - 10) / 2;
 }
 
-RollAdv& getRollAdv(ID& entityID, RollType type, ScoreList score) {
+//Component Points specifics
+HP chkHP(ID entityID) {
+	auto it = pointsContainer.find(entityID)->second.get();
+	return it->m_currentHP;
+}
+HP chkMaxHP(ID entityID) {
+	auto it = pointsContainer.find(entityID)->second.get();
+	return it->m_maxHP;
+}
+void takeDamage(ID entityID, HP damage) {
+	auto it = pointsContainer.find(entityID)->second.get();
+	if (damage > it->m_currentHP) {
+		it->m_currentHP = 0;
+	}
+	else {
+		it->m_currentHP -= damage;
+	}
+}
+
+//Component Stats specifics
+RollAdv& getRollAdv(ID entityID, RollType type, ScoreList score) {
 	switch (type)
 	{
 	case ROLL_SCORE:
@@ -82,5 +108,30 @@ RollAdv& getRollAdv(ID& entityID, RollType type, ScoreList score) {
 		auto it = statsContainer.find(entityID);
 		return it->second.get()->m_ACRoll;
 		break;
+	}
+}
+
+ID getWeapon(ID entityID, CompList hand) {
+	switch (hand)
+	{
+	case MAINHAND:
+	{
+		auto it = mainHandContainer.find(entityID);
+		return it->second.get()->m_weapon;
+		break;
+	}
+	case OFFHAND:
+	{
+		auto it = offHandContainer.find(entityID);
+		return it->second.get()->m_weapon;
+		break;
+	}
+	case NAT_WEAPONS:
+	{
+		auto it = natWeaponsContainer.find(entityID);
+		int weapons = it->second.get()->m_weapons.size();
+		return it->second.get()->m_weapons[rand() % weapons];
+		break;
+	}
 	}
 }
