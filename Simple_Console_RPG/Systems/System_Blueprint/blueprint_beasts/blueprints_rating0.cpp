@@ -30,7 +30,7 @@ const ID createBat() {
 	compScore->m_fth = 12;
 	compScore->m_lck = 4;
 	blueprint.registerComponent(std::move(compScore));
-	blueprint.addComponent(SCORE);
+	blueprint.addComponent(SCORE_COMP);
 
 	//Register Info component
 	auto compInfo = std::make_unique<CompInfo>(ENTITY_ID);
@@ -39,7 +39,7 @@ const ID createBat() {
 	compInfo->m_name = (compInfo->m_desc + " " + std::to_string(batNum));
 	batNum++;
 	blueprint.registerComponent(std::move(compInfo));
-	blueprint.addComponent(INFO);
+	blueprint.addComponent(INFO_COMP);
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
@@ -48,19 +48,19 @@ const ID createBat() {
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
 	blueprint.registerComponent(std::move(compPoints));
-	blueprint.addComponent(POINTS);
+	blueprint.addComponent(POINTS_COMP);
 
 	//Register Natural Armor component
 	auto compNatArmor = std::make_unique<CompNatArmor>(ENTITY_ID);
 	compNatArmor->m_AC = 12;
 	blueprint.registerComponent(std::move(compNatArmor));
-	blueprint.addComponent(NAT_ARMOR);
+	blueprint.addComponent(NAT_ARMOR_COMP);
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
 	compNatWeapons->m_weapons.emplace_back(createBite(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
-	blueprint.addComponent(NAT_WEAPONS);
+	blueprint.addComponent(NAT_WEAPONS_COMP);
 
 	Entity_ptr entity = blueprint.instantiateEntity(ENTITY_ID);
 
@@ -85,7 +85,7 @@ const ID createRat() {
 	compScore->m_fth = 10;
 	compScore->m_lck = 4;
 	blueprint.registerComponent(std::move(compScore));
-	blueprint.addComponent(SCORE);
+	blueprint.addComponent(SCORE_COMP);
 
 	//Register Info component
 	auto compInfo = std::make_unique<CompInfo>(ENTITY_ID);
@@ -94,7 +94,7 @@ const ID createRat() {
 	compInfo->m_name = (compInfo->m_desc + " " + std::to_string(ratNum));
 	ratNum++;
 	blueprint.registerComponent(std::move(compInfo));
-	blueprint.addComponent(INFO);
+	blueprint.addComponent(INFO_COMP);
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
@@ -103,19 +103,19 @@ const ID createRat() {
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
 	blueprint.registerComponent(std::move(compPoints));
-	blueprint.addComponent(POINTS);
+	blueprint.addComponent(POINTS_COMP);
 
 	//Register Natural Armor component
 	auto compNatArmor = std::make_unique<CompNatArmor>(ENTITY_ID);
 	compNatArmor->m_AC = 10;
 	blueprint.registerComponent(std::move(compNatArmor));
-	blueprint.addComponent(NAT_ARMOR);
+	blueprint.addComponent(NAT_ARMOR_COMP);
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
 	compNatWeapons->m_weapons.emplace_back(createBite(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
-	blueprint.addComponent(NAT_WEAPONS);
+	blueprint.addComponent(NAT_WEAPONS_COMP);
 
 	Entity_ptr entity = blueprint.instantiateEntity(ENTITY_ID);
 
@@ -140,7 +140,7 @@ const ID createScorpion() {
 	compScore->m_fth = 8;
 	compScore->m_lck = 2;
 	blueprint.registerComponent(std::move(compScore));
-	blueprint.addComponent(SCORE);
+	blueprint.addComponent(SCORE_COMP);
 
 	//Register Info component
 	auto compInfo = std::make_unique<CompInfo>(ENTITY_ID);
@@ -149,7 +149,7 @@ const ID createScorpion() {
 	compInfo->m_name = (compInfo->m_desc + " " + std::to_string(scorpionNum));
 	scorpionNum++;
 	blueprint.registerComponent(std::move(compInfo));
-	blueprint.addComponent(INFO);
+	blueprint.addComponent(INFO_COMP);
 
 	//Register Points component
 	auto compPoints = std::make_unique<CompPoints>(ENTITY_ID);
@@ -158,19 +158,19 @@ const ID createScorpion() {
 	compPoints->m_maxSP = 0;
 	compPoints->m_currentSP = 0;
 	blueprint.registerComponent(std::move(compPoints));
-	blueprint.addComponent(POINTS);
+	blueprint.addComponent(POINTS_COMP);
 
 	//Register Natural Armor component
 	auto compNatArmor = std::make_unique<CompNatArmor>(ENTITY_ID);
 	compNatArmor->m_AC = 11;
 	blueprint.registerComponent(std::move(compNatArmor));
-	blueprint.addComponent(NAT_ARMOR);
+	blueprint.addComponent(NAT_ARMOR_COMP);
 
 	//Register Natural Weapon component
 	auto compNatWeapons = std::make_unique<CompNatWeapons>(ENTITY_ID);
 	compNatWeapons->m_weapons.emplace_back(createSting(ENTITY_ID));
 	blueprint.registerComponent(std::move(compNatWeapons));
-	blueprint.addComponent(NAT_WEAPONS);
+	blueprint.addComponent(NAT_WEAPONS_COMP);
 
 	Entity_ptr entity = blueprint.instantiateEntity(ENTITY_ID);
 

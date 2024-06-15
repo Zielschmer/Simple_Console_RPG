@@ -1,7 +1,7 @@
 #ifndef ITEM_BLUEPRINTS
 #define ITEM_BLUEPRINTS
 
-#include "..\..\..\utils.h"
+#include "..\..\..\..\utilities\utils.h"
 
 //Consumable
 const ID createHealingPotion(const ID& ownerID);

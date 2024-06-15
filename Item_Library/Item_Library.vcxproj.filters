@@ -18,9 +18,6 @@
     <ClInclude Include="Entity\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Components\comp_attack.h">
       <Filter>Header Files</Filter>
     </ClInclude>

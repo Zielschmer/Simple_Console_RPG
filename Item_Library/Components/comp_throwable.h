@@ -1,7 +1,7 @@
 #ifndef COMP_THROWABLE
 #define COMP_THROWABLE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompThrowable : public Component {

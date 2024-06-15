@@ -6,21 +6,21 @@
 
 Cast_ptr generateCast(ID entityID) {
 	Cast_ptr newCast(new CompCast(entityID));
-	if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Staff") {
+	if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Staff") {
 		newCast->m_spells.emplace_back(createAcidSplash(entityID));
 	}
-	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Rosary") {
+	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Rosary") {
 
 	}
-	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Harp") {
+	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Harp") {
 		
 	}
 
-	if (testComponent(entityID, OFFHAND)) {
-		if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Staff") {
+	if (testComponent(entityID, OFFHAND_COMP)) {
+		if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Staff") {
 			
 		}
-		else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Rosary") {
+		else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Rosary") {
 			
 		}
 	}

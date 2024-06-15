@@ -1,7 +1,7 @@
 #ifndef COMP_LEVEL
 #define COMP_LEVEL
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompLevel : public Component{

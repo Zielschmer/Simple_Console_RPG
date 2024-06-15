@@ -12,7 +12,7 @@ Armor_ptr generateArmor(ID entityID, Blueprint blueprint) {
 		chkScore(entityID, INT) > chkScore(entityID, LCK)) {
 
 		newArmor->m_armor = createRobe(entityID);
-		blueprint.addComponent(CAST);
+		blueprint.addComponent(CAST_COMP);
 	}
 	else if (chkScore(entityID, FTH) > 13 &&
 		chkScore(entityID, FTH) > chkScore(entityID, LCK)) {
@@ -23,14 +23,14 @@ Armor_ptr generateArmor(ID entityID, Blueprint blueprint) {
 		else {
 			newArmor->m_armor = createChainMail(entityID);
 		}
-		blueprint.addComponent(CAST);
+		blueprint.addComponent(CAST_COMP);
 	}
 	else if (chkScore(entityID, LCK) > 13 &&
 		chkScore(entityID, STR) < 14 &&
 		chkScore(entityID, DEX) < 14) {
 
 		newArmor->m_armor = createRobe(entityID);
-		blueprint.addComponent(CAST);
+		blueprint.addComponent(CAST_COMP);
 	}
 	else if (chkScore(entityID, DEX) > 13 &&
 		chkScore(entityID, DEX) > chkScore(entityID, STR)) {

@@ -4,6 +4,7 @@
 
 #include "..\System_Containers\Containers.h"
 #include "..\System_Dice\system_dice.h"
+#include "..\System_Inventory\system_inventory.h"
 #include "..\..\..\Item_Library\Item_Interface.h"
 
 bool isDead(ID& entityID, HP damage) {
@@ -21,36 +22,36 @@ bool isDead(ID& entityID, HP damage) {
 
 AC getAC(ID targetID) {
 	AC ac = 0;
-	if (testComponent(targetID, CompList::ARMOR)) {
-		auto it = armorContainer.find(targetID)->second();
+	if (testComponent(targetID, CompList::ARMOR_COMP)) {
+		auto it = armorContainer.find(targetID)->second.get();
 		ac += getEquipAC(it->m_armor);
 	}
-	else if (testComponent(targetID, CompList::NAT_ARMOR)) {
-		auto it = natArmorContainer.find(targetID)->second();
+	else if (testComponent(targetID, CompList::NAT_ARMOR_COMP)) {
+		auto it = natArmorContainer.find(targetID)->second.get();
 		ac += it->m_AC;
 	}
 
-	if (testComponent(targetID, CompList::OFFHAND)) {
-		auto it = offHandContainer.find(targetID)->second();
-		if(it->m_armor);
+	if (testComponent(targetID, CompList::OFFHAND_COMP)) {
+		auto it = offHandContainer.find(targetID)->second.get();
+		ac += it->m_AC;
 	}
 	return ac;
 }
 
 void actionAttack(ID& attackerID, ID& targetID) {
 	ID weapon;
-	if (testComponent(attackerID, MAINHAND)) {
-		weapon = getWeapon(attackerID, MAINHAND);
+	if (testComponent(attackerID, MAINHAND_COMP)) {
+		weapon = getWeapon(attackerID, MAINHAND_COMP);
 	}
-	else if (testComponent(attackerID, NAT_WEAPONS)) {
-		weapon = getWeapon(attackerID, NAT_WEAPONS);
+	else if (testComponent(attackerID, NAT_WEAPONS_COMP)) {
+		weapon = getWeapon(attackerID, NAT_WEAPONS_COMP);
 	}
 
 	if (getItemName(weapon) == "Bow") {
-		if(inventory.checkArrows() < 1){
+		if (checkItem(attackerID, "Arrow") < 1) {
 			return;
 		}
-		inventory.useArrow();
+		useItem(attackerID, "Arrow");
 	}
 
 	Roll attackRoll = getDice(attackerID, ROLL_ATK, getWeaponMod(weapon));
@@ -61,8 +62,8 @@ void actionAttack(ID& attackerID, ID& targetID) {
 	}
 
 
-	if (testComponent(attackerID, OFFHAND)) {
-		weapon = getWeapon(attackerID, OFFHAND);
+	if (testComponent(attackerID, OFFHAND_COMP)) {
+		weapon = getWeapon(attackerID, OFFHAND_COMP);
 		attackRoll = getDice(D20, 1);
 		if (attackRoll > armorClass) {
 			takeDamage(targetID, getDice(getEquipDmg(weapon), 1));

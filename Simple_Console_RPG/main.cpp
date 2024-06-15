@@ -1,27 +1,23 @@
 #include <iostream>
 
-#include "..\lib\includes\lib_entity.h"
-#include "model\includes\system_inventory.h"
-#include "model\includes\system_components.h"
-#include "model\includes\creation_playable.h"
-#include "model\includes\creation_enemy.h"
-#include "model\includes\equip_armor.h"
-#include "model\includes\equip_weapon.h"
-#include "model\includes\equip_spell.h"
-#include "model\includes\equip_pray.h"
-#include "model\includes\equip_song.h"
-#include "model\includes\system_hiring.h"
-#include "model\includes\system_encounter.h"
-#include "model\includes\combat_map.h"
-#include "model\includes\combat_initiative.h"
-#include "control\includes\choose-coordinate.h"
-#include "model\includes\combat_attack.h"
-#include "model\includes\system_dice.h"
+#include "..\..\..\utilities\utils.h"
+#include "..\..\Entity\entity.h"
+#include "..\..\Components\comp_info.h"
+#include "..\..\Components\comp_score.h"
+#include "..\..\Components\comp_level.h"
+#include "..\..\Components\comp_points.h"
+#include "..\..\Components\comp_stats.h"
+#include "..\..\Components\comp_armor.h"
+#include "..\..\Components\comp_main-hand.h"
+#include "..\..\Components\comp_off-hand.h"
+#include "..\..\Components\comp_cast.h"
+#include "..\..\Components\comp_nat-armor.h"
+#include "..\..\Components\comp_nat-weapons.h"
+#include "..\..\Components\comp_inventory.h"
 
-Inventory inventory;
-int nextID = 1;
 Party partyID;
 
+/*
 void printInventory() {
 
 	std::cout << "Coins: " << inventory.checkCoins() << std::endl;
@@ -131,11 +127,11 @@ void drawCombatArea() {
 		std::cout << std::endl;
 		std::cout << "  +---+---+---+---+---+---+" << std::endl;
 	}
-}
+}*/
 
 int main() {
 
-	hireMercenaries();
+	/*hireMercenaries();
 
 	system("cls");
 	std::cout << "Party:\n" << std::endl;
@@ -171,7 +167,6 @@ int main() {
 	}
 
 	std::cout << std::endl;
-	actionAttack(partyID[0], enemyParty[0]);
-
+	actionAttack(partyID[0], enemyParty[0]);*/
 
 }

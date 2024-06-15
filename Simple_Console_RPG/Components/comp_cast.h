@@ -1,7 +1,7 @@
 #ifndef COMP_CAST
 #define COMP_CAST
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompCast : public Component {

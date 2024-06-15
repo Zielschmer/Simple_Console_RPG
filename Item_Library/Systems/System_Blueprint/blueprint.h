@@ -6,7 +6,7 @@
 #include <utility>
 #include <iostream>
 
-#include "..\..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "..\..\Entity\item.h"
 #include "..\..\Components\comp_consumable.h"
 #include "..\..\Components\comp_points-regen.h"

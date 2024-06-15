@@ -1,6 +1,6 @@
 #include "Containers.h"
 
-#include "..\..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "..\..\Entity\entity.h"
 #include "..\..\Components\comp_info.h"
 #include "..\..\Components\comp_score.h"
@@ -13,6 +13,7 @@
 #include "..\..\Components\comp_cast.h"
 #include "..\..\Components\comp_nat-armor.h"
 #include "..\..\Components\comp_nat-weapons.h"
+#include "..\..\Components\comp_inventory.h"
 
 Container<Entity_ptr> entityContainer;
 Container<Score_ptr> scoreContainer;
@@ -26,6 +27,7 @@ Container<OffHand_ptr> offHandContainer;
 Container<Cast_ptr> castContainer;
 Container<NatArmor_ptr> natArmorContainer;
 Container<NatWeapons_ptr> natWeaponsContainer;
+Container<Inventory_ptr> inventoryContainer;
 
 bool testComponent(ID entityID, CompList comp) {
 	return entityContainer.find(entityID)->second.get()->chk_comp(comp);
@@ -111,22 +113,23 @@ RollAdv& getRollAdv(ID entityID, RollType type, ScoreList score) {
 	}
 }
 
+//Weapons components specifics
 ID getWeapon(ID entityID, CompList hand) {
 	switch (hand)
 	{
-	case MAINHAND:
+	case MAINHAND_COMP:
 	{
 		auto it = mainHandContainer.find(entityID);
 		return it->second.get()->m_weapon;
 		break;
 	}
-	case OFFHAND:
+	case OFFHAND_COMP:
 	{
 		auto it = offHandContainer.find(entityID);
 		return it->second.get()->m_weapon;
 		break;
 	}
-	case NAT_WEAPONS:
+	case NAT_WEAPONS_COMP:
 	{
 		auto it = natWeaponsContainer.find(entityID);
 		int weapons = it->second.get()->m_weapons.size();
@@ -134,4 +137,22 @@ ID getWeapon(ID entityID, CompList hand) {
 		break;
 	}
 	}
+}
+
+//Component Inventory specifics
+std::vector<ID> getInventory(ID entityID) {
+	auto it = inventoryContainer.find(entityID);
+	return it->second.get()->m_items;
+}
+Coins chkCoins(ID entityID) {
+	auto it = inventoryContainer.find(entityID);
+	return it->second.get()->m_coins;
+}
+void addCoins(ID entityID, Coins coins) {
+	auto it = inventoryContainer.find(entityID);
+	it->second.get()->m_coins += coins;
+}
+void rmvCoins(ID entityID, Coins coins) {
+	auto it = inventoryContainer.find(entityID);
+	it->second.get()->m_coins -= coins;
 }

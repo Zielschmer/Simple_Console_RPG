@@ -1,7 +1,7 @@
 #ifndef COMP_NAT_ARMOR
 #define	COMP_NAT_ARMOR
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompNatArmor : public Component{

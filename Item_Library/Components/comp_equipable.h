@@ -1,7 +1,7 @@
 #ifndef COMP_EQUIPABLE
 #define COMP_EQUIPABLE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompEquipable : public Component {

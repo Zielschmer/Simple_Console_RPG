@@ -1,7 +1,7 @@
 #ifndef COMP_ATTACK
 #define COMP_ATTACK
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompAttack : public Component {

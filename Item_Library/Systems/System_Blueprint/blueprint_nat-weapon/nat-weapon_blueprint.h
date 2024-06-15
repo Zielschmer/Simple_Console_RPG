@@ -1,7 +1,7 @@
 #ifndef NAT_WEAPON_BLUEPRINTS
 #define NAT_WEAPON_BLUEPRINTS
 
-#include "..\..\..\utils.h"
+#include "..\..\..\..\utilities\utils.h"
 
 //Natural Weapons
 const ID createBite(const ID& ownerID);

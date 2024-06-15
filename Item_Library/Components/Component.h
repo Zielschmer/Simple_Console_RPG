@@ -1,7 +1,7 @@
 #ifndef COMPONENT
 #define COMPONENT
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 
 struct Component {
 	Component(const ID& ownerID);

@@ -1,7 +1,7 @@
 #ifndef COMP_HEALING
 #define COMP_HEALING
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompHealing : public Component {

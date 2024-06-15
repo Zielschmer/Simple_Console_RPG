@@ -1,7 +1,7 @@
 #ifndef COMP_OFF_HAND
 #define COMP_OFF_HAND
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompOffHand : public Component {

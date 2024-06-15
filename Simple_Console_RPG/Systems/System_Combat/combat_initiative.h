@@ -1,7 +1,7 @@
 #ifndef COMBAT_INITIATIVE
 #define COMBAT_INITIATIVE
 
-#include "..\..\utils.h"
+#include "..\..\..\utilities\utils.h"
 
 extern std::vector<Roll> turnOrder;
 

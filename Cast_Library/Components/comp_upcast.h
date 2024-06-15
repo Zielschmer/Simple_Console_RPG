@@ -1,7 +1,7 @@
 #ifndef COMP_UPCAST
 #define COMP_UPCAST
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompUpcast : public Component {

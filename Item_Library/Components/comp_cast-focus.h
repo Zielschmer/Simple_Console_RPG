@@ -1,7 +1,7 @@
 #ifndef COMP_CAST_FOCUS
 #define COMP_CAST_FOCUS
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompCastFocus : public Component {

@@ -1,7 +1,7 @@
 #ifndef CAST
 #define CAST
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 
 class Cast {
 public:
@@ -9,9 +9,9 @@ public:
 	const CastType m_type;
 
 	Cast(ID& nextID, const ID& ownerID, CompSet& compSet, CastType type, std::string name, std::string desc);
-	void add_comp(CastCompList comp);
-	bool chk_comp(CastCompList comp);
-	std::string chk_name();
+	CompSet& get_comp();
+	std::string& get_name();
+	std::string& get_desc();
 private:
 	ID m_ownerID;
 	CompSet m_compSet;

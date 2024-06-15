@@ -1,7 +1,7 @@
 #ifndef COMP_NAT_WEAPON
 #define COMP_NAT_WEAPON
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompNatWeapons : public Component{

@@ -131,9 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Components\cast_pray.cpp" />
-    <ClCompile Include="Components\cast_song.cpp" />
-    <ClCompile Include="Components\cast_spell.cpp" />
+    <ClCompile Include="Cast_Interface.cpp" />
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Entity\cast.cpp" />
     <ClCompile Include="Systems\System_Blueprint\blueprint_spells\spells_blueprints.cpp" />
@@ -141,9 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\comp_casting.h" />
-    <ClInclude Include="Components\cast_pray.h" />
-    <ClInclude Include="Components\cast_song.h" />
-    <ClInclude Include="Components\cast_spell.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\comp_conditions.h" />
     <ClInclude Include="Components\comp_damage.h" />
@@ -160,7 +155,6 @@
     <ClInclude Include="Systems\System_Blueprint\blueprint_songs\blueprint_songs.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_spells\blueprint_spells.h" />
     <ClInclude Include="Systems\System_Containers\Containers.h" />
-    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,7 @@
 #ifndef WEAPON_BLUEPRINTS
 #define WEAPON_BLUEPRINTS
 
-#include "..\..\..\utils.h"
+#include "..\..\..\utilities\utils.h"
 
 //Swords
 const ID createShortSword(const ID& ownerID);
@@ -16,7 +16,7 @@ const ID createMace(const ID& ownerID);
 const ID createHammer(const ID& ownerID);
 
 //Bows
-const ID createBow(const ID& ownerID);
+const ID createShortBow(const ID& ownerID);
 
 //Spell Focus
 const ID createStaff(const ID& ownerID);

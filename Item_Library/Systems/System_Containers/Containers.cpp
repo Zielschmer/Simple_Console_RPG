@@ -28,27 +28,163 @@ Container<CastFocus_ptr> castFocusContainer;
 Container<Saving_ptr> savingContainer;
 Container<Conditions_ptr> conditionsContainer;
 
-bool testComponent(ID itemID, ItemCompList comp) {
+CompSet& getCompSet(ID itemID) {
 	auto it = itemContainer.find(itemID);
-	return it->second->chk_comp(comp);
+	return it->second->get_comp();
+}
+std::string& getName(ID itemID) {
+	auto it = itemContainer.find(itemID);
+	return it->second->get_name();
+}
+std::string& getDesc(ID itemID) {
+	auto it = itemContainer.find(itemID);
+	return it->second->get_desc();
 }
 
-std::string getItemName(ID itemID) {
-	auto it = itemContainer.find(itemID);
-	return it->second->chk_name();
+//Component Consumable
+TargetList& getConsumableTarget(ID itemID) {
+	auto it = consumableContainer.find(itemID);
+	return it->second.get()->m_target;
 }
 
-ScoreList getWeaponMod(ID itemID) {
+//Component Points Regen
+HP& getHPRegen(ID itemID) {
+	auto it = pointsRegenContainer.find(itemID);
+	return it->second.get()->m_regenHP;
+}
+SP& getSPRegen(ID itemID) {
+	auto it = pointsRegenContainer.find(itemID);
+	return it->second.get()->m_regenSP;
+}
+
+//Component Attack
+Range& getRange(ID itemID) {
+	auto it = attackContainer.find(itemID);
+	return it->second.get()->m_range;
+}
+ScoreList& getMod(ID itemID) {
 	auto it = attackContainer.find(itemID);
 	return it->second.get()->m_mod;
 }
 
-AC getEquipAC(ID itemID) {
-	auto it = defenseContainer.find(itemID)->second.get();
-	return it->m_AC;
+//Component Defense
+AC& getAC(ID itemID) {
+	auto it = defenseContainer.find(itemID);
+	return it->second.get()->m_AC;
+}
+ScoreList& getDefMod(ID itemID) {
+	auto it = defenseContainer.find(itemID);
+	return it->second.get()->m_mod;
+}
+bool& getDefHeavy(ID itemID) {
+	auto it = defenseContainer.find(itemID);
+	return it->second.get()->m_heavy;
+}
+Weakness& getWeak(ID itemID) {
+	auto it = defenseContainer.find(itemID);
+	return it->second.get()->m_weak;
+}
+Resistance& getResist(ID itemID) {
+	auto it = defenseContainer.find(itemID);
+	return it->second.get()->m_resist;
 }
 
-DiceList getEquipDmg(ID itemID) {
+//Component Equipable
+bool& getEquiped(ID itemID) {
+	auto it = equipableContainer.find(itemID);
+	return it->second.get()->m_equiped;
+}
+EquipType& getType(ID itemID) {
+	auto it = equipableContainer.find(itemID);
+	return it->second.get()->m_type;
+}
+bool& getTwoHand(ID itemID) {
+	auto it = equipableContainer.find(itemID);
+	return it->second.get()->m_twoHand;
+}
+bool& getLight(ID itemID) {
+	auto it = equipableContainer.find(itemID);
+	return it->second.get()->m_light;
+}
+ScoreList& getWeaponMod(ID itemID) {
+	auto it = attackContainer.find(itemID);
+	return it->second.get()->m_mod;
+}
+
+//Component Damage
+DiceList& getDmgDice(ID itemID) {
 	auto it = damageContainer.find(itemID);
 	return it->second.get()->m_dmgDice;
+}
+DamageList& getDmgType(ID itemID) {
+	auto it = damageContainer.find(itemID);
+	return it->second.get()->m_dmgType;
+}
+
+//Component Ammunition
+AmmoList& getAmmo(ID itemID) {
+	auto it = ammunitionContainer.find(itemID);
+	return it->second.get()->m_ammo;
+}
+bool& getLoading(ID itemID) {
+	auto it = ammunitionContainer.find(itemID);
+	return it->second.get()->m_loading;
+}
+
+//Component Ammo
+AmmoList& getAmmoType(ID itemID) {
+	auto it = ammoContainer.find(itemID);
+	return it->second.get()->m_ammoType;
+}
+
+//Component Throwable
+DiceList& getThrowDmgDice(ID itemID) {
+	auto it = throwableContainer.find(itemID);
+	return it->second.get()->m_dmgDice;
+}
+DamageList& getThrowDmgType(ID itemID) {
+	auto it = throwableContainer.find(itemID);
+	return it->second.get()->m_dmgType;
+}
+ScoreList& getThrowMod(ID itemID) {
+	auto it = throwableContainer.find(itemID);
+	return it->second.get()->m_mod;
+}
+Range& getThrowRange(ID itemID) {
+	auto it = throwableContainer.find(itemID);
+	return it->second.get()->m_range;
+}
+
+//Component Cast Focus
+bool& getSpellFocus(ID itemID) {
+	auto it = castFocusContainer.find(itemID);
+	return it->second->m_spell;
+}
+bool& getPrayFocus(ID itemID) {
+	auto it = castFocusContainer.find(itemID);
+	return it->second->m_pray;
+}
+bool& getSongFocus(ID itemID) {
+	auto it = castFocusContainer.find(itemID);
+	return it->second->m_song;
+}
+
+//Component Saving Throw
+ScoreList& getSavScore(ID itemID) {
+	auto it = savingContainer.find(itemID);
+	return it->second->m_mod;
+}
+DC& getSavDC(ID itemID) {
+	auto it = savingContainer.find(itemID);
+	return it->second->m_DC;
+}
+bool& getSavFail(ID itemID) {
+	auto it = savingContainer.find(itemID);
+	return it->second->m_fail;
+}
+
+//Component Conditions
+std::vector<Condition>& getConditions(ID itemID) {
+	auto it = conditionsContainer.find(itemID);
+	return it->second->m_conditions;
 }

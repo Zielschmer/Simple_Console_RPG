@@ -1,7 +1,7 @@
 #ifndef COMP_RANGE
 #define COMP_RANGE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompRange : public Component {

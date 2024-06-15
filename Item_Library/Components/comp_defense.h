@@ -1,7 +1,7 @@
 #ifndef COMP_DEFENSE
 #define COMP_DEFENSE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompDefense : public Component {

@@ -29,7 +29,7 @@ const ID createBite(const ID& ownerID) {
     compDamage->m_dmgDice = D1;
     compDamage->m_dmgType = PIERCING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -64,7 +64,7 @@ const ID createSting(const ID& ownerID) {
     compDamage->m_dmgDice = D1;
     compDamage->m_dmgType = PIERCING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -80,7 +80,7 @@ const ID createSting(const ID& ownerID) {
     compSaving->m_DC = 9;
     compSaving->m_fail = true;
     blueprint.registerComponent(std::move(compSaving));
-    blueprint.addComponent(SAVING_COMP);
+    blueprint.addComponent(ITEM_SVG_COMP);
 
     //Register Conditions Component
     auto compConditions = std::make_unique<CompConditions>(ITEM_ID);
@@ -89,7 +89,7 @@ const ID createSting(const ID& ownerID) {
     poisoned.m_turns = 3;
     compConditions->m_conditions.emplace_back(poisoned);
     blueprint.registerComponent(std::move(compConditions));
-    blueprint.addComponent(CONDITIONS_COMP);
+    blueprint.addComponent(ITEM_COND_COMP);
 
     Item_ptr item = blueprint.instantiateItem(ownerID, "Sting", "Might get you poisoned");
 

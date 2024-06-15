@@ -1,7 +1,7 @@
 #ifndef COMP_CONSUMABLE
 #define COMP_CONSUMABLE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompConsumable : public Component {

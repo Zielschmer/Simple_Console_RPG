@@ -1,7 +1,7 @@
 #ifndef COMP_MAIN_HAND
 #define COMP_MAIN_HAND
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompMainHand : public Component{

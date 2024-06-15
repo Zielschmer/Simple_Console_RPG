@@ -1,7 +1,7 @@
 #ifndef COMP_INFO
 #define COMP_INFO
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompInfo : public Component {

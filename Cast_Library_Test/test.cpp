@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "..\Cast_Library\Systems\Cast_Interface.h"
+#include "..\Cast_Library\Cast_Interface.h"
 
 TEST(BlueprintTest, AcidSplash) {
 

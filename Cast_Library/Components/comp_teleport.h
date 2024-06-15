@@ -1,7 +1,7 @@
 #ifndef COMP_TELEPORT
 #define COMP_TELEPORT
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompTeleport : public Component {

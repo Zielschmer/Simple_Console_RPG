@@ -1,7 +1,7 @@
 #ifndef SYSTEM_DICE
 #define SYSTEM_DICE
 
-#include "..\..\utils.h"
+#include "..\..\..\utilities\utils.h"
 
 Roll rollDice(DiceList dice);
 

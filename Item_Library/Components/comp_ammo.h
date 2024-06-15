@@ -1,7 +1,7 @@
 #ifndef COMP_AMMO
 #define COMP_AMMO
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompAmmo : public Component {

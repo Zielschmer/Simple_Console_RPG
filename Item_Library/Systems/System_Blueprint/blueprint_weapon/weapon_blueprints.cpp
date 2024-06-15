@@ -29,7 +29,7 @@ const ID createShortSword(const ID& ownerID) {
     compDamage->m_dmgDice = D6;
     compDamage->m_dmgType = SLASHING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -64,7 +64,7 @@ const ID createDagger(const ID& ownerID) {
     compDamage->m_dmgDice = D4;
     compDamage->m_dmgType = SLASHING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -108,7 +108,7 @@ const ID createMace(const ID& ownerID) {
     compDamage->m_dmgDice = D6;
     compDamage->m_dmgType = BLUDGEONING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -143,7 +143,7 @@ const ID createHammer(const ID& ownerID) {
     compDamage->m_dmgDice = D8;
     compDamage->m_dmgType = BLUDGEONING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -162,7 +162,7 @@ const ID createHammer(const ID& ownerID) {
     return itemID;
 }
 
-const ID createBow(const ID& ownerID) {
+const ID createShortBow(const ID& ownerID) {
 
     Blueprint blueprint;
 
@@ -178,7 +178,7 @@ const ID createBow(const ID& ownerID) {
     compDamage->m_dmgDice = D6;
     compDamage->m_dmgType = PIERCING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -220,7 +220,7 @@ const ID createStaff(const ID& ownerID) {
     compDamage->m_dmgDice = D1;
     compDamage->m_dmgType = BLUDGEONING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -263,7 +263,7 @@ const ID createRosary(const ID& ownerID) {
     compDamage->m_dmgDice = D1;
     compDamage->m_dmgType = BLUDGEONING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);
@@ -306,7 +306,7 @@ const ID createHarp(const ID& ownerID) {
     compDamage->m_dmgDice = D1;
     compDamage->m_dmgType = BLUDGEONING;
     blueprint.registerComponent(std::move(compDamage));
-    blueprint.addComponent(DAMAGE_COMP);
+    blueprint.addComponent(ITEM_DMG_COMP);
 
     //Register Equipable Component
     auto compEquipable = std::make_unique<CompEquipable>(ITEM_ID);

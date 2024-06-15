@@ -1,7 +1,7 @@
 #ifndef COMP_AMMUNITION
 #define COMP_AMMUNITION
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompAmmunition : public Component {

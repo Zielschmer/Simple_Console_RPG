@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -153,11 +153,11 @@
     <ClInclude Include="Systems\System_Blueprint\blueprint_nat-weapon\nat-weapon_blueprint.h" />
     <ClInclude Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprint.h" />
     <ClInclude Include="Systems\System_Containers\Containers.h" />
-    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Entity\item.cpp" />
+    <ClCompile Include="Item_Interface.cpp" />
     <ClCompile Include="Systems\System_Blueprint\blueprint_item\item_blueprints.cpp" />
     <ClCompile Include="Systems\System_Blueprint\blueprint_nat-weapon\nat-weapon_blueprints.cpp" />
     <ClCompile Include="Systems\System_Blueprint\blueprint_weapon\weapon_blueprints.cpp" />

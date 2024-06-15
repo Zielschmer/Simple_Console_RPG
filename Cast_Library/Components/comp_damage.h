@@ -1,7 +1,7 @@
 #ifndef COMP_DAMAGE
 #define COMP_DAMAGE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompDamage : public Component {

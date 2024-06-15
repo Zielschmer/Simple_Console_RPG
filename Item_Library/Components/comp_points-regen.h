@@ -1,7 +1,7 @@
 #ifndef COMP_POINTS_REGEN
 #define COMP_POINTS_REGEN
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompPointsRegen : public Component {

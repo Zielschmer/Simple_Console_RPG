@@ -47,7 +47,7 @@ MainHand_ptr generateMainHand(ID entityID, Blueprint blueprint) {
 
 		newMainHand->m_weapon = createMace(entityID);
 
-		blueprint.addComponent(OFFHAND);
+		blueprint.addComponent(OFFHAND_COMP);
 	}
 	else if (chkScore(entityID, STR) > 15) {
 
@@ -56,7 +56,7 @@ MainHand_ptr generateMainHand(ID entityID, Blueprint blueprint) {
 	}
 	else {
 		newMainHand->m_weapon = createShortSword(entityID);
-		blueprint.addComponent(OFFHAND);;
+		blueprint.addComponent(OFFHAND_COMP);;
 	}
 
 	return std::move(newMainHand);

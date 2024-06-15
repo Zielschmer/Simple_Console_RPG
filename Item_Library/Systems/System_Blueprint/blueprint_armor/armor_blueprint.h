@@ -1,7 +1,7 @@
 #ifndef ARMOR_BLUEPRINT
 #define ARMOR_BLUEPRINT
 
-#include "..\..\..\utils.h"
+#include "..\..\..\..\utilities\utils.h"
 
 //Armor
 const ID createRobe(const ID& ownerID);

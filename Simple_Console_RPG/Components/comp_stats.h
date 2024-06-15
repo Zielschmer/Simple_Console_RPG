@@ -1,7 +1,7 @@
 #ifndef COMP_STATS
 #define COMP_STATS
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 #include "..\Systems\System_Conditions\CondEffect.h"
 

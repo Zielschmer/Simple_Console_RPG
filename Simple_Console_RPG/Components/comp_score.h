@@ -1,7 +1,7 @@
 #ifndef COMP_SCORE
 #define COMP_SCORE
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompScore : public Component {

@@ -1,7 +1,7 @@
 #ifndef COMP_POINTS
 #define COMP_POINTS
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompPoints : public Component {

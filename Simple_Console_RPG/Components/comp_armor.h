@@ -1,7 +1,7 @@
 #ifndef COMP_ARMOR
 #define COMP_ARMOR
 
-#include "..\utils.h"
+#include "..\..\..\utilities\utils.h"
 #include "Component.h"
 
 struct CompArmor : public Component {

@@ -6,7 +6,7 @@
 OffHand_ptr generateOffHand(ID entityID) {
 	OffHand_ptr newOffHand(new CompOffHand(entityID));
 
-	if (getItemName(getComponent<CompArmor>(entityID, ARMOR)->m_armor) == "Robe") {
+	if (getItemName(getComponent<CompArmor>(entityID, ARMOR_COMP)->m_armor) == "Robe") {
 		if (chkScore(entityID, INT) > chkScore(entityID, FTH)) {
 			newOffHand->m_weapon = createStaff(entityID);
 		}
@@ -14,7 +14,7 @@ OffHand_ptr generateOffHand(ID entityID) {
 			newOffHand->m_weapon = createRosary(entityID);
 		}
 	}
-	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND)->m_weapon) == "Mace") {
+	else if (getItemName(getComponent<CompMainHand>(entityID, MAINHAND_COMP)->m_weapon) == "Mace") {
 		newOffHand->m_weapon = createRosary(entityID);
 	}
 	else {
